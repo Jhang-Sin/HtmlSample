@@ -1,0 +1,447 @@
+
+<html>
+<title>
+計算機範例
+</title>
+<head>
+<script>
+//new Array()
+var Trmp = new Array();//
+
+var NumA= 0; //運算元1
+var NumB = 0;	//運算元2
+var Fcount = 0; //運算子(四則符號)
+var ans = 0;	//放置答案
+var Temp = [];///定義一個一維陣列
+
+
+///
+function CheckIsOverNumDisplay()
+{
+		if (getdisplayNum().length>=8)
+		{
+		return true		
+		}	
+
+}
+
+function NumTarge(INnum)//數字鍵觸發
+{
+	console.log('數字長度=') + console.log(NumA.length);
+	console.log("輸入數字為"+  "[" +INnum +"]" +  "記憶數字為="  +  NumA);
+
+	if(NumA == 0)//表示之前尚未輸入數字
+
+	{
+	NumA = INnum;//把輸入數字存至NumA中
+
+	}
+	else ///表示有原數字
+	{
+		//判斷長度是否超過8碼
+		
+		if((NumA.toString()).length>=8)
+		{
+		console.log("Stop this function ");
+		SetTipTXT("輸入長度最大限制8碼")
+		 return; ;///跳出 function//
+		 
+		//中斷不動作
+			
+		}else{
+			var tmpNum = (parseInt(NumA)*10) + parseInt(NumA);
+			console.log('OHOH=' + tmpNum);
+			// parseInt() 函式將字串轉換為整數 
+			//EX:var b = parseInt(a);
+			NumA = tmpNum +NumA; <!-----原數字X10 + 輸入數字-------->
+			console.log('結束數字為' + NumA );				
+			}		 
+	}
+	//處理畫面顯示//
+	
+	console.log('開始刷新畫面')
+	//把處理過的數字 送回畫面刷新
+	SettingDisplay(NumA);
+	
+}
+
+
+<!-----負責抓取UI上面目前顯示數值---->
+function getdisplayNum()
+{
+	var reNum = 0;
+	
+	var DisplayOBJ = document.getElementById('disp');
+	
+	reNum = parseInt(DisplayOBJ.value);
+	return reNum;
+
+}
+
+<!-----負責處理UI顯示------>
+
+function SettingDisplay(InPutValue)
+{
+console.log('FUN-SettingDisplay');
+if(InPutValue == null || InPutValue == undefined)
+{	///
+	//如果輸入是空,則跳出function//
+	console.log('YouKey InValue IS Null Or undefined');
+	return ;
+}
+///否則則刷新UI物件畫面//
+else{
+	//抓取畫面物件塞入顯示值
+	var DisplayOBJ = document.getElementById('disp')//抓取畫面上ID為disp的物件
+	//畫面數值*10+輸入數值
+	DisplayOBJ.value = InPutValue + parseInt(DisplayOBJ.value * 10); ///DisplayOBJ.value為畫面上物件內容原數值
+	//EX:轉換文字為數字(var n = parseInt(a))//
+}
+
+
+
+
+};
+
+
+function SetTipTXT( text)
+{
+var DisplayOBJ = document.getElementById('tipTXT'); //抓取Id為 tipTXT 的物件
+//顯相關文字
+DisplayOBJ.innerHTML = text;
+
+	
+
+}
+///////////////
+////重製物件-清空物件///
+///////////////
+function ResetAll()
+{
+NumA =0;
+NumB =0;
+ans =0;
+var DisplayOBJ = document.getElementById('disp');
+DisplayOBJ.value = 0;
+var DisplayMsgObj =document.getElementById('tipTXT');
+DisplayMsgObj.textContent="";///清空警告視窗
+};
+
+
+
+
+////////////////////
+////重製-歸零按鈕///
+////////////////////
+
+function ReFlashTheView( value)//負責處理顯示function
+{
+console.log('ReFlashTheView--清空所有物件');
+
+//清空暫存
+
+var NumA = 0;
+var NumB = 0;
+var ans = 0;
+// 清空畫面//
+ResetAll();
+
+};
+
+
+
+
+
+
+////流程順序
+//1.預設值為0
+//2.是否為四則(+-X/)
+//3.是否為數字(輸入數值a X 10 + 畫面原數字)
+
+//11-加
+//12減
+//13乘
+//14除
+//15等於
+
+
+
+function targeDisplay(caseNum ,caseType) //第二碼[caseType]是0表示為純數字
+{
+
+	//表示為純輸入數字//
+	if(caseType ==0)
+	{
+		//把數字丟到UI上面顯示
+		SettingDisplay(caseNum); //待處理顯示問題397
+	}
+	//表示微四則運算或其他的
+	else{
+	console.log("觸發了四則運算");
+	//把代碼站存起來[Fcount]
+	Fcount = caseType;
+	
+	}
+	
+	varOUT = '雙參數' + 'CASENUM= '+caseNum + ' CaseType =  ' +  caseType 
+	
+	console.log(varOUT);
+
+	//NumTarge(caseNum);
+	switch (caseNum)
+	{
+	case 0:
+	///按鈕0///
+	console.log(caseNum);
+		break;
+	case 1:
+	console.log(caseNum);
+		break;
+	case 2:
+	console.log(caseNum);
+		break;
+	case 3:
+	console.log(caseNum);
+		break;
+	case 4:
+	console.log(caseNum);
+		break;
+	case 5:
+	console.log(caseNum);
+		break;
+	case 6:
+	console.log(caseNum);
+		break;
+	case 7:
+	console.log(caseNum);
+		break;
+	case 8:
+	console.log(caseNum);
+		break;
+	case 9:
+	console.log(caseNum);
+		break;
+	case 10:	///按鈕[C]
+	
+	console.log('clearAll');
+	console.clear();
+	///清除A、B、display
+	//清除UI顯示
+	//重置物件///
+	ReFlashTheView();	
+		break;
+	case 11:	//11-加
+	console.log('＋');
+	targeDisplay(0,11); //第一碼隨意輸入不判定
+	count=11;
+		break;
+	case 12:	//12減
+	targeDisplay(0,12);
+	count=12;
+	console.log('－');
+		break;
+	case 13:	//13乘
+	targeDisplay(0,13);
+	count=13;
+	console.log('×');
+		break;
+	case 14:	//14除
+	targeDisplay(0,14);
+	count=14;
+	console.log('÷');
+		break;
+	case 15:	//15等於
+	targeDisplay(0,15);
+	console.log('=');
+		break;
+		case 16:	//小數點		
+		DecimalPoint();
+		//targeDisplay(0,16);
+		
+		break;
+	
+	}	
+}
+
+
+//小數點處理事件
+function DecimalPoint()
+{
+console.log('觸發小數點');
+//抓取畫面物件塞入顯示值
+	var DisplayOBJ = document.getElementById('disp')//抓取畫面上ID為disp的物件
+	//畫面數值+ 輸入數值 *0.1
+	
+	var oraingValueNum = (parseInt(DisplayOBJ.value)); /////★〞這邊後面的值字要轉INT
+	var countnum =0; //存放數值X0.1後的結果
+	
+	///如果畫面數值為0
+	if(oraingValueNum=0)
+	{
+	
+	}
+	
+	//如果已經有小數點(小於0)則不動作
+	//用indexof(被判斷的物件,判斷的符號),看結果是否!= -1
+	
+	countnum = DisplayOBJ.value = ((parseInt(DisplayOBJ.value)) * 0.1); ///DisplayOBJ.value為畫面上物件內容原數值
+	//EX:轉換文字為數字(var n = parseInt(a))//
+	
+	///兩數相加
+	var ans = oraingValueNum + countnum;
+	console.log('小數點處理事件' + 'oraingValueNum:'+ oraingValueNum + '存放數值X0.1後的結果:'+ countnum + 'ans:' + ans);
+
+}
+
+///判斷是否有小數點
+function CheckSpoint(num)
+{
+	if(indexof(num ,".")!=-1)
+	{
+		//表示沒有找到
+		return falsel;
+	}
+	else
+	{
+		//表示有小數點
+		return true;
+	}
+}
+
+
+///按鈕0事件//畫面數值 X10
+function zero()
+{
+	console.log('觸發0');
+	
+	//抓取畫面物件塞入顯示值
+	var DisplayOBJ = document.getElementById('disp')//抓取畫面上ID為disp的物件
+	//畫面數值*10+輸入數值
+	DisplayOBJ.value = parseInt(DisplayOBJ.value * 10); ///DisplayOBJ.value為畫面上物件內容原數值
+	//EX:轉換文字為數字(var n = parseInt(a))//
+
+	
+	
+}
+
+///檢核是否小數///
+function CheckIsPoint(num)
+{
+	if(num.indexof('.')>=-1)
+	{
+	///表示有小數點
+	return true;
+	}else
+	{
+		return false;
+	}
+}
+
+</script>
+</head>
+
+A
+
+
+
+<body>
+<hr size = 1>
+<!------UI START--------->
+<input type = "text"  id="disp" maxlength="8" style="width:65%;height:25px;"font-weight:bold value="0">
+
+</br>
+<div id="tipTXT">這是文字</div>
+
+<table border = "1">
+<tr>
+<td>
+<button onclick ="targeDisplay(1,0)">
+<a>1</a>
+</button>
+</br>
+<td>
+<button onclick ="targeDisplay(2,0)">
+<a>2</a>
+</button>
+</td>
+<td>
+<button onclick ="targeDisplay(3,0)">
+<a>3</a>
+</button>
+</td>
+<!----放四則運算符號---->
+<td rowspan = 4 >
+<div >
+<button onclick ="targeDisplay(0,11)" style="padding:5px">
++
+</button></br>
+<button onclick ="targeDisplay(0,12)">
+-
+</button ></br>
+<button onclick ="targeDisplay(0,13)">
+×
+</button ></br>
+<button onclick ="targeDisplay(0,14)">
+÷
+</button ></br>
+<button onclick ="targeDisplay(0,15)">
+=
+</button ></br>
+
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<button onclick ="targeDisplay(4,0)">
+<a>4</a>
+</button>
+</td>
+<td>
+<button onclick ="targeDisplay(5,0)">
+<a>5</a>
+</button>
+</td>
+<td>
+<button onclick ="targeDisplay(6,0)">
+<a>6</a>
+</button>
+</td>
+</tr>
+<tr>
+<td>
+<button onclick ="targeDisplay(7,0)">
+<a>7</a>
+</button>
+</td>
+<td>
+<button onclick ="targeDisplay(8,0)">
+<a>8</a>
+</button>
+</td>
+<td>
+<button onclick ="targeDisplay(9,0)">
+<a>9</a>
+</button>
+</td>
+</tr>
+<tr>
+<td>
+<button onclick ="targeDisplay(10)">
+<a>C</a>
+
+</td>
+<td>
+<button onclick ="zero()">
+<a>0</a>
+</button>
+</td>
+<td>
+<button onclick ="DecimalPoint()"><a>．</a><!-----小數點事件----->
+</button>
+</td>
+</tr>
+
+</table>
+</body
+<html>
