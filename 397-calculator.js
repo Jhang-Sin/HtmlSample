@@ -19,7 +19,7 @@ function zero()
 {
     console.log('觸發zero');
     var temp = document.getElementById('disp');
-    if (parseIn(temp) == 0){
+    if (parseInt(temp) == 0){
         console.log('畫面原數值為0,不動作');
     } 
 	else{
