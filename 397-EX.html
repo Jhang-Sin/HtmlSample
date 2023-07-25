@@ -1,201 +1,117 @@
 <html>
-<title>
-練習用-11-25-01-16-32
-</title>
-<head>
-<meta charset="utf-8">
-<!---引用外部JS---->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
-<script>
-
-SETRedefaultValue();////預設值設定
-
-/////自定義JS function
-function targeDisplay(N1,N2)
-{
-	console.log('N1=' + N1);
-	console.log('N2='+N2);
-	
-	///如果是點下數字鍵
-	if(N2==0)
-	{
-	///表示點下數字鍵
-	console.log(N1);
-	
-	}else	
-	{
-		console.log('觸發了四則運算');	
+    <title>This Is Sample</title>
+    <head>
+        <!------Using JS area-->
+        
+        <!---[1]bootstrap--->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+         <!---2-Using JQuery-->
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+          <!---3-Using angularJS-->
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <!---MySelfJS--->
+        <!---User JS file test--->
 		
-			switch(N2)
-			{
-				case 11:
-				
-				break;
-			
-				case 12:
-				
-				break;
-			
-				case 13:
-				break;
-				
-				case 14:
-				break;
-			
-				case 15:
-				break;		
-			
-			}
-		}
+        <!---<script src="../JS/SampleJS.js"></script>--->
 		
-	
-		
-		
-		
-}
-	
-	
+		<!------[".. (根目錄)/(資料夾)/(JS檔名)"]------>
 
 
-///小數點處發
-function DecimalPoint()
-{
-console.log('觸發了小數點');
-}
+        <!---頁面內部使用JS---->
+        <script>          
+        $(document).ready()
+            {
+                alert('DOM IS ready');
+            }
+            
+            <!---測試用JS-->
+            
+            function Sample001 ( num)
+            {
+                console.log('You targe JS NUM is=' + num);
 
-//歸零重製//
-function ClearALL()
-{
-///清空console.log()
-console.clear();
+            }
 
-//重製UI顯示與暫存//
-//1.歸零UI畫面
-var DisplayOBJ = document.getElementById('disp');//抓取畫面上ID為disp的物件
-DisplayOBJ.value =0;
-//2.歸零暫存-予以預設值
-RedefaultValue();
+            ////DIV顯示///
+            function ChangeDiv()
+            {
+                document.getElementById("D01").innerHTML = "Change DIV-DOM";
+            }
+            ////重置DIV內容///
+            function ResetDiv(){
 
-}
+                document.getElementById("D01").innerText="";
+            }
+            
+            ///產生tableData
+            function  TabeleStr(ObjId)          
+            {        
+                console.log('targetTableStrFun')
+                StrTXT ="<a>測試文字</a>";
 
-///重置初始值
-function SETRedefaultValue()
-{
-	AddendNunm = 0; //加數
-	Summand = 0;	 //被加數
-	Operand = 0;	//運算元 +-*/
-	answer = 0;	// 答案
-	console.log('預設值設定完畢');
-}
 
-</script>
-</head>
 
-<body  ng-app="">
-<hr size = 1>
-<!------UI START--------->
-<input type = "text"  id="disp" maxlength="8" style="width:65%;height:25px;"font-weight:bold value="0" ng-model="INA">
+                tableStrTXT = "<table border = '1'><tr><td><button onclick =alert('testOK')>clickME</button></td></tr><tr><td><a>測試文字</a></td></tr></table>";///[&quot; 表示雙引號]
+                
+                varOBJ = document.getElementById(ObjId); ////取物件
+                varOBJ.innerHTML=tableStrTXT; ///塞值
+                ///return StrTXT;
+            }
 
-</br>
-<table border = "1">
-<tr>
-<td>
-<button onclick ="targeDisplay(1,0)">
-<a>1</a>
-</button>
-</br>
-<td>
-<button onclick ="targeDisplay(2,0)">
-<a>2</a>
-</button>
-</td>
-<td>
-<button onclick ="targeDisplay(3,0)">
-<a>3</a>
-</button>
-</td>
-<!----放四則運算符號---->
-<td rowspan = 4 >
-<div >
-<button onclick ="targeDisplay(0,11)" style="padding:5px">
-+
-</button></br>
-<button onclick ="targeDisplay(0,12)">
--
-</button ></br>
-<button onclick ="targeDisplay(0,13)">
-×
-</button ></br>
-<button onclick ="targeDisplay(0,14)">
-÷
-</button ></br>
-<button onclick ="targeDisplay(0,15)">
-=
-</button ></br>
+            ///重置清空物件///
+            function Restable(ObjId)
+            {
+                tableStrTXT="";
+                varOBJ = document.getElementById(ObjId); ////取物件
+                varOBJ.innerHTML=tableStrTXT; ///塞值
+            }
 
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<button onclick ="targeDisplay(4,0)">
-<a>4</a>
-</button>
-</td>
-<td>
-<button onclick ="targeDisplay(5,0)">
-<a>5</a>
-</button>
-</td>
-<td>
-<button onclick ="targeDisplay(6,0)">
-<a>6</a>
-</button>
-</td>
-</tr>
-<tr>
-<td>
-<button onclick ="targeDisplay(7,0)">
-<a>7</a>
-</button>
-</td>
-<td>
-<button onclick ="targeDisplay(8,0)">
-<a>8</a>
-</button>
-</td>
-<td>
-<button onclick ="targeDisplay(9,0)">
-<a>9</a>
-</button>
-</td>
-</tr>
-<tr>
-<td>
-<button onclick ="ClearALL()">
-<a>C</a>
 
-</td>
-<td>
-<button onclick ="zero()">
-<a>0</a>
-</button>
-</td>
-<td>
-<button onclick ="DecimalPoint()"><a>．</a><!-----小數點事件----->
-</button>
-</td>
-</tr>
+        </script>
+        
+        <!---頁面內部使用JS結束---->
 
-</table>
-<hr size = 2>
-<div><a>Is Footer</a></div>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>
+                    <button onclick="Sample001(123)">click ME</button>
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="console.clear()">clear console-log</button></td>
+            </tr>
+        </table>
 
-</body
-<html>
+        <input type="time" id="tm01">
+
+        <hr><!---水平線--->
+        <a>以下是開發區域</a>
+    </br>
+
+        <button onclick="ChangeDiv()" id="b01">
+            CHANGE-DIV
+        </button>  
+
+        <button onclick="TabeleStr('TB')"> <!--OBJ ID-->          
+            DrawTable
+        </button>
+        <button onclick="Restable('TB')">ClerTable</button>
+
+        <button id="b02" onclick="ResetDiv()">Clear-DIV</button>
+
+        <div id="D01"></div>
+        <button onclick="OutSide001()">引用JSFunctoin 測試</button>
+        <hr></hr>
+        <a>angular-Area</a>
+        <div ng-app >
+            <input type="text" ng-model="T01">
+            <a>{{T01}}</a>
+        </div>
+        <div id="TB"></div>
+        
+
+    </body>
+</html>
