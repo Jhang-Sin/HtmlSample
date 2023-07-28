@@ -31,8 +31,9 @@
             <!---測試用JS-->
             
             /////////TEST//////
-            function Sample001(){
-                var DT = new Date
+            function SWDT()
+            {
+                var DT = new Date;
                 alert(DT);
 
             };
@@ -59,6 +60,7 @@
                 tableStrTXT = "<table border = '1'><tr><td><button onclick =alert('testOK')>clickME</button></td></tr><tr><td><a>測試文字</a></td></tr></table>";///[&quot; 表示雙引號]
                 
                 varOBJ = document.getElementById(ObjId); ////取物件
+                console.log(varOBJ);
                 varOBJ.innerHTML=tableStrTXT; ///塞值
                 ///return StrTXT;
             }
@@ -70,24 +72,27 @@
                 varOBJ = document.getElementById(ObjId); ////取物件
                 varOBJ.innerHTML=tableStrTXT; ///塞值
             }
+
             ///////consoleLOG打印///////
-            (function () {
+            function WRLOG()
+            {
                 var old = console.log;
                 var logger = document.getElementById('log');
-                console.log = function (message) {
-                    if (typeof message == 'object') {
+                console.log = function (message)
+                {
+                    if (typeof message == 'object') 
+                    {
                         logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : message) + '<br />';
-                    } else {
-                        logger.innerHTML += message + '<br />';
+                    }
+                    else
+                    {
+                        logger.innerHTML += message+'<br />';
                     }
                 }
-            })();
-
-            
+            }            
 
 
-        </script>
-        
+        </script>        
         <!---頁面內部使用JS結束---->
 
     </head>
@@ -95,7 +100,7 @@
         <table border="1">
             <tr>
                 <td>
-                    <button onclick="Sample001()">Show Time</button>
+                    <button onclick="SWDT()">Show Time</button>
                 </td>
             </tr>
             <tr>
@@ -114,7 +119,7 @@
         </button>  
 
         <button onclick="TabeleStr('TB')"> <!--OBJ ID-->          
-            DrawTable
+            Draw-Table
         </button>
         <button onclick="Restable('TB')">ClerTable</button>
 
@@ -140,8 +145,11 @@
                 </td>
             </tr>
         </table>
+
+
+        </div>
         +++++
-        <div id="log" style="width:80%;height:300px">
+        <div id="log" style="width:80%;height:120px;border-style: double;" >
 
         </div>         
         <a>異動日期2023-07-26-18:23..</a>
