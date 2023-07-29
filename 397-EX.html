@@ -89,7 +89,32 @@
                         logger.innerHTML += message+'<br />';
                     }
                 }
-            }            
+            }
+
+            
+            ///////ERMSG處理//////
+            function ERMSG(num){
+
+                switch (num)
+                {
+                    case 1:
+                    console.log('ER-1');
+                    alert('還在思考怎處理外部自訂JS');
+                    break;
+
+                    case 2:
+                    console.log('ER-2');                    
+                    break;
+                    case 3:
+                    console.log('ER-4');
+
+                    default:
+                        ////無值之下預設值
+                        console.log('ERMSG-999');
+                    break;
+                }
+
+            }           
 
 
         </script>        
@@ -126,7 +151,7 @@
         <button id="b02" onclick="ResetDiv()">Clear-DIV</button>
 
         <div id="D01"></div>
-        <button onclick="alert('這顆還在想要怎處理外部JS')" ></button>
+        <button onclick="ERMSG(1)">ERMSG-TEST</button>
         <hr></hr>
         <a>angular-Area</a>
         <div ng-app >
