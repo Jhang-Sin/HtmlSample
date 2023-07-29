@@ -1,5 +1,5 @@
 <html>
-    <title>This Is EXSample</title>
+    <title>This Is Example</title>
     <head>
         <!------Using JS area-->
         <!---[1]bootstrap--->
@@ -161,12 +161,12 @@
         <div ng-app >
             <input type="text" ng-model="T01">
             <a>{{T01}}</a>
-        </div>
+        
         <div id="TB"></div>
         <table border="1">
             <tr>
                 <td>
-                    <div><a>R1D1</a></div>
+                    <div><a>R1D1.</a></div>
                 </td>
                 <td>
                     <a>R1D2</a>
@@ -177,10 +177,26 @@
 
 
         </div>
-        +++++
+      預計輸出consloe用
         <div id="log" style="width:80%;height:120px;border-style: double;" >
 
-        </div>         
+        </div>
+
+        <form >
+            <a>姓名:</a><input type="text" ng-model ="N01">{{N01}}
+      
+    </div>
+            <a>性別</a>
+            <input type="radio"  name="sex" value="1" ng-model = "SX01">
+            <label>男</label>
+            <input type="radio"  name="sex" value="2"  ng-model = "SX01">
+            <label >女</label>
+            
+            <label>{{SX01}}</label>
+
+
+        </form>
+    </div><!-----ANGJS的結束範圍---->         
         <footer>
             --頁腳--
             <a>異動日期2023-07-29.</a>
