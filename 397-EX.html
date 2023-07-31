@@ -20,18 +20,18 @@
 		<!------[".. (根目錄)/(資料夾)/(JS檔名)"]------>
 
         <!--UsePJfile-->
-        <script src="JS/SinData.js"></script>>
+
+        <script src="JS/SinData.js"></script>
 
 
         <!---頁面內部使用JS---->
-
         <script>          
         $(document).ready()
             {
                 alert('DOM IS ready');
             }
             
-            <!---測試用JS-->
+            ////測試用JS----////
             
             /////////TEST//////
             function SWDT()
@@ -117,18 +117,19 @@
                     break;
                 }
 
-            }           
+            }
+            </script>      
 
+        <!--頁面內部使用JS結束---->
 
-        </script>        
-        <!---頁面內部使用JS結束---->
 
     </head>
+
     <body ng-app>
         <table border="1">
             <tr>
                 <td>
-                    <button onclick="SWDT()">Show Time</button>
+                    <button onclick="SWDT()"> Show Time </button>
                 </td>
             </tr>
             <tr>
@@ -139,9 +140,9 @@
         <input type="time" id="tm01">
 
         <hr><!---水平線--->
+
         <a>以下是開發區域</a>
     </br>
-
         <button onclick="ChangeDiv()" id="b01">
             CHANGE-DIV
         </button>  
