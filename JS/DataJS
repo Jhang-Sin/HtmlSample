@@ -1,0 +1,10 @@
+<rscript>
+
+    function DataOutPut()
+    {
+        console.log('you targe OutPutJS');
+
+
+    }
+
+</swcript
