@@ -121,7 +121,7 @@
         <!---頁面內部使用JS結束---->
 
     </head>
-    <body>
+    <body ng-app>
         <table border="1">
             <tr>
                 <td>
@@ -158,11 +158,15 @@
 
         <hr></hr>
         <a>angular-Area</a>
-        <div ng-app >
+        <div  >
             <input type="text" ng-model="T01">
             <a>{{T01}}</a>
-        
-        <div id="TB"></div>
+
+
+        </div>
+        <div id="TB">
+
+        </div>
         <table border="1">
             <tr>
                 <td>
@@ -177,12 +181,11 @@
 
 
         </div>
-        <a>預計輸出console用---下方待修正</a>>        
+        <a>預計輸出console用---下方待修正</a>>
+
         <div id="log" style="width:80%;height:120px;border-style: double;" >
-
         </div>
-
-        <form >
+        <form  ng-app>
             <a>姓名:</a><input type="text" ng-model ="N01">{{N01}}
       
     </div>
@@ -196,10 +199,11 @@
 
 
         </form>
-    </div><!-----ANGJS的結束範圍---->         
+    </div>
+    <!-----ANGJS的結束範圍---->         
         <footer>
             --頁腳--
-            <a>異動日期2023-07-29.</a>
+            <a>異動日期2023-07-31.</a>
         </footer>
        
     </body>
