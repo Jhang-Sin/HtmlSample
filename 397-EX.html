@@ -31,27 +31,7 @@
             }
             
             
-            function SWDT()
-            {
-               var  year= "00";
-               var mon= "00";
-               var Day="00";
-               var HH = "00";
-               var MM = "00";
-               var SS = "00";                
-                
-
-                var DT = new Date;
-                year = DT.getFullYear();///取年
-                mon = (DT.getMonth()+1);///取月///+1修正月份
-                Day = (DT.getDate());///取日
-                HH = DT.getHours(); ///取時
-                MM = DT.getMinutes();///取分
-                SS = DT.getSeconds();//取秒
-
-                alert(year +"年"+mon+"月"+Day+"日 "+HH+":"+MM+":"+SS+"秒");
-
-            };
+            
 
             ////DIV顯示///
             function ChangeDiv()
@@ -141,7 +121,7 @@
         <table border="1">
             <tr>
                 <td>
-                    <button onclick="SWDT()"> 顯示時間 </button>
+                    <button onclick="SWDT()"> 顯示時間[測載入JS是否正常] </button>
                 </td>
             </tr>
             <tr>
@@ -166,9 +146,7 @@
 
         <button id="b02" onclick="ResetDiv()">Clear-DIV</button>
 
-        <div id="D01"></div>
-
-        ++--++-+-+-OOPPF
+        <div id="D01"></div>   
 
         <button onclick="ERMSG(1)">ERMSG-TEST</button>
 
@@ -211,11 +189,7 @@
             <input type="radio"  name="sex" value="2"  ng-model = "SX01">
             <label >女</label>
             
-            <label>{{SX01}}</label>
-
-            <button onclick="DataOutPut()">測試專案內JS路徑[console.log]--</button>
-
-
+            <label>{{SX01}}</label> 
         </form>
     </div>
     <!-----ANGJS的結束範圍---->         
