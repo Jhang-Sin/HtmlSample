@@ -12,17 +12,16 @@
           <!---3-Using angularJS-->
           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
           
+          <!---4-Using momentJS--->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
         <!---MySelfJS--->
         <!---User JS file test--->
 		
-        <!---<script src="../JS/SampleJS.js"></script>--->
-		
 		<!------[".. (根目錄)/(資料夾)/(JS檔名)"]------>
 
-        <!--UsePJfile-->
+        <!--UseJSfile-->
 
         <script src="JS/SinData.js"></script>
-
 
         <!---頁面內部使用JS---->
         <script>          
@@ -31,13 +30,26 @@
                 alert('DOM IS ready');
             }
             
-            ////測試用JS----////
             
-            /////////TEST//////
             function SWDT()
             {
+               var  year= "00";
+               var mon= "00";
+               var Day="00";
+               var HH = "00";
+               var MM = "00";
+               var SS = "00";                
+                
+
                 var DT = new Date;
-                alert(DT);
+                year = DT.getFullYear();///取年
+                mon = (DT.getMonth()+1);///取月///+1修正月份
+                Day = (DT.getDate());///取日
+                HH = DT.getHours(); ///取時
+                MM = DT.getMinutes();///取分
+                SS = DT.getSeconds();//取秒
+
+                alert(year +"年"+mon+"月"+Day+"日 "+HH+":"+MM+":"+SS+"秒");
 
             };
 
@@ -129,7 +141,7 @@
         <table border="1">
             <tr>
                 <td>
-                    <button onclick="SWDT()"> Show Time </button>
+                    <button onclick="SWDT()"> 顯示時間 </button>
                 </td>
             </tr>
             <tr>
@@ -209,7 +221,7 @@
     <!-----ANGJS的結束範圍---->         
         <footer>
             --頁腳--
-            <a>異動日期2023-07-31. </a>
+            <a>異動日期2023-08-01. </a>
         </footer>
        
     </body>
