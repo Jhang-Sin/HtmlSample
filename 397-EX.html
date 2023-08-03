@@ -14,7 +14,13 @@
           
           <!---4-Using momentJS--->
           <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-        <!---MySelfJS--->
+        
+          <!-----5-OtherJS---->
+
+
+
+        
+          <!---MySelfJS--->
         <!---User JS file test--->
 		
 		<!------[".. (根目錄)/(資料夾)/(JS檔名)"]------>
@@ -86,6 +92,24 @@
                 }
             }
 
+            ////輸出至DIV///
+            function wrDiv(SubStr)
+            {
+            console.log('targetWrDiv');           
+                var ShowOBJ = document.getElementById("LOG");                
+                ShowOBJ.innerHTML += SubStr;
+
+            }
+            //////////////////////////
+            ///清除DIVLOG內容//////////
+            //////////////////////////
+            function ResetLogDiv()           
+            {   
+                ///清除LOG的內容
+                const container = document.getElementById('LOG');
+                container.textContent = '';
+            }
+
             
             ///////ERMSG處理//////
             function ERMSG(num){
@@ -93,21 +117,24 @@
                 switch (num)
                 {
                     case 1:
-                    console.log('ER-1');
-                    alert('還在思考怎處理外部自訂JS');
+                    wrDiv('ER-1');
+                    wrDiv('還在思考怎處理外部自訂JS');
+
+                    //alert('還在思考怎處理外部自訂JS');
                     break;
 
                     case 2:
-                    console.log('ER-2');                    
+                    wrDiv('ER-2');                    
                     break;
                     case 3:
-                    console.log('ER-4');
+                    wrDiv('ER-4');
 
                     default:
                         ////無值之下預設值
-                        console.log('ERMSG-999');
+                        wrDiv('ERMSG-999');
                     break;
                 }
+
 
             }
             </script>      
@@ -116,25 +143,34 @@
 
 
     </head>
+    <!-----
+    ////////////////////////////////////////////////////////////////////////////////////////
+    ////                                                                                ////
+    ////                                                                                ////
+    ////                                                                                ////
+    ////                                                                                ////
+    ////////////////////////////////////////////////////////////////////////////////////////
+    ----->
 
     <body ng-app>
-        <table border="1">
-            <tr>
-                <td>
-                    <button onclick="SWDT()"> 顯示時間[測載入JS是否正常] </button>
-                </td>
-            </tr>
-            <tr>
-                <td><button onclick="console.clear()">clear console-log</button></td>
-            </tr>
-        </table>
 
-        <input type="time" id="tm01">
 
-        <hr><!---水平線--->
+        <hr><!---水平線--->        
 
         <a>以下是開發區域</a>
-    </br>
+        <div style="text-align: right;"><!---DIV對齊方式靠右------>
+            <button onclick="console.clear()">清除console-log</button>
+        </div>
+    <hr><!----水平分隔線------>
+    <table border="1">
+        <tr>
+            <td>
+                <button onclick="SWDT()"> 顯示時間[測載入JS是否正常] </button>
+            </td>
+        </tr>
+    </table>
+
+    <input type="time" id="tm01">
         <button onclick="ChangeDiv()" id="b01">
             CHANGE-DIV
         </button>  
@@ -144,7 +180,7 @@
         </button>
         <button onclick="Restable('TB')">ClerTable</button>
 
-        <button id="b02" onclick="ResetDiv()">Clear-DIV</button>
+        <button id="b02" onclick="ResetLogDiv()">清空【輸出】</button>
 
         <div id="D01"></div>   
 
@@ -175,10 +211,11 @@
 
 
         </div>
-        <a>預計輸出console用---下方待修正</a>>
-
-        <div id="log" style="width:80%;height:120px;border-style: double;" >
+        <hr>
+        <a>【======輸出======】</a>        
+        <div id="LOG" style="width:80%;height:20%;overflow:auto;">
         </div>
+
         <form  ng-app>
             <a>姓名:</a><input type="text" ng-model ="N01">{{N01}}
       
@@ -192,11 +229,15 @@
             <label>{{SX01}}</label> 
         </form>
     </div>
+
+
     <!-----ANGJS的結束範圍---->         
         <footer>
             --頁腳--
-            <a>異動日期2023-08-01. </a>
+            <a>異動日期2023-08-03. </a>
         </footer>
        
     </body>
+    
+
     </html>
