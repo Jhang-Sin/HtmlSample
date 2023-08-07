@@ -2,6 +2,7 @@
 
 function SWDT()
             {
+                var ReturnStr = '';///回傳用
                var  year= "00";
                var mon= "00";
                var Day="00";
@@ -18,6 +19,8 @@ function SWDT()
                 MM = DT.getMinutes();///取分
                 SS = DT.getSeconds();//取秒
 
-                alert(year +"年"+mon+"月"+Day+"日 "+HH+":"+MM+":"+SS+"秒");
+
+                ReturnStr = year +"年"+mon+"月"+Day+"日 "+HH+":"+MM+":"+SS+"秒";               
+                return ReturnStr
 
             };
