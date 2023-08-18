@@ -16,4 +16,11 @@
   }
   .container01{ 
     display:flow-root;
+  }  
+ 
+  .SinCSS{
+    color: rgb(194, 86, 15);
+    border:double;
+    size:50px;
+    
   }
