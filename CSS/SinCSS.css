@@ -1,0 +1,19 @@
+.container{    
+    width:200px;
+    background:#1A85C9; 
+    padding:20px; 
+    margin-bottom:40px;
+    margin-right:10px;
+  }
+  .box{        
+    width:150px;
+    background:#4d4d4d; 
+    color:#fff; 
+    font-size:18px; 
+    text-align:center; 
+    padding:15px; 
+    float:left;
+  }
+  .container01{ 
+    display:flow-root;
+  }
