@@ -17,9 +17,14 @@
         
           <!-----5-OtherJS---->
 
+           <!--(5-1)拖拉UI(Jquery-UI)使用-->
+           <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+           <link rel="stylesheet" href="/resources/demos/style.css">
+           <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+           <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
+           <!------(5-1)end-------->
 
-        
           <!---MySelfJS--->
         <!---User JS file test--->
 		
@@ -32,6 +37,9 @@
         <!--UseCSSfile-->
 
         <link href="CSS/SinCSS.css" rel="stylesheet">
+
+     
+
         
         <!---頁面內部使用JS---->
         <script>          
@@ -141,8 +149,14 @@
 
 
             }
-            </script>      
 
+            $( function() {
+    $( "#dialog" ).dialog();
+  } );
+   
+
+
+            </script>
         <!--頁面內部使用JS結束---->
 
 
@@ -202,18 +216,7 @@
         </div>
         <div id="TB">
 
-        </div>
-        <table border="1">
-            <tr>
-                <td>
-                    <div><a>R1D1.</a></div>
-                </td>
-                <td>
-                    <a>R1D2</a>
-                    <button onclick="alert('沒啥用途的')">0003</button>
-                </td>
-            </tr>
-        </table>
+        </div>       
 
 
         </div>
@@ -241,13 +244,19 @@
     </div> 
     <div class="SinCSS">
         測試CSS文字效果
-    </div>  
+    </div> 
+    
+    <div id="dialog" title="【請拖拉標題列】" style="height: 50px; width:150px;border:2px;background-color: rgba(134, 146, 146, 0.733); >
+        <div style=" border:2px rgb(0, 0, 0) double"><b><a>異動日期2023-08-25.</a></b>
+        </div>
+    </div>
+
 
 
     <!-----ANGJS的結束範圍---->         
         <footer>
             --頁腳--
-            <a>異動日期2023-08-18. </a>
+            <a>Dev By Sin </a>
         </footer>
        
     </body>
