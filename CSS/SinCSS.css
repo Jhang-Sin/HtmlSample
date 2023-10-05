@@ -24,3 +24,19 @@
     
     
   }
+
+  @media screen and (max-device-width: 768px){
+    /* CSS內容 */
+  }
+
+  /* 電腦版 */
+body{
+  background:rgb(254, 255, 255);
+}
+
+/* 行動裝置版 */
+@media screen and (max-device-width: 768px){
+  body{
+    background:rgb(79, 224, 243);
+  }
+}
