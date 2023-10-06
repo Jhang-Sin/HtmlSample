@@ -20,23 +20,34 @@
  
   .SinCSS{
     color: rgb(19, 212, 238);    
-    font: size 80px;
-    
-    
+    font: size 80px;  
+        
   }
+
+  .SinTable{
+    color: rgb(18, 14, 240);
+    text-align: left;
+    font-size: 12px;
+    max-width: 600px;
+    max-height: 800px;
+    border: 1px;
+    border-color: rgb(255, 0, 0);
+  }
+
+  /*------RWD-UseCss------*/
 
   @media screen and (max-device-width: 768px){
-    /* CSS內容 */
+    /* CSS---content */
   }
 
-  /* 電腦版 */
+  /* PC-USE */
 body{
-  background:rgb(254, 255, 255);
+  background:rgb(195, 198, 245);
 }
 
-/* 行動裝置版 */
+/* MOB-USE */
 @media screen and (max-device-width: 768px){
   body{
-    background:rgb(79, 224, 243);
+    background:rgb(247, 200, 200);
   }
 }
