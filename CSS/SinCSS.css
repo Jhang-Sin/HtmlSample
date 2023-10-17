@@ -36,9 +36,7 @@
 
   /*------RWD-UseCss------*/
 
-  @media screen and (max-device-width: 768px){
-    /* CSS---content */
-  }
+
 
   /* PC-USE */
 body{
@@ -47,6 +45,8 @@ body{
 
 /* MOB-USE */
 @media screen and (max-device-width: 768px){
+      /* CSS---content */
+    /*-----解析度768議上吃這段---*/
   body{
     background:rgb(247, 200, 200);
   }
