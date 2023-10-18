@@ -40,7 +40,9 @@
 
   /* PC-USE */
 body{
-  background:rgb(195, 198, 245);
+  background:rgb(154, 179, 247);
+  font-size:large;
+  color: rgb(0, 0, 0);/*藍底黑字*/
 }
 
 /* MOB-USE */
@@ -48,6 +50,8 @@ body{
       /* CSS---content */
     /*-----解析度768議上吃這段---*/
   body{
-    background:rgb(247, 200, 200);
+    background:rgb(240, 179, 179);
+    font-size: small;
+    color: white;/*紅底白字*/
   }
 }
