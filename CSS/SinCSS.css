@@ -43,15 +43,19 @@ body{
   background:rgb(154, 179, 247);
   font-size:large;
   color: rgb(0, 0, 0);/*藍底黑字*/
-}
+}/* ---PC-USE-END----*/
 
-/* MOB-USE */
-@media screen and (max-device-width: 768px){
-      /* CSS---content */
-    /*-----解析度768議上吃這段---*/
-  body{
-    background:rgb(240, 179, 179);
+/* MOB-USE 解析度-768以上*/
+@media screen and (max-device-width: 768px)
+{
+    /* CSS---content */
+    /*-----解析度768上吃這段---*/
+  body
+  {
+    background:rgb(245, 197, 197);
     font-size: small;
-    color: white;/*紅底白字*/
+    font-weight:bolder ;/*粗體*/
+    color: white;/*紅底白字*/    
   }
-}
+} /* ---MOB-USE-END----*/
+
