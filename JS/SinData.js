@@ -24,3 +24,13 @@ function SWDT()
                 return ReturnStr
 
             };
+        function TimeUsePhoto()
+        {
+
+            ///抓物件 [TIMEIMG]
+            var ShowOBJ = document.getElementById("TIMEIMG");
+                            
+            ShowOBJ.innerHTML += SubStr;
+
+
+        }
