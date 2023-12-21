@@ -34,6 +34,7 @@
         <!--UseJSfile-->
 
         <script src="JS/SinData.js"></script>
+        <script src="JS/Notes.js"></script>>
 
         <!--UseCSSfile-->
 
@@ -197,19 +198,37 @@
         <!-----////////////////////////////////////////////////////////////////////////////////////////--->
              
         <div style="text-align: right;"><!---DIV對齊方式靠右------>
-            <button onclick="console.clear()">清除console-log</button>
+            <button onclick="console.clear()">清除console-log</button></br>
+            <button onclick="Notes()" class= "SinButton">SHOW notesDay</button>
+
+            <div class="sinButton2" style="width: 100px ;height: 100px;">
+                <a>圓形CSS</a>
+            </div>
+
+            <div id="notesDay">
+
+            </div>
         </div>
+        
+
+        </body>
+            
+        </div>
+       
 
         </br>
         <img id="TIMEIMG" style="width: 90px;height:30px;"></img>
         </br>
+       
         
     <hr><!----水平分隔線------>
         <!---- 
      ------>
         <!---上一頁面----->
 
-      </div>
+        <div style="border: 2px; border-color: red; height: 250px;width: 100%;">
+            
+        </div>
 
     </br>
     
@@ -282,9 +301,9 @@
 
     <!----移動式視窗------>
     <div id="dialog" title="拖拉→【標題列】←移動" style="height: 150px; width:150px;border:2px;background-color: rgb(159, 243, 236);overflow:auto;">
-        <a>異動日期2023-10-30..</a>
+        <a>異動日期2023-12-21.</a>
         </br>
-        <a>-modify'toTOP' &addImage</a>
+        <a>-modify'CSS</a>
         </br>
         <button onclick="openRWDPage()">RWD測試頁面</button>
         </br>

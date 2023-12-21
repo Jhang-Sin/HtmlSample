@@ -78,3 +78,36 @@ body{
   background-color: gray;
 }
 /*-------浮動視窗使用END-------*/
+
+.SinButton{ /*  SIN buttonUse      */
+
+  background-color: #fbff00; /* Green */
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15em
+  /*border-radius: 0 10px 0 10px;/*  圓角設定 左上 右上 右下 左下*/
+  /*  若要設計圓形可以設border-radius: 99em */
+
+
+
+}
+
+/*圓形按鈕*/
+/* 
+border-radius屬性可以幫div添加圓角的效果
+設定值為圓角的半徑值，例如：border-radius:5px 意思為圓角半徑為5px
+我們可以依據自身需求為div的四個邊分別設定不同數值
+四個數值對應的方向為 border-radius:  左上 右上 右下 左下
+
+*/
+.sinButton2{
+  width:70px;
+  height:70px;
+  background:rgb(83, 133, 241);
+  border-radius: 99em;
+}
