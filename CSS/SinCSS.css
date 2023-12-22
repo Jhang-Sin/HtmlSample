@@ -79,7 +79,7 @@ body{
 }
 /*-------浮動視窗使用END-------*/
 
-.SinButton{ /*  SIN buttonUse      */
+.sinCircleBut1{ /*  SIN buttonUse      */
 
   background-color: #fbff00; /* Green */
   border: none;
@@ -105,7 +105,7 @@ border-radius屬性可以幫div添加圓角的效果
 四個數值對應的方向為 border-radius:  左上 右上 右下 左下
 
 */
-.sinButton2{
+.sinCircleBut2{
   width:70px;
   height:70px;
   background:rgb(83, 133, 241);
