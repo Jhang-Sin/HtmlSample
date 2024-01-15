@@ -213,12 +213,12 @@
     <br>
     <a>即時運算</a>
     <div>
-        <input type="number" ng-model="price" ng-init="price=1">
-        <br> 
+        <input type="number" ng-model="price" ng-init="price=1 " onkeyup="value=value.replace(/[^\d]/g,'') ">
+        <br> <!-----僅限輸入數字[onkeyup="value=value.replace(/[^\d]/g,'') "]--->
     </div>
     <div>
-        <input type="number" ng-model="num" ng-init="num=10">
-        <br>
+        <input type="number" ng-model="num" ng-init="num=10" onkeyup="value=value.replace(/[^\d]/g,'') ">
+        <br><!-----僅限輸入數字[onkeyup="value=value.replace(/[^\d]/g,'') "]--->
         {{price}}*{{num}} = {{num*price}}   
         
     </div>
