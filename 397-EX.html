@@ -39,7 +39,15 @@
 
         
         <!---頁面內部使用JS---->
-        <script>          
+        <script>
+        
+        /////變數定義區/////
+        var EX01Arr = new Array(); ///陣列宣告方式01
+        var EX02 = [] ; ///陣列宣告方式02
+        var EX03 = ['A','B','C']; ///陣列宣告方式03
+
+        ///////////////////
+
         $(document).ready()
             {
                 alert('DOM IS ready');
@@ -157,7 +165,8 @@
                 window.open('Rwd.html');/////大小寫有差異
 
                 //////window.open(' 新視窗的網址 ', '新視窗的名稱', config='height=高度,width=寬度');
-            }
+            }           
+
             </script>
         <!--頁面內部使用JS結束---->
 
@@ -181,7 +190,11 @@
     <body ng-app>
         <hr>
         <!---水平線---> 
-        <a>以下是開發區域</a>       
+        <a>以下是開發區域</a>
+        <!-----//////////////////////////////////////////////////////////////////////////////////////// ----->
+        <br>
+       
+        <button ng-click="ngtestfn()">NG-button</button>        
              
         <div style="text-align: right;">
             <!---DIV對齊方式靠右------>
@@ -196,6 +209,23 @@
     <div id=" DIVCarousel"  style="width: 100%; height: 50px;border: 2px;border-color: black;">
         BBBB
     </div>
+   
+    <br>
+    <a>即時運算</a>
+    <div>
+        <input type="number" ng-model="price" ng-init="price=1">
+        <br> 
+    </div>
+    <div>
+        <input type="number" ng-model="num" ng-init="num=10">
+        <br>
+        {{price}}*{{num}} = {{num*price}}   
+        
+    </div>
+    <a>下拉選單-ng跑值</a>
+    <select ng-repear></select>
+
+
 
     <!-----<img id="TIMEIMG" style="width: 90px;height:30px;"></img>------>        
         
@@ -272,6 +302,9 @@
     <div class="SinCSS">
         測試CSS文字效果
     </div> 
+
+
+    
 
     <!----移動式視窗------>
     <div id="dialog" title="拖拉→【標題列】←移動" style="height: 150px; width:150px;border:2px;background-color: rgb(159, 243, 236);overflow:auto;">
