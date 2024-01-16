@@ -34,3 +34,8 @@ function SWDT()
 
 
         }
+
+        $.ngtestfn = function()
+        {
+            
+        }

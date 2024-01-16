@@ -3,7 +3,7 @@ function Notes()
 {
 
     document.getElementById("notesDay").innerText="";
-    document.getElementById("notesDay").innerHTML = "2024-1-15 modify";}
+    document.getElementById("notesDay").innerHTML = "2024-1-16 modify";}
 
 
 let AllNum = 0;///宣告全域變數[let + 變數名]
