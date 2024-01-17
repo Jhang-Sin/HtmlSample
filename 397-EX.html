@@ -164,7 +164,7 @@
                 window.open('Rwd.html');/////大小寫有差異
 
                 //////window.open(' 新視窗的網址 ', '新視窗的名稱', config='height=高度,width=寬度');
-            }           
+            }        
 
             </script>
         <!--頁面內部使用JS結束---->
@@ -218,11 +218,12 @@
     <div>
         <input type="number" ng-model="num" ng-init="num=10" onkeyup="value=value.replace(/[^\d]/g,'') "><a>僅限輸入數字</a>
         <br><!-----僅限輸入數字[onkeyup="value=value.replace(/[^\d]/g,'') "]--->
-        {{price}}*{{num}} = {{num*price}}   
+       【{{price}}*{{num}} = {{num*price}}】
         
     </div>
     <a>下拉選單-ng跑值</a>
-    <select ng-repear></select>
+    <br>
+    <select ng-repear = "x in records">{{x}}</select>
 
 
 
