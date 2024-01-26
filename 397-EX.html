@@ -43,8 +43,7 @@
         /////變數定義區/////
         var EX01Arr = new Array(); ///陣列宣告方式01
         var EX02 = [] ; ///陣列宣告方式02
-        var EX03 = ['A','B','C']; ///陣列宣告方式03
-
+        var EX03 = ['A','B','C']; ///陣列宣告方式03        
         ///////////////////
 
         $(document).ready()
@@ -164,7 +163,7 @@
                 window.open('Rwd.html');/////大小寫有差異
 
                 //////window.open(' 新視窗的網址 ', '新視窗的名稱', config='height=高度,width=寬度');
-            }        
+            }                           
 
             </script>
         <!--頁面內部使用JS結束---->
@@ -223,7 +222,8 @@
     </div>
     <a>下拉選單-ng跑值</a>
     <br>
-    <select ng-repear = "x in records">{{x}}</select>
+    <li ng-repeat="X in friends">{{ X }}</li><!----$scope.friends = [ 'A001', 'B002', 'C003', 'D004'];---->
+
 
 
 
