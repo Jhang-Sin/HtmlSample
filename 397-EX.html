@@ -31,6 +31,7 @@
 
         <script src="JS/SinData.js"></script>
         <script src="JS/Notes.js"></script>
+        <script src="JS/DataUseController.js"></script>
 
         <!--UseCSSfile-->
         <link href="CSS/SinCSS.css" rel="stylesheet">
@@ -185,15 +186,12 @@
     ////////////////////////////////////////////////////////////////////////////////////////
     ----->
 
-    <body ng-app>
+    <body ng-app = "myapp">
         <hr>
         <!---水平線---> 
         <a>以下是開發區域</a>
         <!-----//////////////////////////////////////////////////////////////////////////////////////// ----->
-        <br>
-       
-        <button ng-click="ngtestfn()">NG-button</button>        
-             
+        <br>   
         <div style="text-align: right;">
             <!---DIV對齊方式靠右------>
             <button onclick="console.clear()">清除console-log</button></br>
@@ -323,13 +321,26 @@
     <input type="email">
     <input type="datetime">
   </form>
+  <a>Newcontroller</a>
+  <hr>
+  <div  ng-controller="SinController">
+    <b>新數值綁定{{DATAAA}} ={{abcde}}</b>
+    <button ng-click ="ngCk()">ngClick事件</button>
+    <!---
+        注意事項!!!
+        !!!!!!!!!!
+        angularController作用域範圍要包對,不然會呼叫失敗/沒反應
+        !!!!!!!!
+        --->
+  </div>
+  <!--自訂之SinController作用域結束範圍------>
+  
 
     <!-----ANGJS的結束範圍---->         
         <footer>
-            --頁腳--
-            <a>Dev By Sin </a>
+        --頁腳--
+        <a>Dev By Sin </a>
         </footer> 
-    </body>
-    
+    </body>    
 
     </html>
