@@ -1,4 +1,5 @@
-(function(){
+(function()
+{
     ///<!---Sinapp起始範圍--->//
     var SinApp = angular.module('SinApp',[]);
     SinApp.controller('SinController',['$scope',function($scope)
@@ -24,5 +25,5 @@
     }]);    
     /// <!----Sinapp結束範圍----->///  
     var app = angular.module('myapp' ,['SinApp']); ///把[sinapp]裝載至[myapp]中
-
+    
 }) ();
