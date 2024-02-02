@@ -211,30 +211,66 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content"> <!--內容框架DIV--->
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">公告備註</h5>
 
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">關</button><!---原始class套用"btn-close"-->
         </div>
-        <a><b>=====上邊文字=====</b></a>
+        <table border="1">
+            <tr>
+                <td>AB01</td>
+                <td>AB02</td>
+            </tr>
+        </table>
+        <a><b>=====上邊文字==========================</b></a>
         <div class="modal-body" >
-            <div style="overflow:auto;height: 150px;width: 200px; "><!--overflow:auto-出現scrollbar軸-->                
-            <a>公告內容~</a></br>
-            <a>1-AAA</a></br>
-            <a>2-BBB</a></br>
-            <a>3-CCC</a></br>
-            <a>4-DDD</a></br>
-            <a>5-EEE</a></br>
-            <a>6-FFF</a></br>
+
+            <div class ="container" style="border-style: double;">
+                <div class="row">
+                    <div class="col ">
+                        <a>A001</a>
+                    </div>
+
+                    <div class="col ">
+                        <a>A002</a>
+                    </div>
+                    <div>
+                        <a>A003</a>
+                    </div>
+                </div>
+
             </div>
-            <!-------右邊文字-------->
-            
+
+            <div class="row">
+                <div style="overflow:auto;height: 150px;width: 200px; "><!--overflow:auto-出現scrollbar軸-->                
+                    <a>公告內容~</a></br>
+                    <a>1-AAA</a></br>
+                    <a>2-BBB</a></br>
+                    <a>3-CCC</a></br>
+                    <a>4-DDD</a></br>
+                    <a>5-EEE</a></br>
+                    <a>6-FFF</a></br>
+                </div> 
+                
+                <div>
+                    <a>7-GGG</a></br>
+                    <a>8-HHH</a></br>
+
+                </div>
 
 
+            </div>
+             
 
-            <div style="border-color: blueviolet;">
+            <div style="border: 1px solid black;">
                 <a><b>=====下邊文字=====</b></a>
+                <table border="1">
+                    <tr>
+                        <td>T01</td>
+                        <td>T02</td>
+                    </tr>
+                </table>
             </div>           
             
         </div>
@@ -388,6 +424,10 @@
   <div  ng-controller="SinController">
     <b>新數值綁定{{DATAAA}} ={{abcde}}</b>
     <button ng-click ="ngCk()">ngClick事件</button>
+    <input type="number" ng-model="NumA">
+    <button ng-click = "ngCk()">{{NumA}}</button>
+    <b><a>{{NumA}}</a></b>
+
     <!---
         注意事項!!!
         !!!!!!!!!!

@@ -5,7 +5,9 @@
     SinApp.controller('SinController',['$scope',function($scope)
     {
         $scope.dataAA = "ABC";
-        $scope.abcde = "66666-有數字表示呼叫正常";       
+        $scope.abcde = "66666-有數字表示呼叫正常"; 
+
+        $scope.NumA = "52888";      
        $scope.ngCk = function()
        {
         alert('angJSFun觸發呼叫正常');
