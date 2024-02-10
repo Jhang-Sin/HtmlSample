@@ -31,7 +31,7 @@
 
         <script src="JS/SinData.js"></script>
         <script src="JS/Notes.js"></script>
-        <script src="JS/DataUseController.js"></script>
+        <script src="JS/DataUseController.js"></script>       
 
         <!--UseCSSfile-->
         <link href="CSS/SinCSS.css" rel="stylesheet">
@@ -424,7 +424,7 @@
   <div  ng-controller="SinController">
     <b>新數值綁定{{DATAAA}} ={{abcde}}</b>
     <button ng-click ="ngCk()">ngClick事件</button>
-    <input type="number" ng-model="NumA">
+    <input type="number" ng-model="NumA" min="1" max="10" value="1" >
     <button ng-click = "ngCk()">{{NumA}}</button>
     <b><a>{{NumA}}</a></b>
 
@@ -436,6 +436,7 @@
         --->
   </div>
   <!--自訂之SinController作用域結束範圍------>
+
   
 
     <!-----ANGJS的結束範圍---->         
