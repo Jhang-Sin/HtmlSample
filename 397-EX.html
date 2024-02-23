@@ -11,8 +11,18 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
           <!---3-Using angularJS-->
-          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
           
+          <!---<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>-->
+
+          <!-- Angular Material CSS now available via Google CDN; version 1.2.1 used here -->
+          <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.css">
+          
+         <!-- Angular Material Dependencies -->
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script>  
+
           <!---4-Using momentJS--->
           <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
         
@@ -200,7 +210,7 @@
 
             <div class="sinCircleBut2" style="width: 100px ;height: 100px;"><a>圓形CSS</a></div>
 
-            <div id="notesDay"></div>
+            <div id="notesDay" style="border:2px rgb(255, 251, 0) dashed ;width: 100px;"></div>
         </div>        
         <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -419,6 +429,7 @@
     <input type="email">
     <input type="datetime">
   </form>
+  
   <a>Newcontroller</a>
   <hr>
   <div  ng-controller="SinController">

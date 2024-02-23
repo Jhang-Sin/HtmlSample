@@ -111,3 +111,7 @@ border-radius屬性可以幫div添加圓角的效果
   background:rgb(83, 133, 241);
   border-radius: 99em;
 }
+
+.btn1 {
+  /* your custom overrides here */
+ }
