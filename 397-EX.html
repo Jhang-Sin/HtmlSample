@@ -59,7 +59,10 @@
 
         $(document).ready()
             {
-                alert('DOM IS ready');
+                ////alert('DOM IS ready');
+                ///console.log('DOM IS ready');
+                ////console.log('SetAutoTIME');
+                setInterval(ShowTime,1000);////顯示時間 1000 毫秒= 1 秒 setInterval(fun 名稱不用加()號,即可調用)
             }            
             
             
@@ -174,7 +177,35 @@
                 window.open('Rwd.html');/////大小寫有差異
 
                 //////window.open(' 新視窗的網址 ', '新視窗的名稱', config='height=高度,width=寬度');
-            }                           
+            }
+            
+
+
+            function ShowTime()
+            {
+                
+                /*
+                setInterval(func, delayTime, argument)
+
+                用途：每間隔多少毫秒，執行動作。
+                回傳：timeoutID，紀錄當下定時編號，作為之後取消執行的依據。
+                參數：
+                        func:間隔delayTime，要執行哪些動作
+                        delayTime : 延遲單位(毫秒)
+                        argument(optional): 其他參數
+                        與setTimeout()差異：
+                        setTimeout()做完一次延遲執行動作即結束，setInterval()則是間隔延遲執行動作不中斷。
+
+                */
+               var DTString  = SWDT();
+               var ShowOBJ = document.getElementById("TM01");                
+                ShowOBJ.innerHTML= DTString;
+                console.log(DTString); 
+            }
+           
+
+
+            
 
             </script>
         <!--頁面內部使用JS結束---->
@@ -207,6 +238,18 @@
             <button onclick="console.clear()">清除console-log</button></br>
 
             <!--<button onclick="Notes()" class= "sinCircleBut">SHOW notesDay</button>-->
+
+            <table style="text-align: right;" border="1" align="right"> 
+                <tr>
+                    <td>
+                        <b><a>現在時間:</a></b>
+                    </td>
+                    <td>
+                        <div id="TM01"></div> 
+                    </td>
+                </tr>
+            </table>
+           
 
             <div class="sinCircleBut2" style="width: 100px ;height: 100px;"><a>圓形CSS</a></div>
 
@@ -349,9 +392,8 @@
                 <button onclick= alert(SWDT())> 顯示時間[測載入JS是否正常] </button>
             </td>
         </tr>
-    </table>
+    </table>  
 
-    <input type="time" id="tm01">
         <button onclick="ChangeDiv()" id="b01">
             CHANGE-DIV
         </button>  
