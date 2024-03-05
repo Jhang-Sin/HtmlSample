@@ -115,3 +115,11 @@ border-radius屬性可以幫div添加圓角的效果
 .btn1 {
   /* your custom overrides here */
  }
+
+
+ /*進度條CSS*/ 
+ /*-----*/
+ .progress {
+  margin: 10px;
+  width: 700px;
+}

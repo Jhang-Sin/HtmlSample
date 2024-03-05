@@ -63,6 +63,8 @@
                 ///console.log('DOM IS ready');
                 ////console.log('SetAutoTIME');
                 setInterval(ShowTime,1000);////顯示時間 1000 毫秒= 1 秒 setInterval(fun 名稱不用加()號,即可調用)
+
+                
             }            
             
             
@@ -170,6 +172,25 @@
             {
                 $( "#dialog" ).dialog();
             } );
+
+
+            ////進度條JS/////
+
+            $(function() {
+            var current_progress = 0;
+            var interval = setInterval(function() {
+                current_progress += 10;
+                $("#dynamic")
+                .css("width", current_progress + "%")
+                .attr("aria-valuenow", current_progress)
+                .text(current_progress + "% Complete");
+                if (current_progress >= 100)
+                    clearInterval(interval);
+            }, 1000);
+            });
+
+
+
 
             ///////開啟RWD測試頁面//////
             function openRWDPage()
@@ -357,6 +378,19 @@
         <a>文字123</a>
     </div> -->
    
+    <hr>
+
+    <div>    
+        <div class="progress">
+          <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            <span id="current-progress"></span>
+          </div>
+        </div>
+        
+    </div> 
+    <!---
+        ---->
+
     <br>
     <a>即時運算</a>
     <div>
