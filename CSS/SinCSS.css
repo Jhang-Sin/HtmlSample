@@ -120,6 +120,6 @@ border-radius屬性可以幫div添加圓角的效果
  /*進度條CSS*/ 
  /*-----*/
  .progress {
-  margin: 10px;
-  width: 700px;
+  margin: 10px;  /* 每次動畫小格的寬度*/
+  width: 800px; /*進度條的寬度*/
 }
