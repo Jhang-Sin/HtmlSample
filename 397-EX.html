@@ -55,17 +55,36 @@
         var EX01Arr = new Array(); ///陣列宣告方式01
         var EX02 = [] ; ///陣列宣告方式02
         var EX03 = ['A','B','C']; ///陣列宣告方式03        
-        ///////////////////
+        /////////////////////////////////////////////////////////////
 
         $(document).ready()
-            {
+        {
                 ////alert('DOM IS ready');
                 ///console.log('DOM IS ready');
                 ////console.log('SetAutoTIME');
                 setInterval(ShowTime,1000);////顯示時間 1000 毫秒= 1 秒 setInterval(fun 名稱不用加()號,即可調用)
 
-                
-            }            
+                ///var timerId = setInterval(timer, 1000); // 每隔1000毫秒，呼叫一次timer。[倒數用]
+
+                //最簡單的作法是使用setInterval()，它會依照固定的頻率，重複呼叫同一個函式。////
+                ///如果想停止計時器，可以呼叫clearInterval()，並把上面的timerId傳給它。////
+                //// clearInterval(timerId); // 依據timerId，停止指定的timer。
+        }
+         /////////////////////////////////////////////////////////////
+        
+        /* 設定倒數60秒。
+        var count = 60;
+ 
+        function timer() 
+        {
+        count--; // 每次執行timer就把count減1。
+    
+        // 若已計數完畢，則停止計時。
+        if (count == 0) 
+       clearInterval(timerId);
+        } */
+
+
             
             
 
@@ -177,7 +196,12 @@
             ////進度條JS/////
 
             $(function() {
+
+                ///////條件1
+
             var current_progress = 0;
+
+            /////自動觸發的迴圈--10秒
             var interval = setInterval(function() 
             {
                 current_progress += 10;
@@ -190,9 +214,17 @@
                     clearInterval(interval);
                     console.log('跑完了');
                     disableProgress();
+                   /// AutoTargetFN();
+
                 }
                    
-            }, 1000);
+            }
+            
+            ///////條件2
+           
+            
+            ///////////
+            , 1000);
             });
 
             ////隱藏進度條
@@ -204,6 +236,15 @@
                 dynamicOBJ.hidden = true /// 隱藏物件                
 
             }
+
+            ////手動觸發某個條件///        
+            // function AutoTargetFN()
+            // {
+            //     console.log('手動觸發某個條件--AutoTargetFN');
+            //     var OBJ =document.getElementById('TIP-BtCls');
+            //     OBJ.onclick();
+
+            // }
 
 
 
@@ -305,7 +346,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">公告備註</h5>
 
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">關</button><!---原始class套用"btn-close"-->
+          <button  id ="TIP-BtCls" type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">關</button><!---原始class套用"btn-close"-->
         </div>
         <table border="1">
             <tr>
@@ -365,7 +406,7 @@
             
         </div>
         
-        <div class="modal-footer">
+        <div  id="announcement" class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉視窗</button>
           <button type="button" class="btn btn-primary" onclick="Notes()">顯示異動日期</button>
         </div>
