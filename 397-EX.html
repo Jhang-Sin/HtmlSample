@@ -256,6 +256,15 @@
 
                 //////window.open(' 新視窗的網址 ', '新視窗的名稱', config='height=高度,width=寬度');
             }
+
+            function OpenMultPage()
+            {
+                window.open('View/MultiPage.html');
+                window.opener=null;
+                ///window.close(); ///關閉原視窗
+
+
+            }
             
 
 
@@ -449,6 +458,7 @@
         ---->
 
     <br>
+    <button onclick="OpenMultPage()"> open MTPage</button>
     <a>即時運算</a>
     <div>
         <input type="number" ng-model="price" ng-init="price=1 " onkeyup="value=value.replace(/[^\d]/g,'') "><a>僅限輸入數字</a>

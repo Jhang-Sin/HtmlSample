@@ -1,3 +1,4 @@
+"use strict";
 (function()
 {
     ///<!---Sinapp起始範圍--->//
