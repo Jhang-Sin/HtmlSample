@@ -51,16 +51,22 @@
     });
 });
 
+$(document).ready()
+{
+    console.log('AutoShow');
+    AutoShow();
+    
+}
+
+
 //////自動關閉效果////
-
-
+function AutoShow()
+{
 var w = window.open('','','width=100,height=100')
 w.document.write('5秒後我會自動關閉')
 w.focus()
 setTimeout(function() {w.close();}, 5000) ///5秒
-
-
-//////////////
+}
 
 
 </script>
