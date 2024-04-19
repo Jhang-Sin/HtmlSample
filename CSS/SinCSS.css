@@ -124,3 +124,7 @@ border-radius屬性可以幫div添加圓角的效果
   margin: 10px;  /* 每次動畫小格的寬度*/
   width: 800px; /*進度條的寬度*/
 }
+
+/*---收合效果CSS---*/
+.flip{margin:0px;padding:5px;text-align:center;background:#E09697;cursor:pointer;font-family:'Arial';}
+.panel{margin:0px;padding:5px;text-align:center;background:#e5eecc;border:solid 1px #c3c3c3;display:none;font-family:'Arial';}
