@@ -20,5 +20,12 @@ $(function(){
           var ShowOBJ = document.getElementById("MMD");                
           ShowOBJ.innerHTML += SubStr;
 
+      }
+      /*清空 DIV */
+      function ClearTXT()
+      {
+        var ShowOBJ = document.getElementById("MMD");                
+        ShowOBJ.innerHTML = '';
+        
       } 
       
