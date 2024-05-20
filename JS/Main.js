@@ -28,4 +28,10 @@ $(function(){
         ShowOBJ.innerHTML = '';
         
       } 
+
+      /* call Other-Iframe*/
+      function callframe()
+      {        
+       console.log('Call Other Iframe') ;
+      }
       

@@ -8,6 +8,7 @@ function TEST()
 function MainEvent()
 {
     console.log('LeftJS-MainEvent-')
-    var MainObj = document.getElementById('MMD');
+    var MainObj ;
+    MainObj = document.getElementById('MMD');
     MainObj.wrDiv('OH ~ Left');
 }
