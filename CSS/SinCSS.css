@@ -128,3 +128,27 @@ border-radius屬性可以幫div添加圓角的效果
 /*---收合效果CSS---*/
 .flip{margin:0px;padding:5px;text-align:center;background:#E09697;cursor:pointer;font-family:'Arial';}
 .panel{margin:0px;padding:5px;text-align:center;background:#e5eecc;border:solid 1px #c3c3c3;display:none;font-family:'Arial';}
+
+
+/*---閃爍效果CSS---*/
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 將動畫應用於需要閃爍的元素 */
+.blinking {
+  animation: blink 1s infinite;
+}
+
+/*
+-
+-
+@keyframes 來定義了一個名為 blink 的動畫效果，使元素在 50% 的時間內透明度為 0。 然後，我們將這個動畫效果應用於一個類別名為 .blinking 的元素，使其以 1 秒的時間間隔無限循環地閃爍。
+
+變更閃爍的時間間隔或，修改 animation 和 @keyframes 中的值。
+-
+-
+*/
