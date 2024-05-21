@@ -485,10 +485,7 @@
        【{{price}}*{{num}} = {{num*price}}】
         
     </div>
-    <a>下拉選單-ng跑值</a>
-    <br>
-    <li ng-repeat="X in friends">{{ X }}</li><!----$scope.friends = [ 'A001', 'B002', 'C003', 'D004'];---->
-
+    
 
 
 
@@ -597,6 +594,25 @@
     <input type="number" ng-model="NumA" min="1" max="10" value="1" >
     <button ng-click = "ngCk()">{{NumA}}</button>
     <b><a>{{NumA}}</a></b>
+
+    <a>下拉選單-ng跑值</a>
+    <br>
+    <a>anagular產label</a>
+
+    <a>anagular產清單文字</a>
+    <li ng-repeat="X in friends">{{ X }}</li>
+
+    <label>anagular產List</label>
+</br>
+    <select >
+        <option ng-repeat="X in friends">{{ X }}</option>
+    </select>
+</br>
+
+
+    <!-------->
+
+
 
     <!---
         注意事項!!!
