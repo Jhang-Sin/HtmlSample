@@ -591,14 +591,13 @@
   <div  ng-controller="SinController">
     <b>新數值綁定{{DATAAA}} ={{abcde}}</b>
     <button ng-click ="ngCk()">ngClick事件</button>
+  </br>
+    <a>限值1~10</a>
     <input type="number" ng-model="NumA" min="1" max="10" value="1" >
+    <a>ng-Model綁定</a>
     <button ng-click = "ngCk()">{{NumA}}</button>
     <b><a>{{NumA}}</a></b>
-
-    <a>下拉選單-ng跑值</a>
-    <br>
-    <a>angular產label</a>
-
+    </br>
     <a>angular產清單文字</a>
     <li ng-repeat="X in friends">{{ X }}</li>
 
