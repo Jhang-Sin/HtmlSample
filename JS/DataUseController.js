@@ -9,7 +9,7 @@
         $scope.abcde = "66666-有數字表示呼叫正常";
         $scope.friends = [ 'A001', 'B002', 'C003', 'D004'];       
 
-        $scope.NumA = "52888";      
+        $scope.NumA = 52888 ;     
        $scope.ngCk = function()
        {
         alert('angJSFun觸發呼叫正常');
@@ -26,7 +26,7 @@
         ----*/
 
 
-    }]);    
+    }],'$http');    
     /// <!----Sinapp結束範圍----->///  
     var app = angular.module('myapp' ,['SinApp']); ///把[sinapp]裝載至[myapp]中    
 }) ();
