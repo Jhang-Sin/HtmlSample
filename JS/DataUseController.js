@@ -20,15 +20,10 @@
             要做的事情
         }
         EX:$scope.save  = function() {alert("Note Saved");};
-        前端要使用ng-事件做呼叫 EX:ng-click="save()"
-
-        
-
-
+        前端要使用ng-事件做呼叫 EX:ng-click="save()" 
         ----*/
-
-
-    }],'$http');    
+    }
+]);    
     /// <!----Sinapp結束範圍----->///  
     var app = angular.module('myapp' ,['SinApp']); ///把[sinapp]裝載至[myapp]中    
 }) ();
