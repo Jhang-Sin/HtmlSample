@@ -306,6 +306,13 @@
                 ShowOBJ.innerHTML= DTString;
                 ///console.log(DTString); 
             }
+            ////關閉提示視窗時候.
+            function CloseNotesform()
+            {
+                document.getElementById("notesDay").innerText="";
+              ///清除 NotesDIV的內容
+
+            }
            
 
 
@@ -357,7 +364,7 @@
 
             <div class="sinCircleBut2" style="width: 100px ;height: 100px;"><a>圓形CSS</a></div>
 
-            <div id="notesDay" style="border:2px rgb(255, 251, 0) dashed ;width: 100px;"></div>
+            
         </div>        
         <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -371,14 +378,17 @@
     <div class="modal-dialog">
       <div class="modal-content"> <!--內容框架DIV--->
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">公告備註</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Q公告Q</h5>
+          
 
-          <button  id ="TIP-BtCls" type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">關</button><!---原始class套用"btn-close"-->
+          <button  id ="TIP-BtCls" type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" onclick="CloseNotesform()">關</button><!---原始class套用"btn-close"-->
         </div>
         <table border="1">
-            <tr>
-                <td>AB01</td>
-                <td>AB02</td>
+            <tr>                
+                <td>
+                    <div id="notesDay" style="border:1px rgb(255, 255, 255) dashed ;width: 1px; border:1px rgb(255, 255, 255) dashed ;width: 1px; width: 80%;height:50% ;"></div>
+                </td>
+              
             </tr>
         </table>
         <a><b>=====上邊文字==========================</b></a>
@@ -401,23 +411,43 @@
             </div>
 
             <div class="row">
-                <div style="overflow:auto;height: 150px;width: 200px; "><!--overflow:auto-出現scrollbar軸-->                
-                    <a>公告內容~</a></br>
-                    <a>1-AAA</a></br>
-                    <a>2-BBB</a></br>
-                    <a>3-CCC</a></br>
-                    <a>4-DDD</a></br>
-                    <a>5-EEE</a></br>
-                    <a>6-FFF</a></br>
+
+                <div style="text-align:center"><b><a >==|公告內容|==</a></b></div>
+               
+                <div style="overflow:auto;height: 150px;width:95%"><!--overflow:auto-出現scrollbar軸-->
+                    <div class="row">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div>
+                                        
+                                        <a>1-AAA</a></br>
+                                        <a>2-BBB</a></br>
+                                        <a>3-CCC</a></br>
+                                        <a>4-DDD</a></br>
+                                        <a>6-FFF</a></br>
+                                        <a>7-GGG</a></br>
+                                        <a>8-HHH</a></br>   
+                                    </div> 
+                                </td>
+
+                                <td>
+                                    <div>
+                                        <a>9-III</a></br> 
+                                        <a>10-JJJ</a></br> 
+                                        <a>11-KKK</a></br> 
+                                        <a>12-LLL</a></br> 
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        
+
+                        
+
+                    </div>
                 </div> 
-                
-                <div>
-                    <a>7-GGG</a></br>
-                    <a>8-HHH</a></br>
-
-                </div>
-
-
             </div>
              
 
@@ -434,7 +464,7 @@
         </div>
         
         <div  id="announcement" class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉視窗</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="CloseNotesform()">關閉視窗</button>
           <button type="button" class="btn btn-primary" onclick="Notes()">顯示異動日期</button>
         </div>
       </div>
