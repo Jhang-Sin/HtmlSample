@@ -35,3 +35,16 @@ function SWDT()
 
         }
         
+function reloadJS()
+{
+console.log('JS載入中....');
+
+var script = document.createElement("script");
+script.type="text/javascript";
+script.src= "JS/RL.js";
+document.body.appendChild(script);
+console.log('加載完畢');
+var tipbtn = document.getElementById("RelFunBT");
+tipbtn .disabled = false///JS載入後解除鎖定///
+
+}

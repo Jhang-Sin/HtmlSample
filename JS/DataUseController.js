@@ -3,6 +3,8 @@
 {
     ///<!---Sinapp起始範圍--->//
     var SinApp = angular.module('SinApp',[]);
+
+    
     SinApp.controller('SinController',['$scope',function($scope,$http)
     {
         $scope.DATAAA = "-ABC文字-";
