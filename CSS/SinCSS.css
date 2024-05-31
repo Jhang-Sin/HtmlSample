@@ -30,8 +30,11 @@
     font-size: 12px;
     max-width: 600px;
     max-height: 800px;
-    border: 1px;
-    border-color: rgb(255, 0, 0);
+    border-style: double;
+    border-collapse: collapse;
+    table, th, td {
+      border: 2px solid black;
+  }
   }
 
   /* 公告文字使用 */
