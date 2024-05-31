@@ -48,3 +48,5 @@ var tipbtn = document.getElementById("RelFunBT");
 tipbtn .disabled = false///JS載入後解除鎖定///
 
 }
+
+
