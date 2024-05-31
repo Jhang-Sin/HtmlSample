@@ -25,17 +25,18 @@
   }
 
   .SinTable{
-    tr:hover {background-color: rgb(7, 234, 250);} /*滑鼠停留時效果*/
-    color: rgb(18, 14, 240);
-    text-align: left;
-    font-size: 12px;
-    width: 70%;
-    max-width:85%;
-    max-height: 70%;
+    tr:hover {background-color: rgb(0, 255, 234);} /*滑鼠停留時效果*/   
+    color:black; /* 字體顏色-黑*/   
+    text-align: left;/* 字體對齊方式-左*/ 
+    font-size: 16px;/* 字體大小-16px*/ 
+    min-width: 50%;
+    max-width:95%;
+    min-height: 50%;
+    max-height: 95%;
     border-style: double;
     border-collapse: collapse;
     table, th, td {
-      border: 2px solid black;
+      border: 2px solid rgb(0, 0, 0);
     }
     
     
