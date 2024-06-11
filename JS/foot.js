@@ -1,5 +1,6 @@
 "use strict";
 function TEST()
 {
-    console.log('footJS-OK');
+    ///console.log('footJS-OK');
+    alert('foot!!');
 }
