@@ -19,8 +19,9 @@
   }  
  
   .SinCSS{
-    color: rgb(19, 212, 238);    
-    font: size 80px;  
+    color: rgb(255, 255, 255);    
+    font: size 66px;
+    border:rgb(0, 0, 0)
         
   }
 
