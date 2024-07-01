@@ -47,6 +47,10 @@ console.log('加載完畢');
 var tipbtn = document.getElementById("RelFunBT");
 tipbtn .disabled = false///JS載入後解除鎖定///
 
+var btspand = document.getElementById("spTXT");
+btspand.remove(); // 移除span轉圈圈效果
+
+
 }
 
 
