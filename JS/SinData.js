@@ -50,6 +50,36 @@ tipbtn .disabled = false///JS載入後解除鎖定///
 var btspand = document.getElementById("spTXT");
 btspand.remove(); // 移除span轉圈圈效果
 
+var filepath = "JS/";
+var filename = "RL.js";
+var aa = checkJsFileIsReady(filepath,filename);
+var bb;
+console.log(aa);
+
+}
+
+//檢查檔案是否已經存在
+
+function checkJsFileIsReady(filepath, filename)
+{
+    // checkFile-JS/RL.js
+    ////alert('checking...')
+    if(filepath == null || filename == null || filepath === "" || filename ===""){
+        return false
+       }
+      var xmlhttp;
+      if (window.XMLHttpRequest){
+        xmlhttp=new XMLHttpRequest();
+      }else{
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+     }
+      xmlhttp.open("GET",filepath,false);
+      xmlhttp.send();
+      if(xmlhttp.readyState === 4){
+      if(xmlhttp.status === 200) return true; //url存在
+      else if(xmlhttp.status === 404) return false; //url不存在
+      else return false;//其他状态
+  }
 
 }
 
