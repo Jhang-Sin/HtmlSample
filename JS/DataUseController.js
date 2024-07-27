@@ -5,9 +5,9 @@
     var SinApp = angular.module('SinApp',[]);
 
     
-    SinApp.controller('SinController',['$scope',function($scope,$http)
+    SinApp.controller('SinController',['$scope',function($scope, $element, $interval, $timeout, $http, $window, $location)
     {
-        $scope.DATAAA = "-ABC文字-";
+        $scope.DATAAA = "-Ini++";
         $scope.abcde = "+66666+";
         $scope.friends = [ 'A001', 'B002', 'C003', 'D004'];       
 

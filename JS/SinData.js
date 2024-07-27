@@ -1,4 +1,6 @@
 "use strict";
+var filepath = "JS/";
+var filename = "RL.js";
 
 function SWDT()
             {
@@ -50,11 +52,6 @@ tipbtn .disabled = false///JS載入後解除鎖定///
 var btspand = document.getElementById("spTXT");
 btspand.remove(); // 移除span轉圈圈效果
 
-var filepath = "JS/";
-var filename = "RL.js";
-var aa = checkJsFileIsReady(filepath,filename);
-var bb;
-console.log(aa);
 
 }
 
@@ -62,6 +59,7 @@ console.log(aa);
 
 function checkJsFileIsReady(filepath, filename)
 {
+  console.log('檔案狀態=');
     // checkFile-JS/RL.js
     ////alert('checking...')
     if(filepath == null || filename == null || filepath === "" || filename ===""){
@@ -76,7 +74,7 @@ function checkJsFileIsReady(filepath, filename)
       xmlhttp.open("GET",filepath,false);
       xmlhttp.send();
       if(xmlhttp.readyState === 4){
-      if(xmlhttp.status === 200) return true; //url存在
+      if(xmlhttp.status === 200)  return true; //url存在
       else if(xmlhttp.status === 404) return false; //url不存在
       else return false;//其他状态
   }
