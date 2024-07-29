@@ -36,49 +36,52 @@ function SWDT()
 
 
         }
-        
+
+
+/*加載JD檔案*/         
 function reloadJS()
+
 {
-console.log('JS載入中....');
+  ////console.log('JS載入中....');
+  //判斷是否已經載過
 
-var script = document.createElement("script");
-script.type="text/javascript";
-script.src= "JS/RL.js";
-document.body.appendChild(script);
-console.log('加載完畢');
-var tipbtn = document.getElementById("RelFunBT");
-tipbtn .disabled = false///JS載入後解除鎖定///
+  if(checkJsFileIsReady())
+    {
+      console.log('return!!!已經載入過了 按下直接跳出');  
+      alert('該JS已經加載過了喔~不重複執行')   
+      return ;//結束function
+   
+    }
+  else
+    {
+      var script = document.createElement("script");
+      script.type="text/javascript";
+      script.src= "JS/RL.js";
+      document.body.appendChild(script);
+      console.log('加載完畢');
+      var tipbtn = document.getElementById("RelFunBT");
+      tipbtn .disabled = false///JS載入後解除鎖定///  
+      var btspand = document.getElementById("spTXT");
+      btspand.remove(); // 移除span轉圈圈效果
 
-var btspand = document.getElementById("spTXT");
-btspand.remove(); // 移除span轉圈圈效果
-
-
+    }
 }
 
 //檢查檔案是否已經存在
 
-function checkJsFileIsReady(filepath, filename)
+function checkJsFileIsReady()
 {
-  console.log('檔案狀態=');
-    // checkFile-JS/RL.js
-    ////alert('checking...')
-    if(filepath == null || filename == null || filepath === "" || filename ===""){
-        return false
-       }
-      var xmlhttp;
-      if (window.XMLHttpRequest){
-        xmlhttp=new XMLHttpRequest();
-      }else{
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-     }
-      xmlhttp.open("GET",filepath,false);
-      xmlhttp.send();
-      if(xmlhttp.readyState === 4){
-      if(xmlhttp.status === 200)  return true; //url存在
-      else if(xmlhttp.status === 404) return false; //url不存在
-      else return false;//其他状态
+  if (typeof window.myScriptLoaded === 'undefined') 
+  {
+    // 如果未載入，進行載入並設置標誌
+    window.myScriptLoaded = false;
+    console.log('尚未加載過')
+    // 你的 JavaScript 代碼
+    return false;
   }
-
+  else
+  {
+    return true;
+    console.log('JS檔案已經載入了~不進行重複加載')
+  }
 }
-
-
