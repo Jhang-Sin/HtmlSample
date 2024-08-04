@@ -505,15 +505,17 @@ button.ui-button::-moz-focus-inner {
 	width: 90%;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
+}/* dialog UI視窗調整*/
 .ui-dialog .ui-dialog-titlebar-close {
-	position: absolute;
-	right: .3em;
-	top: 50%;
-	width: 20px;
-	margin: -10px 0 0 0;
-	padding: 1px;
-	height: 20px;
+	position: absolute;/* 原始值 absolute*/
+	right: .3em;/* 原始值3em*/
+	top: 50%; /* 原始值 50%*/
+	width: 20px; /* 原始值 20px*/
+	margin: -10px 5 5 5; /* 原始值 -10px 0 0 0*/
+	padding: 1px; /* 原始值1px*/
+	height: 20px; /* 原始值 20px*/
+	background-color: rgb(172, 172, 172); /*SIN增加 */
+	background-image: url(../Image/ImgX2.jpg);/*SIN增加 */	
 }
 .ui-dialog .ui-dialog-content {
 	position: relative;
