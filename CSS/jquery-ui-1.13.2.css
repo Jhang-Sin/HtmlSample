@@ -497,6 +497,10 @@ button.ui-button::-moz-focus-inner {
 .ui-dialog .ui-dialog-titlebar {
 	padding: .4em 1em;
 	position: relative;
+	
+	/* SIN增加*/
+	background-image:url(../Image/Banner01.jpg);
+	/* SIN增加*/
 }
 .ui-dialog .ui-dialog-title {
 	float: left;
@@ -515,7 +519,7 @@ button.ui-button::-moz-focus-inner {
 	padding: 1px; /* 原始值1px*/
 	height: 20px; /* 原始值 20px*/
 	background-color: rgb(172, 172, 172); /*SIN增加 */
-	background-image: url(../Image/ImgX2.jpg);/*SIN增加 */	
+	background-image: url(../Image/ImgX2.jpg);/*按鈕背景-SIN增加 */	
 }
 .ui-dialog .ui-dialog-content {
 	position: relative;
@@ -523,6 +527,7 @@ button.ui-button::-moz-focus-inner {
 	padding: .5em 1em;
 	background: none;
 	overflow: auto;
+	background-image: url(../Image/DeskImg.jpg);/*內容背景-SIN增加 */
 }
 .ui-dialog .ui-dialog-buttonpane {
 	text-align: left;
