@@ -528,6 +528,11 @@ button.ui-button::-moz-focus-inner {
 	background: none;
 	overflow: auto;
 	background-image: url(../Image/DeskImg.jpg);/*內容背景-SIN增加 */
+	background-repeat:no-repeat; /*SIN增加 -讓背景圖片自動縮放到填滿內容區域內的最大尺寸*/
+	background-attachment: fixed;/*SIN增加 -讓背景圖片自動縮放到填滿內容區域內的最大尺寸*/
+    background-position: center;/*SIN增加 -讓背景圖片自動縮放到填滿內容區域內的最大尺寸*/
+    background-size: cover;/*SIN增加 -讓背景圖片自動縮放到填滿內容區域內的最大尺寸*/
+	
 }
 .ui-dialog .ui-dialog-buttonpane {
 	text-align: left;
