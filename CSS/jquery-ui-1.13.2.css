@@ -520,6 +520,7 @@ button.ui-button::-moz-focus-inner {
 	height: 20px; /* 原始值 20px*/
 	background-color: rgb(172, 172, 172); /*SIN增加 */
 	background-image: url(../Image/ImgX2.jpg);/*按鈕背景-SIN增加 */	
+	border-radius: 8px 8px 8px 8px; /*圓角屬性 SIN增加 */
 }
 .ui-dialog .ui-dialog-content {
 	position: relative;
