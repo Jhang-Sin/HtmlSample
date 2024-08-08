@@ -331,6 +331,20 @@
 
             }    
 
+            //滑鼠移入圖片區
+            function ImgMoveIn()
+            {
+                document.getElementById("Imgshow").innerText="HI~";               
+
+
+            }
+            function ImgMoveOut()
+            {
+                document.getElementById("Imgshow").innerText="";               
+
+
+            }
+
 
             
 
@@ -707,29 +721,54 @@
  
     <a>Bootstrap Example</a>    
     <div>
-        <button type="button" class="btn">BT01</button>
-        <button type="button" class="btn btn-primary">BT02</button>
-        <button type="button" class="btn btn-secondary">BT03</button>
-        <button type="button" class="btn btn-success">BT04</button>
-        <button type="button" class="btn btn-info">BT05</button>
-        <button type="button" class="btn btn-warning">BT06</button>
-        <button type="button" class="btn btn-danger">BT07</button>
-        <button type="button" class="btn btn-dark">BT08</button>
-        <button type="button" class="btn btn-light">BT09</button>
-        <button type="button" class="btn btn-link">BT10</button>     
+        <table>
+            <tr>
+                <td><button type="button" class="btn" id="BT01">BT01</button></td>
+                <td><button type="button" class="btn btn-primary" id="BT02">BT02</button></td>
+                <td><button type="button" class="btn btn-secondary" id="BT03">BT03</button></td>
+                <td><button type="button" class="btn btn-success" id="BT04">BT04</button></td>
+                <td><button type="button" class="btn btn-info" id="BT05">BT05</button></td>
+                <td></td>
+            </tr>
+            <tr>
+               
+                <td><button type="button" class="btn btn-warning" id="BT06">BT06</button></td>
+                <td><button type="button" class="btn btn-danger" id="BT07">BT07</button></td>
+                <td><button type="button" class="btn btn-dark" id="BT08">BT08</button></td>
+                <td><button type="button" class="btn btn-light" id="BT09">BT09</button></td>
+                <td><button type="button" class="btn btn-link" id="BT010">BT10</button></td>
+            </tr>
+        </table>
+       
+      
+        
+        
+        
+        
+        
+        
+        
+             
     </div>
 
     <!---AD----->
 
-    <div class="floating-ad" style="width: 60px;height: 60px;" id="SinAD">
+    <div class="floating-ad" style="width: 80px;height: 80px;" id="SinAD">
         <div>
             <img style="height: 15px;width: 15px; " src="Image/ImgX.jpg" onclick="ADCK()">
             
-        </div> 
+        </div>         
         <div>
-            <img style="width: 30px;height: 30px;" src="./Image/skype-like.gif">
+            
+            <img style="width: 30px;height: 30px;" src="./Image/skype-like.gif" onmousemove="ImgMoveIn()" onmouseout="ImgMoveOut()">
+            
         </div>
-        
+        <strong>
+            <div id="Imgshow" style="height: 15px; width:70px;">
+
+            </div>
+        </strong>       
+       
         
     </div>
 </br>
