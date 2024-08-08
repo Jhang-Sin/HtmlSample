@@ -169,4 +169,10 @@ border-radius屬性可以幫div添加圓角的效果
 -
 -
 */
+.B64Img{
+  width:100%;
+  height:132px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 

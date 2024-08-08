@@ -55,6 +55,7 @@
         <link href="CSS/SinCSS.css" rel="stylesheet">
         <link href="CSS/SinCarousel.css" rel="stylesheet"> <!--輪播效果CSS----->  
         <link href="CSS/AD.css" rel="stylesheet">  <!--AD效果CSS-----> 
+        <link href="CSS/SinDialogStyle.css"rel="stylesheet"><!--Dialog 彈窗CSS---->
 
         
         <!---頁面內部使用JS---->
@@ -376,7 +377,8 @@
         <!-----//////////////////////////////////////////////////////////////////////////////////////// ----->
          </br>
          <a style="font-size:small;">↓↓↓這是B64編碼呈現↓↓↓</a>
-    <iframe id="B64" src="View/B64.html"  style="width:100%;height:132px;overflow-y: scroll; overflow-x: hidden;"><!---強制隱藏卷軸-->
+    <iframe id="B64" src="View/B64.html" class="B64Img" "><!---強制隱藏卷軸-->
+        <!--style="width:100%;height:132px;overflow-y: scroll; overflow-x: hidden;-->
         
     </iframe>   
     
@@ -413,7 +415,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
     <div class="modal-dialog">
       <div class="modal-content"> <!--內容框架DIV--->
         <div class="modal-header">
@@ -653,7 +655,7 @@
     
 
     <!----移動式視窗------>
-    <div id="dialog" title="( O_O )-原生修改過-" style="height: 150px; width:150px;border:2px;background-color: rgb(255, 255, 255);overflow:auto;">
+    <div id="dialog" title="( O_O )-原生修改過-" class="PopDialog">
         <a>異動日期請點"顯示公告/資訊"按鈕.</a>
         </br>       
         </br>

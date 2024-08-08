@@ -1,0 +1,8 @@
+.PopDialog{   
+    border-radius: 10px 10px 10px 10px; /* 4邊圓角*/
+    height: 150px;
+    width:150px;
+    border:2px;
+    background-color: rgb(255, 255, 255);
+    overflow:auto;
+    }
