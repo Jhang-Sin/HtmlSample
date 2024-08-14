@@ -322,29 +322,62 @@
                 document.getElementById("notesDay").innerText="";
               ///清除 NotesDIV的內容
 
-            }       
+            } 
+            ///關閉廣告///      
             function ADCK()
-            {
-                alert("Bye~");  
+            {             
+                ///更換圖片                            
+                var ADIMG = document.getElementById("ADimg");                             
+                                      
                 var AD = document.getElementById("SinAD")
-                ///ad.hidden=true ////隱藏
-                AD.remove()//移除廣告
+                ///ad.hidden=true ////隱藏              
+                ADIMG.src="./Image/3Q.gif";
+                
+                document.getElementById("Imgshow").innerText="Bye~Bye~";
 
-            }    
+                /////================================////////
+                 ////倒數迴圈///
+                var counter = 5;
+                interval = window.setInterval(( updateSecs ), 1000);
+                function updateSecs()
+                {
+                    counter -= 1;
+                    $('#secs').text(counter)
+                    if (counter == 0)
+                    {
+                        clearInterval(interval);///取消倒數
+                        ////要做的事情////
+                        console.log('倒數結束');
+                        ///$('#StepTime').hidden=true;///隱藏整個DIV
+                        $('#StepTime').remove();////移除整個物件
+                        AD.remove()//移除廣告 
+                    }
+                }
+            } 
+
+
 
             //滑鼠移入圖片區
             function ImgMoveIn()
             {
-                document.getElementById("Imgshow").innerText="HI~";               
+                document.getElementById("Imgshow").innerText="HI~"; 
+                var ADIMG = document.getElementById("ADimg");
+                ADIMG.src="./Image/skype02.gif";                       
+                                                    
 
 
             }
+            //滑鼠移出圖片區
             function ImgMoveOut()
             {
-                document.getElementById("Imgshow").innerText="";               
+                document.getElementById("Imgshow").innerText="";
+                var ADIMG = document.getElementById("ADimg");
+                ADIMG.src="./Image/skype-like.gif";                
 
 
             }
+
+           
 
 
             
@@ -394,6 +427,8 @@
             <table style="text-align: right;" border="1" align="right"> 
                 <tr>
                     <td>
+                      
+                        
                         <b><a>現在時間:</a></b>
                     </td>
                     <td>
@@ -406,7 +441,7 @@
             <div class="sinCircleBut2" style="width: 100px ;height: 100px;"><a>圓形CSS</a></div>
 
             
-        </div>        
+        </div>
         <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
    顯示公告/資訊
@@ -753,23 +788,29 @@
              
     </div>
 
-    <!---AD----->
+    <!---AD-廣告用---->
 
     <div class="floating-ad" style="width: 80px;height: 80px;" id="SinAD">
         <div>
-            <img style="height: 15px;width: 15px; " src="Image/ImgX.jpg" onclick="ADCK()">
+            <img  style="height: 15px;width: 15px; " src="Image/ImgX.jpg" onclick="ADCK()">
             
         </div>         
         <div>
             
-            <img style="width: 30px;height: 30px;" src="./Image/skype-like.gif" onmousemove="ImgMoveIn()" onmouseout="ImgMoveOut()">
+            <img id="ADimg" style="width: 30px;height: 30px;max-height:30px; max-width:30px;" src="./Image/skype-like.gif" onmousemove="ImgMoveIn()" onmouseout="ImgMoveOut()">
             
         </div>
         <strong>
-            <div id="Imgshow" style="height: 15px; width:70px;">
+            <div id="StepTime"><!---///倒數計時顯示////---->
+                <a><span id="secs" style="font-size: xx-small;"></span></a>
+            </div> 
+            <div id="Imgshow" style="height: 15px; width:70px; font-size: small;">
 
             </div>
-        </strong>       
+            
+            
+        </strong> 
+              
        
         
     </div>
