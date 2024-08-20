@@ -183,4 +183,23 @@ font-weight: bolder;
 color:rgb(255, 0, 0);
 
 }
+/*頁面最上端公告顯示用*/
+.STinfo{
+  font-size: larger;
+  font-weight: bolder;
+  color: #4c00ff  ;
+  position:absolute;
+  position: relative;
+  z-index: 9999;
 
+  /*--
+  懸浮DIV
+  首先將position定義為，absolute、relative或fixed。
+ 【必須position為以上三個屬性，z-index才能層級體現出來，才能運作】
+  設定 style 中 z-index:auto
+ auto可定義為一個值(整數數字)，越大代表越置前，如可定義為： z-index:9999。
+ 若定義為-1，代表為最底層。
+ 如果要讓div1不被div2遮擋，則將div1的z-index設定比div2大就可以了。
+  --*/
+
+}

@@ -45,14 +45,14 @@ function reloadJS()
   ////console.log('JS載入中....');
   //判斷是否已經載過
 
-  if(checkJsFileIsReady())
+  if(checkJsFileIsReady()) /*已經載入過了*/
     {
       console.log('return!!!已經載入過了 按下直接跳出');  
       alert('該JS已經加載過了喔~不重複執行')   
       return ;//結束function
    
     }
-  else
+  else/*尚未載入過*/
     {
       var script = document.createElement("script");
       script.type="text/javascript";
