@@ -48,6 +48,12 @@
     font-size: 18px;
     color: rgb(255, 0, 0);    
     font-weight: bold; /*-粗體-*/
+    text-align: right;/*水平對齊
+    -left (對齊左側)
+    -center (置中)
+    -right (對齊右側)
+    -justify (左右對齊)
+    */
 
   }
 
@@ -143,8 +149,21 @@ border-radius屬性可以幫div添加圓角的效果
 }
 
 /*---收合效果CSS---*/
-.flip{margin:0px;padding:5px;text-align:center;background:#E09697;cursor:pointer;font-family:'Arial';}
-.panel{margin:0px;padding:5px;text-align:center;background:#e5eecc;border:solid 1px #c3c3c3;display:none;font-family:'Arial';}
+.flip{
+  margin:0px;
+  padding:5px;
+  text-align:center;
+  background:#E09697;
+  cursor:pointer;font-family:'Arial';
+}
+.panel{
+  margin:0px;
+  padding:5px;
+  text-align:center;
+  background:#e5eecc;
+  border:solid 1px #c3c3c3;display:none;
+  font-family:'Arial';
+}
 
 
 /*---閃爍效果CSS---*/
@@ -187,11 +206,18 @@ color:rgb(255, 0, 0);
 .STinfo{
   font-size: larger;
   font-weight: bolder;
-  color: #4c00ff  ;
-  position:absolute;
-  position: relative;
-  z-index: 9999;
-
+  color: #ff0000  ;
+  position:fixed; /*設定定位方式
+  -
+  -fixed:固定定位
+-absolute:容器的相對位置
+-
+-*/
+  z-index: 1000;
+  /*
+   z 軸（立體空間），將重疊的元素依照需求進行層疊排序
+   z-index 數字越大其物件將越上層，上層的物件可以覆蓋下層的物件
+  */
   /*--
   懸浮DIV
   首先將position定義為，absolute、relative或fixed。
@@ -201,5 +227,5 @@ color:rgb(255, 0, 0);
  若定義為-1，代表為最底層。
  如果要讓div1不被div2遮擋，則將div1的z-index設定比div2大就可以了。
   --*/
-
-}
+  right: 0;/*靠右*/
+}/*頁面最上端公告顯示用結尾*/
