@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS HTTP Request Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myController">
+
+    <h1>AngularJS HTTP Request Example</h1>
+
+    <div>
+        <h3>GET Request:</h3>
+        <button ng-click="makeGetRequest()">Get Data</button>
+        <pre>{{ getData | json }}</pre>
+    </div>
+
+    <div>
+        <h3>POST Request:</h3>
+        <button ng-click="makePostRequest()">Post Data</button>
+        <pre>{{ postData | json }}</pre>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('myController', function($scope, $http) {
+            //  GET 请求
+            $scope.makeGetRequest = function() {
+                $http.get('https://jsonplaceholder.typicode.com/posts/1')
+                    .then(function(response) {
+                        $scope.getData = response.data;
+                    }, function(error) {
+                        console.error('Error occurred:', error);
+                    });
+            };
+
+            //  POST 请求
+            $scope.makePostRequest = function() {
+                var data = {
+                    title: 'foo',
+                    body: 'bar',
+                    userId: 1
+                };
+
+                $http.post('https://jsonplaceholder.typicode.com/posts', data)
+                    .then(function(response) {
+                        $scope.postData = response.data;
+                    }, function(error) {
+                        console.error('Error occurred:', error);
+                    });
+            };
+        });
+    </script>
+</body>
+</html>

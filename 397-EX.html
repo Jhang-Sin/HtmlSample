@@ -277,6 +277,12 @@
 
 
             }
+            function OpenAngHttp()
+            {
+                window.open('View/AngHttp.html');
+                window.opener=null;
+            }
+
 
             function openReaactPage()
             {
@@ -608,6 +614,7 @@
 
     <br>
     <button onclick="OpenMultPage()">MultiPage</button>
+    <button onclick="OpenAngHttp()">AngHttp</button>
     <a>即時運算</a>
     <div>
         <input type="number" ng-model="price" ng-init="price=1 " onkeyup="value=value.replace(/[^\d]/g,'') "><a>僅限輸入數字</a>
