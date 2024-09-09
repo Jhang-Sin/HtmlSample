@@ -85,3 +85,4 @@ function checkJsFileIsReady()
     console.log('JS檔案已經載入了~不進行重複加載')
   }
 }
+
