@@ -35,4 +35,19 @@ $(function(){
        console.log('Call Other Iframe') ;
        
       }
+
+      //[监听iframe加载完成]
+
+ let iframe = document.getElementById('iframeId');
+  $(function () {
+        if (iframe.attachEvent) {
+            iframe.attachEvent("onload", function () {
+            });
+        } else {
+            iframe.onload = function () {//iframe加载完成
+             //数据处理
+            };
+        }
+
+    })
       
