@@ -86,3 +86,32 @@ function checkJsFileIsReady()
   }
 }
 
+function AJAXTEST()
+{
+  console.log('AJAX SEND');
+
+  $.ajax({
+      // url: '/User/GetData',
+      // type: 'POST',
+      // data: {
+      //     ID: $scope.AAA,
+      //     NAME: 'FromUI-NAME',
+      // },  // 這是你想發送的資料
+      // dataType: 'json',  // 預期從伺服器返回的資料格式
+      // success: function (response) {
+      //     // 請求成功，這裡處理回應
+       
+      //     console.log('傳達並接收成功:', response);
+ 
+      //     ///$scope.FinishData(response);
+      // },
+      // error: function (xhr, status, error) {
+      //     alert('error ');
+      //     // 請求失敗，這裡處理錯誤
+      //     console.log('error:', error);
+      // }
+  });
+
+
+  
+}

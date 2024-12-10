@@ -15,6 +15,10 @@
         alert('angJSFun觸發呼叫正常');
        }
 
+      
+
+
+
         /*-------function宣告方式 
         $scope. + fun名稱 = function()
             要做的事情
