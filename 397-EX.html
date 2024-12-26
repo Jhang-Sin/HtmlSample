@@ -609,16 +609,18 @@
     <button onclick="OpenMultPage()">MultiPage</button>
     <button onclick="OpenAngHttp()">AngHttp</button>
     <a>即時運算</a>
-    <div>
-        <input type="number" ng-model="price" ng-init="price=1 " onkeyup="value=value.replace(/[^\d]/g,'') "><a>僅限輸入數字</a>
+    <div>       
+        <input type="number" ng-model="price" ng-init="price=1 " onkeyup="value=value.replace(/[^\d]/g,'') " ><a>僅限輸入數字</a>
         <br> <!-----僅限輸入數字[onkeyup="value=value.replace(/[^\d]/g,'') "]--->
     </div>
     <div>
-        <input type="number" ng-model="num" ng-init="num=10" onkeyup="value=value.replace(/[^\d]/g,'') "><a>僅限輸入數字</a>
+        <input type="number" ng-model="num" ng-init="num=10" onkeyup="value=value.replace(/[^\d]/g,'') " placeholder="僅限輸入數字"><a>僅限輸入數字</a>
         <br><!-----僅限輸入數字[onkeyup="value=value.replace(/[^\d]/g,'') "]--->
        【{{price}}*{{num}} = {{num*price}}】
         
     </div>
+    <a>限制輸入</a>
+    <input type="text" placeholder="僅限輸入數字"  ng-init="" onkeyup="value=value.replace(/[^\d]/g,'') ">
     
 
 
