@@ -49,7 +49,8 @@
         <script src="JS/SinData.js"></script>
         <script src="JS/Notes.js"></script>
         <script src="JS/DataUseController.js"></script><!--主要為定義SinController--->
-        <script src="JS/SinData.js"></script><!--AD效果----->             
+        <script src="JS/SinData.js"></script><!--AD效果----->
+        <script src="JS/Weath.js"></script><!--天氣資訊-->             
 
         <!--UseCSSfile-->
         <link href="CSS/SinCSS.css" rel="stylesheet">
@@ -78,9 +79,9 @@
                 ///如果想停止計時器，可以呼叫clearInterval()，並把上面的timerId傳給它。////
                 //// clearInterval(timerId); // 依據timerId，停止指定的timer。
 
+            
                 
-        }
-         /////////////////////////////////////////////////////////////
+        }        
         
         /* 設定倒數60秒。
         var count = 60;
@@ -416,6 +417,40 @@
     <div id=" SYSInfo" class="STinfo">
         <a id="SYSInfoTXT">測試狀態顯示列</a>
     </div>
+
+    <div>
+        <a>台灣天氣資訊</a>
+         <!-- 天氣資訊顯示區 -->
+         <div id="weather"></div>
+         <label for="city-select">選擇縣市：</label>
+        <select id="city-select">
+            <option value="Taipei">台北市</option>
+            <option value="NewTaipei">新北市</option>
+            <option value="Taoyuan">桃園市</option>
+            <option value="Hsinchu">新竹市</option>
+            <option value="HsinchuCounty">新竹縣</option>
+            <option value="Miaoli">苗栗縣</option>
+            <option value="Taichung">台中市</option>
+            <option value="Changhua">彰化縣</option>
+            <option value="Nantou">南投縣</option>
+            <option value="Yunlin">雲林縣</option>
+            <option value="Chiayi">嘉義市</option>
+            <option value="ChiayiCounty">嘉義縣</option>
+            <option value="Tainan">台南市</option>
+            <option value="Kaohsiung">高雄市</option>
+            <option value="Pingtung">屏東縣</option>
+            <option value="Yilan">宜蘭縣</option>
+            <option value="Hualien">花蓮縣</option>
+            <option value="Taitung">台東縣</option>
+            <option value="Penghu">澎湖縣</option>
+            <option value="Kinmen">金門縣</option>
+            <option value="Matsu">連江縣</option>
+        </select>
+    </div>
+
+    
+
+
      
     <body >
         <hr>
@@ -445,9 +480,8 @@
                     <td>
                         <div id="TM01"></div> 
                     </td>
-                </tr>
-            </table>
-           
+                </tr>                
+            </table>            
 
             <div class="sinCircleBut2" style="width: 100px ;height: 100px;"><a>圓形CSS</a></div>
 
@@ -733,12 +767,7 @@
         <span id="spTXT" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     </button>  
 </div>
-<div>
-    <a>AJAX TEST</a>
-    <button onclick="AJAXTEST()">
-        AJAX
-    </button>
-</div>
+
 
 
     <!-------->
@@ -975,6 +1004,6 @@
 <hr>
     <footer>
         --頁腳--
-        <a>Dev By Sin </a>
+        <a>Dev By Sin </a>    
     </footer> 
     </html>

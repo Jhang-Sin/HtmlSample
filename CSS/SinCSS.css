@@ -229,3 +229,18 @@ color:rgb(255, 0, 0);
   --*/
   right: 0;/*靠右*/
 }/*頁面最上端公告顯示用結尾*/
+
+
+.weather-info {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+}
+
+select {
+  margin-bottom: 3px;
+  padding: 5px;
+  font-size: 10px;
+}
