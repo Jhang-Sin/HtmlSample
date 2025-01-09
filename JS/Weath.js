@@ -12,9 +12,11 @@ $(document).ready(function () {
         function  ChangeCityName(cityName)
          {
             var  ReStr = "none";
+            //console.log("["+cityName+"]");
 
             switch(cityName)
             {
+                
                 case"Panchiao":
                     ReStr = "台北市-板橋";
                     break;
@@ -27,16 +29,24 @@ $(document).ready(function () {
                 case "Chungho":
                     ReStr = "新北中和";
                     break;
-                case "Taoyuan":
-                case "Tachi":
+                case "Taoyuan":                
                     ReStr = "桃園市";
+                    break;
+                case "Tachi":
+                    ReStr = "桃園-大溪";
                     break;
                 case "Hsinchu":
                     ReStr = "新竹市";
                     break;
+                case "Chupei":
+                    ReStr = "新竹-竹北";
+                    break;
                 case "HsinchuCounty":
                     ReStr = "新竹縣";
                      break;
+                case "Miaoli":
+                    ReStr = "苗栗縣";
+                        break;
                 case "Taichung":
                     ReStr = "台中市";
                     break;
@@ -48,12 +58,18 @@ $(document).ready(function () {
                     break;
                 case "Yunlin":
                     ReStr = "雲林縣";
+                    break;
+                case "Touliu":
+                    ReStr= "雲林-斗六"
                     break;       
                 case "Chiayi":
                     ReStr = "嘉義市";
                     break;
+                case "Taipao":
+                    ReStr = "嘉義-太保"
+
                 case "ChiayiCounty":
-                    ReStr = "嘉義縣";
+                    ReStr = "嘉義-太保";
                     break;
                 case "Tainan":
                    ReStr = "台南市";
@@ -97,7 +113,7 @@ $(document).ready(function () {
                 ///處理顯示名稱
                 var CityName="NoneCity";
                 CityName = data.nearest_area[0].areaName[0].value;
-                console.log(data.nearest_area[0].areaName[0].value);
+                //console.log('OldName='+CityName);
                 CityName = ChangeCityName(CityName);
                 const location = CityName; 
 
