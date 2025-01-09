@@ -7,7 +7,85 @@ $(document).ready(function () {
     // 當下拉選單變更時執行
     $("#city-select").on("change", function () {
         const city = $(this).val(); // 獲取選中的城市名稱
-        const apiUrl = baseUrl + city + format; // 拼接 API URL
+        const apiUrl = baseUrl + ChangeCityName(city) + format; // 拼接 API URL
+        
+        function  ChangeCityName(cityName)
+         {
+            var  ReStr = "none";
+
+            switch(cityName)
+            {
+                case"Panchiao":
+                    ReStr = "台北市-板橋";
+                    break;
+                case "Taipei":
+                    ReStr = "台北市";
+                    break;
+                case "NewTaipei":                
+                    ReStr = "新北市";
+                    break;
+                case "Chungho":
+                    ReStr = "新北中和";
+                    break;
+                case "Taoyuan":
+                case "Tachi":
+                    ReStr = "桃園市";
+                    break;
+                case "Hsinchu":
+                    ReStr = "新竹市";
+                    break;
+                case "HsinchuCounty":
+                    ReStr = "新竹縣";
+                     break;
+                case "Taichung":
+                    ReStr = "台中市";
+                    break;
+                case "Changhua":
+                    ReStr = "彰化縣";
+                    break;
+                case "Nantou":
+                    ReStr = "南投縣";
+                    break;
+                case "Yunlin":
+                    ReStr = "雲林縣";
+                    break;       
+                case "Chiayi":
+                    ReStr = "嘉義市";
+                    break;
+                case "ChiayiCounty":
+                    ReStr = "嘉義縣";
+                    break;
+                case "Tainan":
+                   ReStr = "台南市";
+                   break;
+                case "Kaohsiung":
+                  ReStr = "高雄市";
+                  break;
+                case "Pingtung":
+                    ReStr = "屏東縣";
+                    break;
+                case "Yilan":
+                    ReStr = "宜蘭縣";
+                    break;
+                case "Hualien":
+                    ReStr = "花蓮縣";
+                    break;
+                case "Taitung":
+                    ReStr = "台東縣";
+                    break;
+                case "Penghu":
+                    ReStr = "澎湖縣";
+                    break;
+                case "Kinmen":
+                    ReStr = "金門縣";
+                    break;
+                case "Matsu":
+                    ReStr = "馬祖/連江縣";
+                    break;
+            }
+            return ReStr
+
+         }
 
         // AJAX 請求取得天氣資訊
         $.ajax({
@@ -16,7 +94,15 @@ $(document).ready(function () {
             success: function (data) {
                 // 提取需要的天氣資訊
                 const current = data.current_condition[0];
-                const location = data.nearest_area[0].areaName[0].value;
+                ///處理顯示名稱
+                var CityName="NoneCity";
+                CityName = data.nearest_area[0].areaName[0].value;
+                console.log(data.nearest_area[0].areaName[0].value);
+                CityName = ChangeCityName(CityName);
+                const location = CityName; 
+
+                ///const location = (data.nearest_area[0].areaName[0].value);  
+                              
                 const temperature = current.temp_C; // 攝氏溫度
                 const humidity = current.humidity; // 濕度
                 const description = current.weatherDesc[0].value; // 天氣描述

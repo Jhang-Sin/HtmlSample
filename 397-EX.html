@@ -418,40 +418,6 @@
         <a id="SYSInfoTXT">測試狀態顯示列</a>
     </div>
 
-    <div>
-        <a>台灣天氣資訊</a>
-         <!-- 天氣資訊顯示區 -->
-         <div id="weather"></div>
-         <label for="city-select">選擇縣市：</label>
-        <select id="city-select">
-            <option value="Taipei">台北市</option>
-            <option value="NewTaipei">新北市</option>
-            <option value="Taoyuan">桃園市</option>
-            <option value="Hsinchu">新竹市</option>
-            <option value="HsinchuCounty">新竹縣</option>
-            <option value="Miaoli">苗栗縣</option>
-            <option value="Taichung">台中市</option>
-            <option value="Changhua">彰化縣</option>
-            <option value="Nantou">南投縣</option>
-            <option value="Yunlin">雲林縣</option>
-            <option value="Chiayi">嘉義市</option>
-            <option value="ChiayiCounty">嘉義縣</option>
-            <option value="Tainan">台南市</option>
-            <option value="Kaohsiung">高雄市</option>
-            <option value="Pingtung">屏東縣</option>
-            <option value="Yilan">宜蘭縣</option>
-            <option value="Hualien">花蓮縣</option>
-            <option value="Taitung">台東縣</option>
-            <option value="Penghu">澎湖縣</option>
-            <option value="Kinmen">金門縣</option>
-            <option value="Matsu">連江縣</option>
-        </select>
-    </div>
-
-    
-
-
-     
     <body >
         <hr>
         <!---水平線--->        
@@ -724,11 +690,50 @@
     <!----移動式視窗------>
     <div id="dialog" title="( O_O )-原生修改過-" class="PopDialog">
         <a>異動日期請點"顯示公告/資訊"按鈕.</a>
-        </br>       
-        </br>
-        <button onclick="openRWDPage()">RWD測試頁面</button>
-        </br>
-        <button onclick="openReaactPage()">React測試頁面</button>
+        <table>
+            <tr>
+                <td><button onclick="openRWDPage()">RWD測試頁面</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="openReaactPage()">React測試頁面</button></td>
+            </tr>
+        </table>        
+        
+        
+        
+        <!----天氣資訊------>
+        <div style="border-style: double;border-color: red;background-color: rgb(114, 186, 235);">
+        <a>台灣天氣資訊</a>
+        <label for="city-select">選擇縣市：</label>
+        <select id="city-select">
+            <option value="Taipei">台北市</option>
+            <option value="NewTaipei">新北市</option>
+            <option value="Taoyuan">桃園市</option>
+            <option value="Hsinchu">新竹市</option>
+            <option value="HsinchuCounty">新竹縣</option>
+            <option value="Miaoli">苗栗縣</option>
+            <option value="Taichung">台中市</option>
+            <option value="Changhua">彰化縣</option>
+            <option value="Nantou">南投縣</option>
+            <option value="Yunlin">雲林縣</option>
+            <option value="Chiayi">嘉義市</option>
+            <option value="ChiayiCounty">嘉義縣</option>
+            <option value="Tainan">台南市</option>
+            <option value="Kaohsiung">高雄市</option>
+            <option value="Pingtung">屏東縣</option>
+            <option value="Yilan">宜蘭縣</option>
+            <option value="Hualien">花蓮縣</option>
+            <option value="Taitung">台東縣</option>
+            <option value="Penghu">澎湖縣</option>
+            <option value="Kinmen">金門縣</option>
+            <option value="Matsu">連江縣</option>
+        </select>         
+         <div id="weather"></div><!-- 天氣資訊顯示區 -->
+         
+        </div><!----天氣資訊結束------>
+
+
+
     </div>        
   <!----移動式視窗結尾------>  
   
