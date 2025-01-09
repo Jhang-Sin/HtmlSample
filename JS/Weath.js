@@ -45,6 +45,8 @@ $(document).ready(function () {
                     ReStr = "新竹縣";
                      break;
                 case "Miaoli":
+                case "Ban Not":
+
                     ReStr = "苗栗縣";
                         break;
                 case "Taichung":
@@ -81,6 +83,7 @@ $(document).ready(function () {
                     ReStr = "屏東縣";
                     break;
                 case "Yilan":
+                case"Ilan":
                     ReStr = "宜蘭縣";
                     break;
                 case "Hualien":
@@ -90,10 +93,12 @@ $(document).ready(function () {
                     ReStr = "台東縣";
                     break;
                 case "Penghu":
-                    ReStr = "澎湖縣";
+                case"Makung":
+                    ReStr = "澎湖-馬公";
                     break;
                 case "Kinmen":
-                    ReStr = "金門縣";
+                case "Dadeng":
+                    ReStr = "金門";
                     break;
                 case "Matsu":
                     ReStr = "馬祖/連江縣";
