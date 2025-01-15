@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS 多框架模擬</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+    .frame {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 45%;
+      height: 300px;
+      overflow: auto;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body ng-controller="MainController as ctrl">
+  <h1>AngularJS 多框架模擬</h1>
+  <div class="container">
+    <!-- 第一個框架 -->
+    <div class="frame">
+      <div ng-include="'frame1.html'"></div>
+    </div>
+    <!-- 第二個框架 -->
+    <div class="frame">
+      <div ng-include="'frame2.html'"></div>
+    </div>
+  </div>
+
+  <script>
+    // 定義 AngularJS 應用程式
+    angular.module('app', [])
+      .controller('MainController', function($scope, SharedService) {
+        $scope.sendMessageToFrame2 = function() {
+          SharedService.setMessage('frame2', '來自 Frame 1 的訊息');
+        };
+
+        $scope.sendMessageToFrame1 = function() {
+          SharedService.setMessage('frame1', '來自 Frame 2 的訊息');
+        };
+      })
+      .factory('SharedService', function($rootScope) {
+        let messages = {};
+        return {
+          setMessage: function(frame, message) {
+            messages[frame] = message;
+            $rootScope.$broadcast('messageUpdated', { frame, message });
+          },
+          getMessage: function(frame) {
+            return messages[frame];
+          }
+        };
+      });
+  </script>
+</body>
+</html>

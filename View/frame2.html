@@ -1,0 +1,21 @@
+
+<div ng-controller="Frame2Controller as ctrl">
+  <h2>Frame 2</h2>
+  <p>這是第二個框架的內容。</p>
+  <button ng-click="sendMessageToFrame1()">傳送訊息到 Frame 1</button>
+  <p class="output">訊息：{{ message }}</p>
+</div>
+
+<script>
+  angular.module('app').controller('Frame2Controller', function($scope, SharedService) {
+    $scope.message = '';
+    $scope.sendMessageToFrame1 = function() {
+      SharedService.setMessage('frame1', '來自 Frame 2 的訊息');
+    };
+    $scope.$on('messageUpdated', function(event, data) {
+      if (data.frame === 'frame2') {
+        $scope.message = data.message;
+      }
+    });
+  });
+</script>
