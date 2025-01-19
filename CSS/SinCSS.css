@@ -195,6 +195,19 @@ border-radius屬性可以幫div添加圓角的效果
   overflow-x: hidden;
 }
 
+
+/*
+讓DIV 內容字體隨著大小而改變
+*/
+.popup-content {
+  font-size: calc(1vw + 1vh + 0.5em); /* Adjust font size dynamically based on viewport */
+}
+
+
+
+
+
+
 /*倒數計時文字*/
 .StepTime{
 font-size: xx-small;
@@ -240,7 +253,27 @@ color:rgb(255, 0, 0);
 }
 
 select {
-  margin-bottom: 3px;
-  padding: 5px;
-  font-size: 10px;
+  margin-bottom: 2px;
+  padding: 3px;
+  font-size: 8px;
 }
+
+
+
+/* 全螢幕遮罩樣式 */
+#countdown-overlay 
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  z-index: 9999;
+}
+ 
