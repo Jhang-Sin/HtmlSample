@@ -250,12 +250,14 @@ color:rgb(255, 0, 0);
   border: 1px solid #ccc;
   border-radius: 3px;
   background-color: #f9f9f9;
+  font-size: small;
+
 }
 
 select {
   margin-bottom: 2px;
   padding: 3px;
-  font-size: 8px;
+  font-size: 4px;
 }
 
 

@@ -754,7 +754,7 @@ $(document).ready(function ()
             <option value="Matsu">連江縣</option> -->
         </select> 
         <div ></div>        
-         <div id="weather" style="max-width: 250px;max: height 270px;border: #000000; border-style: double ;overflow-y: scroll;"> <!-- 天氣資訊顯示區 -原始無class-->
+         <div id="weather" style="border: #000000; border-style: double ;overflow-y: scroll; font-size: clamp(10px, 5vw, 16px)" > <!-- 天氣資訊顯示區 -原始無class  || clamp 意味著字體大小最小為 14px，最大為 18px，優先根據 5vw 計算。-->
                    
          </div>
         </div>
