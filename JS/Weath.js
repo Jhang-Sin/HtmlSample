@@ -86,7 +86,11 @@ $(document).ready(function () {
                 case"Ilan":
                     ReStr = "宜蘭縣";
                     break;
+
                 case "Hualien":
+                case "Kuomin":                    
+                case "HualienCity":
+                    
                     ReStr = "花蓮縣";
                     break;
                 case "Taitung":
