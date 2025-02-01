@@ -315,6 +315,13 @@ $(document).ready(function ()
 
 
             }
+
+            function openDialogExample()
+            {
+                window.open('View/DialogExample.html');
+                window.opener=null;
+            }
+
             
             function openB64Page()
             {
@@ -722,6 +729,11 @@ $(document).ready(function ()
             <tr>
                 <td><button onclick="openReaactPage()">React測試頁面</button></td>
             </tr>
+
+            <tr>
+                <td><button onclick="openDialogExample()">多重按鈕視窗</button></td>
+            </tr>
+
         </table>        
         
         
