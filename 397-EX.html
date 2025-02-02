@@ -795,16 +795,11 @@ $(document).ready(function ()
     <label>angular產List</label>
 </br>
 <a>下拉清單綁定</a>
-<select ng-model="Sex" ng-init="Sex=1">
+<select ng-model="Sex" ng-init="Sex=1"  style="font-size: medium;">
     <option value="0" label="- Select-"></option>
     <option ng-repeat="x in Sexs" value="{{x.value}}">{{ x.Tag }}</option>
 </select>
 [{{Sex}}]
-</br>
-<a>下拉清單</a>
-    <select >
-        <option ng-repeat="X in friends">{{ X }}</option>
-    </select>
 </br>
 <div>
     <button onclick="reloadJS()" >手動加載JS</button >
