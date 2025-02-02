@@ -807,6 +807,35 @@ $(document).ready(function ()
         <span id="spTXT" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     </button>  
 </div>
+    <!----20250202ADD----->
+    <h3>選擇職業</h3>
+    <ul>
+        <li>
+            <input type="checkbox" ng-model="selectAll" ng-change="toggleAll()"> 全選
+        </li>
+        <li ng-repeat="job in jobs">
+            <input type="checkbox" ng-model="job.selected" ng-change="updateSelection()"> {{ job.name }}
+        </li>
+    </ul>
+    
+    <h3>已選擇的職業</h3>
+    <table border="1">
+        <tr>
+            <th>職業名稱</th>
+        </tr>
+        <tr ng-repeat="job in selectedJobs">
+            <td>{{ job.name }}</td>
+        </tr>
+    </table>
+
+
+
+
+    <!------20250202ADD end-->
+
+
+
+
     <!-------->
     <!---
         注意事項!!!

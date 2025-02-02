@@ -10,10 +10,10 @@
         ///$scope.abcde = "66666-有數字表示呼叫正常"; 
 
         ///$scope.NumA = "52888";      
-       ///$scope.ngCk = function()
+       $scope.ngCk = function()
        {
         alert('angJSFun觸發呼叫正常');
-       }
+       }       
 
       
 

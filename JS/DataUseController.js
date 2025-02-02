@@ -40,6 +40,32 @@
         ];
 
 
+        /*--20250202ADD---*/
+
+       $scope.jobs = 
+       [
+        { name: '職業1', selected: false },
+        { name: '職業2', selected: false },
+        { name: '職業3', selected: false }
+        ];
+    
+    $scope.selectAll = false;
+    
+    $scope.toggleAll = function() {
+        angular.forEach($scope.jobs, function(job) {
+            job.selected = $scope.selectAll;
+        });
+        $scope.updateSelection();
+    };
+
+    $scope.updateSelection = function() {
+        $scope.selectedJobs = $scope.jobs.filter(job => job.selected);
+        $scope.selectAll = $scope.selectedJobs.length === $scope.jobs.length;
+    };
+
+       /*--20250202ADD END---*/
+
+
       
 
 
