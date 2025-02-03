@@ -40,39 +40,47 @@
     </style>
 </head>
 <body>
-    <h1>Modal Dialog Example</h1>
-    <button id="startButton">Start Questions</button>
+    <h1>Modal Dialog 範例</h1>
+    <button id="startButton" onclick="SartQue()">開始作答</button>
     <div class="result" id="resultDisplay"></div>
 
     <div class="modal" id="modal1">
         <div class="modal-content">
-            <p>Question 1: Do you agree with this?</p>
-            <button onclick="handleAnswer(1, 'yes')">Yes</button>
-            <button onclick="handleAnswer(1, 'no')">No</button>
-            <button onclick="endQuestions()">End</button>
+            <p>問題1</p>
+            <button onclick="handleAnswer(1, 'Y')">是[Y]</button>
+            <button onclick="handleAnswer(1, 'N')">否[N]</button>
+            <button onclick="endQuestions()">結束[END]</button>
         </div>
     </div>
 
     <div class="modal" id="modal2">
         <div class="modal-content">
-            <p>Question 2: Should we continue?</p>
-            <button onclick="handleAnswer(2, 'yes')">Yes</button>
-            <button onclick="handleAnswer(2, 'no')">No</button>
-            <button onclick="endQuestions()">End</button>
+            <p>問題2</p>
+            <button onclick="handleAnswer(2, 'Y')">是[Y]</button>
+            <button onclick="handleAnswer(2, 'N')">否[N]</button>
+            <button onclick="endQuestions()">結束[END]</button>
         </div>
     </div>
 
     <div class="modal" id="modal3">
         <div class="modal-content">
-            <p>Question 3: What is your final choice?</p>
-            <button onclick="handleAnswer(3, 'yes')">Yes</button>
-            <button onclick="handleAnswer(3, 'no')">No</button>
-            <button onclick="endQuestions()">End</button>
+            <p>問題3</p>
+            <button onclick="handleAnswer(3, 'Y')">是[Y]</button>
+            <button onclick="handleAnswer(3, 'N')">否[N]</button>
+            <button onclick="endQuestions()">結束[END]</button>
         </div>
     </div>
 
     <script>
         let answers = {};
+
+
+        function SartQue()
+        {
+            answers = {};
+
+
+        }
 
         document.getElementById('startButton').addEventListener('click', () => {
             openModal('modal1');
@@ -82,7 +90,7 @@
             document.getElementById(modalId).style.display = 'flex';
         }
 
-        function closeModal(modalId) {
+        function closeModal(modalId) { 
             document.getElementById(modalId).style.display = 'none';
         }
 
@@ -90,8 +98,14 @@
             answers[question] = answer;
             closeModal(`modal${question}`);
 
-            if (question < 3 && answer !== 'end') {
-                openModal(`modal${question + 1}`);
+            if (question <=2 && answer !== 'end')  /// 小於3 or 等於3 結束
+            {
+                openModal(`modal${question + 1}`);///則下一個問題
+            }           
+
+            if ( question >= 3 ||answer == 'end')     /// 3個問題作答完畢或按下了結束
+            {
+                endQuestions(); ///結束並顯示
             }
         }
 
@@ -104,7 +118,7 @@
 
         function displayResults() {
             const resultDisplay = document.getElementById('resultDisplay');
-            resultDisplay.innerHTML = `Answers:<br>Question 1: ${answers[1] || 'Not Answered'}<br>Question 2: ${answers[2] || 'Not Answered'}`;
+            resultDisplay.innerHTML = `Answers:<br>Question 1: ${answers[1] || '-未作答'}<br>Question 2: ${answers[2] || '-未作答'}<br>Question 3: ${answers[3] || '-未作答'}`;
         }
     </script>
 </body>
