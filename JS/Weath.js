@@ -139,6 +139,7 @@ $(document).ready(function () {
                 heavyrain: "大雨",
                 torrentialrain: "暴雨",
                 patchysnowpossible: "可能有局部小雪",
+                thunderstorminvicinityrainshower:"局部性雷陣雨",
                 lightsnow: "小雪",
                 moderatesnow: "中雪",
                 heavysnow: "大雪",
