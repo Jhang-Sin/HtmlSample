@@ -92,6 +92,7 @@ $(document).ready(function ()
             if(countdown ==5)
             {
                 console.log('剩5秒');
+
             }
 			if (countdown <= 0) 
 			{
@@ -124,6 +125,11 @@ $(document).ready(function ()
         if (count == 0) 
        clearInterval(timerId);
         } */
+
+        function ShowDisableBT()
+        {  
+             console.log('DisableMask');
+        }
 
 
             
@@ -351,6 +357,22 @@ $(document).ready(function ()
                         argument(optional): 其他參數
                         與setTimeout()差異：
                         setTimeout()做完一次延遲執行動作即結束，setInterval()則是間隔延遲執行動作不中斷。
+                        =================================
+                        id_of_setinterval
+                        -----
+                        語法:clearInterval(id_of_setinterval)
+                        id_of_setinterval:呼叫 setInterval() 函數時所獲得的回傳值，
+                        使用此傳回識別碼作為參數，可以取消該 setInterval() 設定的定時執行操作。
+                        -----
+
+
+
+
+
+
+
+
+
 
                 */
                var DTString  = SWDT();
@@ -459,7 +481,10 @@ $(document).ready(function ()
         <!---水平線--->        
 
         <a>以下是開發區域</a>
-        <div id="countdown-overlay">(^_^)</div>  <!---全畫面倒數遮罩特效DIV---->
+        <div id="countdown-overlay"> <!---全畫面倒數遮罩特效DIV---->
+            (^_^) 
+            <button onclick="ShowDisableBT()">[x]</button>
+        </div>  <!---全畫面倒數遮罩特效DIV END---->
         <!-----//////////////////////////////////////////////////////////////////////////////////////// ----->
          </br>
          <a style="font-size:small;">↓↓↓這是B64編碼呈現↓↓↓</a>

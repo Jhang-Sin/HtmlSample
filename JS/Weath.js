@@ -148,6 +148,7 @@ $(document).ready(function () {
                 lightdrizzle: "小毛毛雨",
                 heavydrizzle: "大毛毛雨",
                 thunderstorm: "雷陣雨",
+                lightrainshower:"小陣雨",
                 thunderyoutbreakspossible: "可能有雷暴",
                 hail: "冰雹",
                 sleet: "雨夾雪",
