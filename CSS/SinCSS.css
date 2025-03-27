@@ -276,6 +276,37 @@ select {
   justify-content: center;
   align-items: center;
   font-size: 5rem;
-  z-index: 9999;
+  z-index: 999; /* 原9999改,Skip按鈕為9999*/
+}
+
+/*SKIP按鈕*/
+#SkipBtn
+{
+  display: none;/*初始隱藏*/
+  position: absolute; /* 固定在畫面上 */
+  top: 20px; /* 距離頂部 20px */
+  left: 20px; /* 距離左側 20px */
+  z-index: 1000; /* 比 .countdown-overlay 更高 */
+  background-color: rgb(65, 80, 221);
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+
+  /*z-index 只對 position 為 relative、absolute、fixed 或 sticky 的元素有效。
+  如果元素的 position 是 static（預設值），z-index 不會生效。
+
+  關鍵修正點
+.skip-button 使用 position: fixed;，確保它獨立於 .countdown-overlay 之外。
+z-index: 9999; 確保比 .countdown-overlay 高，使它顯示在最上層。
+top: 20px; right: 20px; 讓按鈕固定在右上角，不會被覆蓋。
+這樣 Skip 按鈕就會正確顯示在 .countdown-overlay 的上方  
+  
+  
+  */
+  
 }
  

@@ -83,20 +83,53 @@
 // 倒數特效使用
 $(document).ready(function () 
 {
-	// 倒數秒數
+    let interval; // 在全域範圍內宣告 interval 變數
+    
+	// 倒數秒數    
 	let countdown = 10;
 	// 每秒更新倒數
-	const timer = setInterval(function () 
+	 timerT = setInterval(function () 
 	{
 		$('#countdown-overlay').text(countdown); // 更新顯字
             if(countdown ==5)
             {
                 console.log('剩5秒');
+                ///抓物件
+                var disBt = document.getElementById("skip-btn");
+                 ///顯示物件
+                disBt.style.display="block";
+
+                /*
+                
+                +Inline行內元素+
+                -元素可在同一行內呈現，圖片或文字均不換行，也不會影響其版面配置
+                -不可設定長寬，元素的寬高由它的內容撐開
+                -另外，常聽到行內元素不能設定上下margin/padding，但並非不能設定，是排版不會隨著設定改變，字仍在行內，其他行並不會被推開。
+
+                +Block區塊元素+
+                -元素寬度預設會撐到最大，使其占滿整個容器
+
+                +inline-block行內區塊+
+                -以inline的方式呈現，但同時擁有block的屬性
+                -可設定元素的寬高/margin/padding
+                -可水平排列
+
+                
+                */
+               
 
             }
+
+            if(countdown ==5)
+            {
+            var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
+             ClsBt.hidden = false /// 顯示物件
+
+            }
+            
 			if (countdown <= 0) 
 			{
-				clearInterval(timer); // 停倒數
+				clearInterval(timerT); // 停倒數
 				$('#countdown-overlay').fadeOut(500, function () 
 				{
 					$(this).remove(); // 移除遮罩
@@ -126,9 +159,21 @@ $(document).ready(function ()
        clearInterval(timerId);
         } */
 
-        function ShowDisableBT()
+        function ShowDisableBT() //停止倒數按鈕//
         {  
              console.log('DisableMask');
+             clearInterval(timerT);///取消倒數             
+             ////要做的事情////
+             console.log('倒數結束');
+             $('#countdown-overlay').remove()
+             ///$('#StepTime').hidden=true;///隱藏整個DIV
+             $('#StepTime').remove();////移除整個物件
+
+             //按鈕本身隱藏//
+             var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
+             ClsBt.hidden = true /// 隱藏物件     
+
+            
         }
 
 
@@ -474,18 +519,25 @@ $(document).ready(function ()
     ----->
     <div id=" SYSInfo" class="STinfo">
         <a id="SYSInfoTXT">測試狀態顯示列</a>
+        <button id="skip-btn" onclick="ShowDisableBT()" class="SkipBtn" hidden>--SKIP--</button><!--關閉遮罩按鈕初始為[hidden屬性隱藏]-->
     </div>
 
     <body >
         <hr>
         <!---水平線--->        
 
-        <a>以下是開發區域</a>
-        <div id="countdown-overlay"> <!---全畫面倒數遮罩特效DIV---->
-            (^_^) 
-            <button onclick="ShowDisableBT()">[x]</button>
+        <a>以下是開發區域</a>        
+        <div id="countdown-overlay"> <!---全畫面倒數遮罩特效DIV---->                                 
         </div>  <!---全畫面倒數遮罩特效DIV END---->
-        <!-----//////////////////////////////////////////////////////////////////////////////////////// ----->
+         
+        <!-----//////////////////////////////////////
+        
+        1.顯示在最上層style="z-index:-100;position: relative;"
+        2.顯示在最底層style="z-index:9999;position: relative;"
+        一般來說z-index的數字愈大，代表愈上層，同理愈小，代表愈底層。
+
+        
+        ////////////////////////////////////////////////// ----->
          </br>
          <a style="font-size:small;">↓↓↓這是B64編碼呈現↓↓↓</a>
     <iframe id="B64" src="View/B64.html" class="B64Img" "><!---強制隱藏卷軸-->
@@ -1121,10 +1173,7 @@ $(document).ready(function ()
         </div>
 
         <strong>
-            <div id="StepTime"><!---///倒數計時顯示////---->
-                <a><span id="secs"  class="StepTime"></span></a>
-            </div>
-
+            
             <div id="Imgshow" style="height: 15px; width:70px; font-size: small;">
             </div>          
             
