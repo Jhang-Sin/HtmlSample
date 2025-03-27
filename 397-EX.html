@@ -132,7 +132,10 @@ $(document).ready(function ()
 				clearInterval(timerT); // 停倒數
 				$('#countdown-overlay').fadeOut(500, function () 
 				{
-					$(this).remove(); // 移除遮罩
+                     //按鈕本身隱藏//
+                    var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
+                    ClsBt.hidden = true /// 隱藏物件 
+			        $(this).remove(); // 移除遮罩
 				});
 			}
 			else
