@@ -131,6 +131,7 @@ $(document).ready(function () {
                 overcast: "陰天",
                 mist: "薄霧",
                 fog: "霧",
+                rain:"雨",
                 patchyrainpossible: "可能有局部小雨",
                 patchyrainnearby: "附近有局部降雨",
                 lightrain: "小雨",

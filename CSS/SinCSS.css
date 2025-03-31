@@ -134,6 +134,14 @@ border-radius屬性可以幫div添加圓角的效果
   background:rgb(83, 133, 241);
   border-radius: 99em;
 }
+/* 關閉遮罩用按鈕*/
+.sinCircleBut3{
+  width:40px;
+  height:40px;
+  background:rgb(255, 255, 255); 
+  color: #000000; 
+  border-radius: 99em;
+}
 
 .btn1 {
   /* your custom overrides here */
@@ -284,8 +292,8 @@ select {
 {
   display: none;/*初始隱藏*/
   position: absolute; /* 固定在畫面上 */
-  top: 20px; /* 距離頂部 20px */
-  left: 20px; /* 距離左側 20px */
+  top:50%; /* 距離頂部 100px */
+  left: 50%; /* 距離左側 100px */
   z-index: 1000; /* 比 .countdown-overlay 更高 */
   background-color: rgb(65, 80, 221);
   color: white;
@@ -294,7 +302,7 @@ select {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;  /* Transitions 定義元件切換轉場效果 */
 
   /*z-index 只對 position 為 relative、absolute、fixed 或 sticky 的元素有效。
   如果元素的 position 是 static（預設值），z-index 不會生效。
