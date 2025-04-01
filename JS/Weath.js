@@ -11,28 +11,27 @@ $(document).ready(function () {
         
         function  ChangeCityName(cityName)
          {
-            var  ReStr = "none";
+            var  ReStr = "網站目前無法準確對應此地名資料,請稍後嘗試";
             //console.log("["+cityName+"]");
 
             switch(cityName)
             {
                 
                 case"Panchiao":
-                case "Chiupokou":
+                // case "Chiupokou":
                     ReStr = "台北市-板橋";
                     break;
                 case "Taipei":
                     ReStr = "台北市";
                     break;
                 case "NewTaipei":
-                case "Pukan":                    
+                //case "Pukan":                    
                     ReStr = "新北市";
                     break;
                 case "Chungho":
                     ReStr = "新北中和";
                     break;
                 case "Taoyuan": 
-                case "Chiaochiapu":               
                     ReStr = "桃園市";
                     break;
                 case "Tachi":
@@ -47,11 +46,9 @@ $(document).ready(function () {
                 case "HsinchuCounty":
                     ReStr = "新竹縣";
                      break;
-                case "Miaoli":
-                case "Ban Not":
-
+                case "Miaoli": 
                     ReStr = "苗栗縣";
-                        break;
+                      break;
                 case "Taichung":
                     ReStr = "台中市";
                     break;
@@ -59,30 +56,25 @@ $(document).ready(function () {
                     ReStr = "彰化縣";
                     break;
                 case "Nantou":
-                case "Chiehholi":
                     ReStr = "南投縣";
                     break;
                 case "Yunlin":
                     ReStr = "雲林縣";
                     break;
                 case "Touliu":
-                case "Peikou":
+                //case "Peikou":
                     ReStr= "雲林-斗六"
                     break;       
-                case "Chiayi":
-                    ReStr = "嘉義市";
-                    break;
+                
                 case "Taipao":
-                case "Chiai":
+                case "Chiayi":
                 case "ChiayiCounty":
-                    ReStr = "嘉義-太保";
+                    ReStr = "嘉義";
                     break;
                 case "Tainan":
-                case "Hsianli":
                    ReStr = "台南市";
                    break;
                 case "Kaohsiung":
-                case "Juichu":
                   ReStr = "高雄市";
                   break;
                 case "Pingtung":
@@ -93,10 +85,8 @@ $(document).ready(function () {
                     ReStr = "宜蘭縣";
                     break;
 
-                case "Hualien":
-                case "Kuomin":                    
-                case "HualienCity":
-                    
+                case "Hualien":                   
+                case "HualienCity":                    
                     ReStr = "花蓮縣";
                     break;
                 case "Taitung":
@@ -107,7 +97,6 @@ $(document).ready(function () {
                     ReStr = "澎湖-馬公";
                     break;
                 case "Kinmen":
-                case "Dadeng":
                     ReStr = "金門";
                     break;
                 case "Matsu":
@@ -215,7 +204,7 @@ $(document).ready(function () {
 
                 // 更新頁面顯示
                 $("#weather").html(`
-                    <b>${location} 天氣資訊</b>
+                    <b>${location}</b>
                     <p>溫度：${temperature}°C</p>
                     <p>天氣狀態：${description}</p>
                     <p>濕度：${humidity}%</p>
