@@ -18,18 +18,21 @@ $(document).ready(function () {
             {
                 
                 case"Panchiao":
+                case "Chiupokou":
                     ReStr = "台北市-板橋";
                     break;
                 case "Taipei":
                     ReStr = "台北市";
                     break;
-                case "NewTaipei":                
+                case "NewTaipei":
+                case "Pukan":                    
                     ReStr = "新北市";
                     break;
                 case "Chungho":
                     ReStr = "新北中和";
                     break;
-                case "Taoyuan":                
+                case "Taoyuan": 
+                case "Chiaochiapu":               
                     ReStr = "桃園市";
                     break;
                 case "Tachi":
@@ -56,27 +59,30 @@ $(document).ready(function () {
                     ReStr = "彰化縣";
                     break;
                 case "Nantou":
+                case "Chiehholi":
                     ReStr = "南投縣";
                     break;
                 case "Yunlin":
                     ReStr = "雲林縣";
                     break;
                 case "Touliu":
+                case "Peikou":
                     ReStr= "雲林-斗六"
                     break;       
                 case "Chiayi":
                     ReStr = "嘉義市";
                     break;
                 case "Taipao":
-                    ReStr = "嘉義-太保"
-
+                case "Chiai":
                 case "ChiayiCounty":
                     ReStr = "嘉義-太保";
                     break;
                 case "Tainan":
+                case "Hsianli":
                    ReStr = "台南市";
                    break;
                 case "Kaohsiung":
+                case "Juichu":
                   ReStr = "高雄市";
                   break;
                 case "Pingtung":
