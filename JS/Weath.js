@@ -11,7 +11,7 @@ $(document).ready(function () {
         
         function  ChangeCityName(cityName)
          {
-            var  ReStr = "網站目前無法準確對應此地名資料,請稍後嘗試";
+            var  ReStr = "";
             //console.log("["+cityName+"]");
 
             switch(cityName)
@@ -64,9 +64,7 @@ $(document).ready(function () {
                 case "Touliu":
                 //case "Peikou":
                     ReStr= "雲林-斗六"
-                    break;       
-                
-                case "Taipao":
+                    break;                
                 case "Chiayi":
                 case "ChiayiCounty":
                     ReStr = "嘉義";
@@ -101,6 +99,9 @@ $(document).ready(function () {
                     break;
                 case "Matsu":
                     ReStr = "馬祖/連江縣";
+                    break;
+                default:
+                    ReStr = "網站目前無法準確對應此地名資料,請稍後嘗試";
                     break;
             }
             return ReStr
