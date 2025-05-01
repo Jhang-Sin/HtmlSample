@@ -291,19 +291,19 @@ select {
 #SkipBtn
 {
   display: none;/*初始隱藏*/
-  position: absolute; /* 固定在畫面上 */
-  top:50%; /* 距離頂部 100px */
-  left: 50%; /* 距離左側 100px */
-  z-index: 1000; /* 比 .countdown-overlay 更高 */
+  position: absolute;; /* 固定在畫面上*/
+  /*top:50%; /* 距離頂部  */
+  /*left: 50%; /* 距離左側  */
+  transform: translate(-50%, -50%); /* 根據自身尺寸偏移，實現精確居中 */
+  z-index: 9999; /* 比 .countdown-overlay 更高 */
   background-color: rgb(65, 80, 221);
   color: white;
-  padding: 10px 20px;
+  /*padding: 10px 20px;*/
   font-size: 1.5rem;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;  /* Transitions 定義元件切換轉場效果 */
-
   /*z-index 只對 position 為 relative、absolute、fixed 或 sticky 的元素有效。
   如果元素的 position 是 static（預設值），z-index 不會生效。
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>共享模組範例</title>
+</head>
+<body>
+  <!-- 使用我們的自訂元件 -->
+  <shared-widget system="系統A" user="Alice"></shared-widget>
+  <shared-widget system="系統B" user="Bob"></shared-widget>
+
+  <script>
+    class SharedWidget extends HTMLElement {
+      constructor() {
+        super();
+        // 附加 Shadow DOM，避免污染主頁樣式
+        this.attachShadow({ mode: 'open' });
+      }
+
+      connectedCallback() {
+        const system = this.getAttribute('system') || '未知系統';
+        const user = this.getAttribute('user') || '訪客';
+
+        this.shadowRoot.innerHTML = `
+          <style>
+            .box {
+              padding: 1rem;
+              margin: 1rem;
+              border: 1px solid #888;
+              border-radius: 8px;
+              background: #f9f9f9;
+              font-family: sans-serif;
+            }
+          </style>
+          <div class="box">
+            <strong>共享元件</strong><br/>
+            目前系統：${system}<br/>
+            使用者：${user}
+          </div>
+        `;
+      }
+    }
+
+    // 註冊自訂元素（HTML 標籤）
+    customElements.define('shared-widget', SharedWidget);
+  </script>
+</body>
+</html>

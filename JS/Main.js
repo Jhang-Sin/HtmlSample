@@ -30,24 +30,15 @@ $(function(){
       } 
 
       /* call Other-Iframe*/
-      function callframe()
+      function SendData()
       {        
-       console.log('Call Other Iframe') ;
-       
+        const iframe = document.getElementById('IFRL');
+      iframe.contentWindow.postMessage('你好 iframe，我是主頁', '*');
       }
 
-      //[监听iframe加载完成]
+      /**接收子框傳來的訊息*/      
 
- let iframe = document.getElementById('iframeId');
-  $(function () {
-        if (iframe.attachEvent) {
-            iframe.attachEvent("onload", function () {
-            });
-        } else {
-            iframe.onload = function () {//iframe加载完成
-             //数据处理
-            };
-        }
-
-    })
-      
+      window.addEventListener('message', function(event) {
+        console.log('從 iframe 收到：', event.data);
+        document.getElementById('log').innerText = '從 iframe 收到：' + event.data;
+      });

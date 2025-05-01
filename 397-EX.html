@@ -388,6 +388,12 @@ $(document).ready(function ()
                 window.opener=null;
                 
             }
+
+            function openWebComponentPage()
+            {
+                window.open('View/WebComponent.html')
+                window.opener=null;
+            }
             
 
 
@@ -816,6 +822,9 @@ $(document).ready(function ()
 
             <tr>
                 <td><button onclick="openDialogExample()">多重按鈕視窗</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="openWebComponentPage()">WebComponentPage</button></td>
             </tr>
 
         </table>        
