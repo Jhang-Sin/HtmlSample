@@ -6,8 +6,8 @@
 </head>
 <body>
   <!-- 使用我們的自訂元件 -->
-  <shared-widget system="系統A" user="Alice"></shared-widget>
-  <shared-widget system="系統B" user="Bob"></shared-widget>
+  <shared-widget system="系統A" user="Tom"></shared-widget>
+  <shared-widget system="系統B" user="Jhan"></shared-widget>
 
   <script>
     class SharedWidget extends HTMLElement {
@@ -42,6 +42,7 @@
     }
 
     // 註冊自訂元素（HTML 標籤）
+    //使用[ window.customElements.define]註冊元素，便可以在 HTML 當中自由的加入新定義好的元素
     customElements.define('shared-widget', SharedWidget);
   </script>
 </body>

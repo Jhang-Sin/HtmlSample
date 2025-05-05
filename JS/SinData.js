@@ -98,6 +98,7 @@ function AJAXTEST()
         NAME: 'TEST',
     },  // 這是你想發送的資料
     dataType: 'json',  // 預期從伺服器返回的資料格式
+    timeout: 10000, // 10 秒逾時
     success: function (response) {
         // 請求成功，這裡處理回應
 
@@ -106,9 +107,12 @@ function AJAXTEST()
         FinishData(response);
     },
     error: function (xhr, status, error) {
-        alert('error ');
-        // 請求失敗，這裡處理錯誤
-        console.log('error:', error);
+      if (status === 'timeout') {
+        alert('請求逾時，請稍後再試。');
+      } else 
+      {
+        console.log(' 錯誤：' + error);
+      }
     }
 });
 
