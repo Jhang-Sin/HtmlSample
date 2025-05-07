@@ -130,6 +130,8 @@ $(document).ready(function () {
                 rain:"雨",
                 patchyrainpossible: "可能有局部小雨",
                 patchyrainnearby: "附近有局部降雨",
+                heavyrainshower:"大雨",
+                rainshower:"零星細雨",
                 lightrain: "小雨",
                 lightrainmist: "小雨、霧",
                 moderaterain: "中雨",

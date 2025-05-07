@@ -3,7 +3,7 @@ function Notes()
 {
 
     document.getElementById("notesDay").innerText="";
-    document.getElementById("notesDay").innerHTML = "2025-05-05異動/更新";
+    document.getElementById("notesDay").innerHTML = "2025-05-07異動/更新";
 
 }
 
