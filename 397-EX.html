@@ -96,8 +96,10 @@ $(document).ready(function ()
                 console.log('剩5秒');
                 ///抓物件
                 var disBt = document.getElementById("skip-btn");
+                var CentdisBt =  document.getElementById("CenterClsDiv");
                  ///顯示物件
                 disBt.style.display="block";
+                CentdisBt.style.display="block";
 
                 /*
                 
@@ -123,8 +125,10 @@ $(document).ready(function ()
             if(countdown ==5)
             {
             var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
+            var CentClsbt = document.getElementById('CenterClsDiv');////關閉遮罩之按鈕
             // ClsBt.visibility  = "visible" /// 顯示物件
             ClsBt.hidden=false; /// 顯示物件
+            CentClsbt.hidden=false; /// 顯示物件
 
             }
             
@@ -163,22 +167,80 @@ $(document).ready(function ()
        clearInterval(timerId);
         } */
 
-        function ShowDisableBT() //停止倒數按鈕//
+        function ShowDisableBT(LocalNum) //停止倒數按鈕//
         {  
-             console.log('DisableMask');
-             clearInterval(timerT);///取消倒數             
-             ////要做的事情////
+
+             console.log('觸發的LocalNum=' + LocalNum);
+
+              // 右上小按鈕
+              if(LocalNum ==1)
+            {
+                 $('#CenterClsDiv').remove();
+                 clearInterval(timerT);///取消倒數
+            }
+            // 中間小按鈕
+            else if(LocalNum ==2)
+            {
+                 $('#CenterClsDiv').remove();
+                    clearInterval(timerT);///取消倒數      
+            }
+            //其他預設值
+            else
+            {
+                clearInterval(timerT);///取消倒數             
+                    ////要做的事情////
+                   
+            }
+
              console.log('倒數結束');
              $('#countdown-overlay').remove()
              ///$('#StepTime').hidden=true;///隱藏整個DIV
              $('#StepTime').remove();////移除整個物件
-
              //按鈕本身隱藏//
              var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
-             ClsBt.hidden = true /// 隱藏物件     
+             ClsBt.hidden = true /// 隱藏物件  
+
+
 
             
-        }
+
+
+            // switch (LocalNum)
+            // {
+              
+            //     // 右上小按鈕
+               
+            //     case 1:         
+            //      $('#CenterClsDiv').remove();
+            //      clearInterval(timerT);///取消倒數                     
+            //         break;
+
+            //     // 中間小按鈕
+            //     case 2:
+            //          $('#CenterClsDiv').remove();
+            //         clearInterval(timerT);///取消倒數                             
+            //         break;
+            //     default:
+            //         console.log('DisableMask');
+            //         clearInterval(timerT);///取消倒數             
+            //         ////要做的事情////
+            //         console.log('倒數結束');
+            //         $('#countdown-overlay').remove()
+            //         ///$('#StepTime').hidden=true;///隱藏整個DIV
+            //         $('#StepTime').remove();////移除整個物件
+
+            //         //按鈕本身隱藏//
+            //         var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
+            //         ClsBt.hidden = true /// 隱藏物件  
+            //         break;
+                    
+            // }
+
+
+             
+
+            
+        }///----function ShowDisableBT---END
 
 
             
@@ -529,7 +591,7 @@ $(document).ready(function ()
     ----->
     <div id=" SYSInfo" class="STinfo">
         <a id="SYSInfoTXT">測試狀態顯示列</a>
-        <button id="skip-btn" onclick="ShowDisableBT()" class="SkipBtn sinCircleBut3" hidden>X</button><!--關閉遮罩按鈕初始為[hidden屬性隱藏]-->
+        <button id="skip-btn" onclick="ShowDisableBT(1)" class="SkipBtn sinCircleBut3" hidden>X</button><!--關閉遮罩按鈕初始為[hidden屬性隱藏]-->
     </div>
 
     <body >
@@ -537,8 +599,12 @@ $(document).ready(function ()
         <!---水平線--->        
 
         <a>以下是開發區域</a>        
-        <div id="countdown-overlay"> <!---全畫面倒數遮罩特效DIV---->                                 
+        <div id="countdown-overlay"> <!---全畫面倒數遮罩特效DIV---->
+                                            
         </div>  <!---全畫面倒數遮罩特效DIV END---->
+        <div  id="CenterClsDiv" style="z-index: 99999;" hidden><!--畫面中央X的關閉按鈕--->
+                <img  class="STinfo" style="position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);height: 50px;width:50px;" src="Image/X.png" onclick="ShowDisableBT(2)" >
+        </div> 
          
         <!-----//////////////////////////////////////
         
@@ -1193,6 +1259,8 @@ $(document).ready(function ()
         </strong> 
     </div>
 </br>
+
+ 
 
 <hr>
     <footer>

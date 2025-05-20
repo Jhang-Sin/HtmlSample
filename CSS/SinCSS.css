@@ -325,4 +325,15 @@ top: 20px; right: 20px; 讓按鈕固定在右上角，不會被覆蓋。
   */
   
 }
- 
+
+.center-overlay {
+  position: fixed; /* 固定在視窗上，與解析度無關 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);/* 使內容真正置中 */
+  z-index: 9999; /* 確保在最上層 */
+  background-color: white;
+  padding: 20px;
+  border: 2px solid black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);/* 美化陰影效果 */
+}
