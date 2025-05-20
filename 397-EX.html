@@ -139,7 +139,8 @@ $(document).ready(function ()
 				{
                      //按鈕本身隱藏//
                     var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
-                    ClsBt.hidden = true /// 隱藏物件 
+                    ClsBt.hidden = true /// 隱藏物件
+                    $('#CenterClsDiv').remove();//移除中間按鈕DIV 
 			        $(this).remove(); // 移除遮罩
 				});
 			}
@@ -194,11 +195,14 @@ $(document).ready(function ()
 
              console.log('倒數結束');
              $('#countdown-overlay').remove()
-             ///$('#StepTime').hidden=true;///隱藏整個DIV
+            $('#CenterClsDiv').remove();
              $('#StepTime').remove();////移除整個物件
              //按鈕本身隱藏//
              var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
-             ClsBt.hidden = true /// 隱藏物件  
+             var ClsCentBt = document.getElementById('CenterClsDiv'); //中央的關閉按鈕
+
+             ClsBt.hidden = true /// 隱藏物件
+             ClsCentBt.hidden = true /// 隱藏物件 
 
 
 
