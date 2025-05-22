@@ -139,6 +139,7 @@ $(document).ready(function ()
 				{
                      //按鈕本身隱藏//
                     var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
+
                     ClsBt.hidden = true /// 隱藏物件
                     $('#CenterClsDiv').remove();//移除中間按鈕DIV 
 			        $(this).remove(); // 移除遮罩
@@ -177,12 +178,14 @@ $(document).ready(function ()
               if(LocalNum ==1)
             {
                  $('#CenterClsDiv').remove();
+                 $('#skip-btn').remove();
                  clearInterval(timerT);///取消倒數
             }
             // 中間小按鈕
             else if(LocalNum ==2)
             {
                  $('#CenterClsDiv').remove();
+                 $('#skip-btn').remove();
                     clearInterval(timerT);///取消倒數      
             }
             //其他預設值
@@ -196,7 +199,8 @@ $(document).ready(function ()
              console.log('倒數結束');
              $('#countdown-overlay').remove()
             $('#CenterClsDiv').remove();
-             $('#StepTime').remove();////移除整個物件
+            $('#skip-btn').remove();
+            $('#StepTime').remove();////移除整個物件
              //按鈕本身隱藏//
              var ClsBt = document.getElementById('skip-btn');////關閉遮罩之按鈕
              var ClsCentBt = document.getElementById('CenterClsDiv'); //中央的關閉按鈕
