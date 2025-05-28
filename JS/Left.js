@@ -17,3 +17,26 @@ window.addEventListener('message', function(event)
     console.log('從 iframe 收到：', event.data);
     document.getElementById('log').innerText = '從 iframe 收到：' + event.data;
 })
+
+/*
+
+============================
+element.addEventListener(event, function, useCapture)
+
+[event]	必须。字符串，指定事件名。
+注意: 不要使用 "on" 前缀。 例如，使用 "click" ,而不是使用 "onclick"。
+
+[function]	必须。指定要事件触发时执行的函数。
+当事件对象会作为第一个参数传入函数。 事件对象的类型取决于特定的事件。例如， "click" 事件属于 MouseEvent(鼠标事件) 对象。
+
+[useCapture]	可选。布尔值，指定事件是否在捕获或冒泡阶段执行。
+可能值:
+true - 事件句柄在捕获阶段执行
+false- false- 默认。事件句柄在冒泡阶段执行
+============================
+*/
+
+function postMessage(MSG)
+{
+    console.log('LeftJS Get Data = ' + MSG);
+}
