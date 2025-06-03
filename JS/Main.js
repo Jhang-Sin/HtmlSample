@@ -31,8 +31,9 @@ $(function(){
 
       /* call Other-Iframe*/
       function SendData()
-      {        
-        const iframe = document.getElementById('IFRL');
+      {
+        var IdArrays = ['IFRL','IFRR','IFRF'];        
+        const iframe = document.getElementById(IdArrays[0]);
       iframe.contentWindow.postMessage('你好 iframe，我是主頁', '*');
       }
 
@@ -42,3 +43,34 @@ $(function(){
         console.log('從 iframe 收到：', event.data);
         document.getElementById('log').innerText = '從 iframe 收到：' + event.data;
       });
+      
+      /*
+      ------------
+      [window.addEventListener(type, listener, options);]
+
+      type:字串，表示要監聽的事件類型，例如 "click"、"load"、"keydown" 等。
+      listener:當事件發生時要執行的函式（callback function）。
+      options:（可選）設定物件或布林值，控制事件監聽的行為。常用的選項有：
+        - capture: 是否使用事件捕獲階段（預設是 false）
+        - once: 是否只觸發一次（預設是 false）
+        - passive: 是否不會呼叫 preventDefault()（預設是 false）
+        
+      常見事件
+          -'click'	使用者點擊元素時觸發
+          -'keydown' / 'keyup'	鍵盤按下 / 放開時觸發
+          -'load'	網頁或資源載入完成
+          -'DOMContentLoaded'	初始 HTML 解析完畢（不等圖片或 CSS）
+          -'resize'	瀏覽器視窗大小改變時觸發
+          -'scroll'	捲動時觸發
+          -'input'	表單輸入內容改變時觸發
+          -'submit'	表單送出時觸發
+          -'error'	發生錯誤時（圖片載入錯誤、script 錯誤等）
+          -'focus'/'blur'	元素獲得 / 失去焦點時
+          -'mousemove' / 'mouseover'	滑鼠移動 / 移入元素時
+          'change'	表單元素改變（例如 select、checkbox）
+
+
+
+
+      ------------
+      */
