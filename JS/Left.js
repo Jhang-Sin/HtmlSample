@@ -14,6 +14,12 @@ function MainEvent()
 }
 window.addEventListener('message', function(event)
 {
+    //  if (event.origin !== "https://jhang-sin.github.io/")
+    //     {
+    //          console.log("不合法路徑");
+    //         return;
+    //     } 
+    
     console.log('從 iframe 收到：', event.data);
     document.getElementById('log').innerText = '從 iframe 收到：' + event.data;
 })

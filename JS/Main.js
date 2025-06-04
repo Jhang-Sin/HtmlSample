@@ -33,8 +33,15 @@ $(function(){
       function SendData()
       {
         var IdArrays = ['IFRL','IFRR','IFRF'];        
-        const iframe = document.getElementById(IdArrays[0]);
-      iframe.contentWindow.postMessage('你好 iframe，我是主頁', '*');
+        
+        for (let i=0;i<IdArrays.length;i++)
+        {
+          const iframe = document.getElementById(IdArrays[i]);
+          iframe.contentWindow.postMessage('你好 iframe，我是主頁', '*');
+
+
+        }
+      //iframe.contentWindow.postMessage('你好 iframe，我是主頁', '*');
       }
 
       /**接收子框傳來的訊息*/      
