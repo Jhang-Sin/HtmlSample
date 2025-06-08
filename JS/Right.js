@@ -13,5 +13,5 @@ window.addEventListener('message', function(event)
 //   console.log("來源視窗：", event.source);    // 可用來回訊
 
     console.log('從 iframe 收到：', event.data);
-    document.getElementById('log').innerText = '從 iframe 收到：' + event.data;
+    document.getElementById('log').innerText = '[RIGHT]收到：' + event.data;
 })

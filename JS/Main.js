@@ -32,7 +32,7 @@ $(function(){
       /* call Other-Iframe*/
       function SendData()
       {
-        var IdArrays = ['IFRL','IFRR','IFRF'];        
+        var IdArrays = ['IFRT','IFRL','IFRR','IFRF'];        
         
         for (let i=0;i<IdArrays.length;i++)
         {
@@ -48,7 +48,7 @@ $(function(){
 
       window.addEventListener('message', function(event) {
         console.log('從 iframe 收到：', event.data);
-        document.getElementById('log').innerText = '從 iframe 收到：' + event.data;
+        document.getElementById('log').innerText = '[M]收到：' + event.data;
       });
       
       /*
