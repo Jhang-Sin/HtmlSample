@@ -32,23 +32,55 @@ $(function(){
       /* call Other-Iframe*/
       function SendData()
       {
-        var IdArrays = ['IFRT','IFRL','IFRR','IFRF'];        
-        
+        var IdArrays = ['IFRT','IFRL','IFRR','IFRF'];
+
+        // var SData =
+        // [
+        //   {id:"001"},
+        //   {name:"ABC"},
+        //   {DATA:"OPUSER"}
+        // ];
+
+         var SData = {
+          id: "001",
+          name: "ABC",
+          DATA: "OPUSER"
+        };
+
+
+
+
+
         for (let i=0;i<IdArrays.length;i++)
         {
           const iframe = document.getElementById(IdArrays[i]);
-          iframe.contentWindow.postMessage('你好 iframe，我是主頁', '*');
+          iframe.contentWindow.postMessage(SData, '*');
 
-
-        }
-      //iframe.contentWindow.postMessage('你好 iframe，我是主頁', '*');
+        }    
       }
+
+      function ResData()
+      {
+        console.log('ResData');
+         var IdArrays = ['IFRT','IFRL','IFRR','IFRF'];
+
+         for (let i=0;i<IdArrays.length;i++)
+        {
+          const iframe = document.getElementById(IdArrays[i]);
+          iframe.contentWindow.postMessage(SData, '*');
+        }
+
+      }
+
+
+
+
 
       /**接收子框傳來的訊息*/      
 
       window.addEventListener('message', function(event) {
         console.log('從 iframe 收到：', event.data);
-        document.getElementById('log').innerText = '[M]收到：' + event.data;
+        document.getElementById('log').innerText = '[M]收到：' + 'id=' + event.data.id+'-'+'name='+event.data.DATA;
       });
       
       /*

@@ -21,7 +21,7 @@ window.addEventListener('message', function(event)
     //     } 
     
     console.log('從 iframe 收到：', event.data);
-    document.getElementById('log').innerText = '[Left]收到：' + event.data;
+    document.getElementById('log').innerText = '[Left]收到：' +'id=' + event.data.id+'-'+'name='+event.data.DATA;
 })
 
 /*
