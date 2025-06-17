@@ -63,11 +63,16 @@ $(function(){
       {
         console.log('ResData');
          var IdArrays = ['IFRT','IFRL','IFRR','IFRF'];
+         var NullData = {
+          id: "",
+          name: "",
+          DATA: ""
+        };
 
          for (let i=0;i<IdArrays.length;i++)
         {
           const iframe = document.getElementById(IdArrays[i]);
-          iframe.contentWindow.postMessage(SData, '*');
+          iframe.contentWindow.postMessage(NullData, '*');
         }
 
       }
