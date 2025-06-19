@@ -33,6 +33,8 @@ $(function(){
       function SendData()
       {
         var IdArrays = ['IFRT','IFRL','IFRR','IFRF'];
+        var StrName = document.getElementById("TxtName").value;
+        var intAge = document.getElementById("Numage").value;
 
         // var SData =
         // [
@@ -42,9 +44,9 @@ $(function(){
         // ];
 
          var SData = {
-          id: "001",
-          name: "ABC",
-          DATA: "OPUSER"
+          id:intAge,
+          name: StrName,
+          DATA: "DATA-"+StrName
         };
 
 
@@ -74,6 +76,12 @@ $(function(){
           const iframe = document.getElementById(IdArrays[i]);
           iframe.contentWindow.postMessage(NullData, '*');
         }
+
+      }
+
+      function DisiframeShow()
+      {
+        
 
       }
 
