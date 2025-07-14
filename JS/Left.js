@@ -14,12 +14,25 @@ function MainEvent()
 }
 window.addEventListener('message', function(event)
 {
-    //  if (event.origin !== "https://jhang-sin.github.io/")
-    //     {
-    //          console.log("不合法路徑");
-    //         return;
-    //     } 
+    ///--允許清單--///
+    const allowedOrigins =
+    [
+        "https://jhang-sin.github.io",
+        "http://localhost:5500",
+        "http://127.0.0.1:5500"
+    ];
     
+    ///發布後的網址["https://jhang-sin.github.io"
+
+    
+    // 使用標準化處理
+const origin = event.origin.toLowerCase();
+
+// if (!allowedOrigins.includes(origin)) 
+//     {
+//         console.log("不合法路徑=[" + origin.toString() &"]");
+//          return;
+//     }    
     console.log('從 iframe 收到：', event.data);
     document.getElementById('log').innerText = '[Left]收到：' +'id=' + event.data.id+'-'+'name='+event.data.DATA;
 })
