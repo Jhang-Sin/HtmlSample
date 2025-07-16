@@ -12,6 +12,7 @@ function MainEvent()
     ///事件觸發用 物件.click()
     MainObj.click()  ///結尾不用加上分號
 }
+
 window.addEventListener('message', function(event)
 {
     ///--允許清單--///
