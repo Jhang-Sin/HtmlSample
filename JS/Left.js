@@ -7,8 +7,7 @@ function TEST()
 ///呼叫主視窗事件///
 function MainEvent()
 {
-    console.log('LeftJS-MainEvent--')   
-    var MainObj= document.getElementById("MMD")
+   var MainObj= document.getElementById("MMD")
     ///事件觸發用 物件.click()
     MainObj.click()  ///結尾不用加上分號
 }
@@ -16,18 +15,18 @@ function MainEvent()
 window.addEventListener('message', function(event)
 {
     ///--允許清單--///
+    ///發布後的網址["https://jhang-sin.github.io"
     const allowedOrigins =
     [
         "https://jhang-sin.github.io",
         "http://localhost:5500",
         "http://127.0.0.1:5500"
-    ];
+    ];   
     
-    ///發布後的網址["https://jhang-sin.github.io"
 
     
     // 使用標準化處理
-const origin = event.origin.toLowerCase();
+//const origin = event.origin.toLowerCase();
 
 // if (!allowedOrigins.includes(origin)) 
 //     {
