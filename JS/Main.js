@@ -97,9 +97,11 @@ $(function(){
         };
 
          for (let i=0;i<IdArrays.length;i++)
-        {
-          const iframe = document.getElementById(IdArrays[i]);
-          iframe.contentWindow.postMessage(NullData, '*');
+        {    
+              const iframe = document.getElementById(IdArrays[i]);
+              iframe.contentWindow.postMessage(NullData, '*');                   
+
+          
         }
 
       }

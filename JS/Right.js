@@ -15,3 +15,11 @@ window.addEventListener('message', function(event)
     console.log('從 iframe 收到：', event.data);
     document.getElementById('log').innerText = '[RIGHT]收到：' + 'id=' + event.data.id+'-'+'name='+event.data.DATA;
 })
+
+
+function SetData(DATA)
+{
+    console.log(" RIGHT 收到");
+     document.getElementById('log').innerText = '[RIGHT]收到：' + 'id=' + DATA.id+'-'+'name='+DATA.DATA;
+
+}
