@@ -52,10 +52,17 @@ element.addEventListener(event, function, useCapture)
 可能值:
 true - 事件句柄在捕获阶段执行
 false- false- 默认。事件句柄在冒泡阶段执行
-============================
+=================================
 */
 
 function postMessage(MSG)
 {
     console.log('LeftJS Get Data = ' + MSG);
+}
+
+function SetData(Data)
+{
+    console.log('START-SET DATA');
+
+
 }
