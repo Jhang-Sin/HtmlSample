@@ -12,7 +12,7 @@ function TEST()
 //     MainObj.click()  ///結尾不用加上分號
 // }
 
-window.addEventListener('message', function(event)
+window.addEventListener("message", function(event)
 {
     ///--允許清單--///
     ///發布後的網址["https://jhang-sin.github.io"
@@ -34,7 +34,7 @@ window.addEventListener('message', function(event)
 //          return;
 //     }    
     console.log('從 iframe 收到：', event.data);
-    document.getElementById('log').innerText = '[Left]收到：' +'id=' + event.data.id+'-'+'name='+event.data.DATA;
+    document.getElementById("log").innerText = '[Left]收到：' +'id=' + event.data.id+'-'+'name='+event.data.DATA;
 })
 
 /*
