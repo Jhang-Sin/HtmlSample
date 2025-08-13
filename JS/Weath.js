@@ -160,7 +160,8 @@ $(document).ready(function () {
                 freezingfog: "凍霧",
                 lightfreezingrain: "小凍雨",
                 moderateorheavyfreezingrain: "中度或重度凍雨",
-                showerinvicinity:"局部陣雨"
+                showerinvicinity:"局部陣雨",
+                patchylightraininareawiththunder:"局部雷陣雨"
             };         
              // 如果找不到對應，返回預設值
              return weatherMapping[New_EnGStatu] || `${New_EnGStatu}-No_Data-`;

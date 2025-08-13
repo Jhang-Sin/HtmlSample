@@ -50,7 +50,7 @@ $(function(){
       /* call Other-Iframe*/
       function SendData()
       {
-        var IdArrays = ['IFRT','IFRL','IFRR','IFRF'];
+        var IdArrays = ['fTOP','fLEFT','fRIGHT','fFOOT'];
         var StrName = document.getElementById("TxtName").value;
         var intAge = document.getElementById("Numage").value;
 
@@ -89,7 +89,7 @@ $(function(){
       function ResData()
       {
         console.log('ResData');
-         var IdArrays = ['IFRT','IFRL','IFRR','IFRF'];
+         var IdArrays = ['fTOP','fLEFT','fRIGHT','fFOOT'];
          var NullData = {
           id: "",
           name: "",
@@ -111,6 +111,16 @@ $(function(){
         
 
       }
+      function CallLFun()
+      {
+        var OBJ = parent.document.getElementById("fLEFT");  //document.getElementById("fLEFT");
+        OBJ.contentWindow.TEST();    /// OBJ.contentWindow.Function名稱 EX:OBJ.contentWindow.showMessage();
+
+      }
+
+
+
+
       function SetCookie()
       {
         alert('SET');
