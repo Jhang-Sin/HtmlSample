@@ -50,7 +50,7 @@ $(function(){
       /* call Other-Iframe*/
       function SendData()
       {
-        var IdArrays = ['fTOP','fLEFT','fRIGHT','fFOOT'];
+        var IdArrays = ['sTOP','sLEFT','sRIGHT','sFOOT'];
         var StrName = document.getElementById("TxtName").value;
         var intAge = document.getElementById("Numage").value;
 
@@ -89,7 +89,7 @@ $(function(){
       function ResData()
       {
         console.log('ResData');
-         var IdArrays = ['fTOP','fLEFT','fRIGHT','fFOOT'];
+         var IdArrays = ['sTOP','sLEFT','sRIGHT','sFOOT'];
          var NullData = {
           id: "",
           name: "",

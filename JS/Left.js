@@ -55,10 +55,17 @@ false- false- 默认。事件句柄在冒泡阶段执行
 =================================
 */
 
-function postMessage(MSG)
+window.addEventListener('message', function(event)
 {
-    console.log('LeftJS Get Data = ' + MSG);
-}
+//  if (event.origin !== "https://jhang-sin.github.io/") return;
+
+//   console.log("收到訊息：", event.data);     // { msg: "Hello from iframe" }
+//   console.log("來源網址：", event.origin);    // https://jhang-sin.github.io/
+//   console.log("來源視窗：", event.source);    // 可用來回訊
+
+    console.log('從 iframe 收到：', event.data);
+    document.getElementById('log').innerText = '[LEFT]收到：' + 'id=' + event.data.id+'-'+'name='+event.data.DATA;
+})
 
 function SetData(Data)
 {
