@@ -3,7 +3,7 @@ function Notes()
 {
 
     document.getElementById("notesDay").innerText="";
-    document.getElementById("notesDay").innerHTML = "2025-08-18異動/更新";
+    document.getElementById("notesDay").innerHTML = "2025-08-21異動/更新";
 
 }
 
@@ -12,7 +12,8 @@ let AllNum = 0;///宣告全域變數[let + 變數名]
 ///let 可能會被重新指定值
 
 const Allnum2 = 99;
-///// const 不會被重新指定值
+
+// const 不會被重新指定值
 
 /*
 建議在開發ES6之後的專案中，使用“ const ”或者“let”嚴謹的宣告變數而非“var”，

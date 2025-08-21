@@ -353,9 +353,65 @@ $(document).ready(function ()
 
             }
 
+            ///彈出視窗
+            /*
+            用 jQuery UI 把 id="dialog" 的 <div> 轉換成「對話框元件」
+                $("#dialog") → 這是 jQuery 的選擇器，等於 document.getElementById("dialog")。
+            .dialog() → 這是 jQuery UI 提供的方法，不是原生 JS。
+            它會把普通的 <div> 包裝成一個「可拖曳、可關閉、帶標題列的視窗」。
+            會自動產生「X」關閉按鈕、標題列，以及額外的 CSS class。
+            預設是 隱藏狀態，需要 .dialog("open") 才會顯示。
+
+
+                
+            */
             $( function() 
             {
-                $( "#dialog" ).dialog();
+
+                $( "#dialog" ).dialog();////原生寫法
+
+
+                ///----------------------////改寫自抓event順序
+
+             $(function() //----dialog關閉時觸發的事件----//
+             {
+                $("#dialog").dialog({
+                    autoOpen: true, // 預設會自動打開（原本就是 true）
+                    beforeClose: function(event, ui) {
+                    console.log("1) beforeClose 被觸發");
+                    // 如果 return false，會阻止關閉
+                    // return false;
+                    },
+                    close: function(event, ui) {
+                    console.log("2) close 被觸發");
+                    //抓按鈕
+                    $("#againBT").prop("hidden", false); // 開啟時顯示
+                    var ReShowBt = $("#againBT");
+                    var BtStatus = ReShowBt.hidden;
+                    
+                    if($("#myDiv").is(":hidden"))
+                    {
+                        console.log("目前是隱藏的");
+
+
+                    }else
+                    {
+                        console.log("目前是顯示的");
+
+                    }
+                  
+                    console.log('BtStatus-->'+BtStatus);
+                    console.log('--2的重啟按鈕')
+                    ReShowBt.hidden=false;///關閉按鈕隱藏屬性
+
+                    ///關隱藏
+                    }
+                });
+                });
+
+
+
+
             } );
 
 
@@ -580,6 +636,15 @@ $(document).ready(function ()
             {
                 document.getElementById("SYSInfoTXT").innerText=DisplayTXT;
             }
+
+            //重新開啟彈窗
+            function ReopenDialog() 
+            {
+                $("#dialog").dialog("open");
+                //$("ReopenDialog").hidden=true;
+                var BT = $("#againBT");
+                BT.hide();//自己本身隱藏///
+            }
             
 
 
@@ -608,7 +673,7 @@ $(document).ready(function ()
         <a id="SYSInfoTXT">測試狀態顯示列</a>
         <button id="skip-btn" onclick="ShowDisableBT(1)" class="SkipBtn sinCircleBut3" hidden>X</button><!--關閉遮罩按鈕初始為[hidden屬性隱藏]-->
     </div>
-
+<button type="button" id="againBT" onclick="ReopenDialog()" hidden="true" >再開一次視窗</button>
     <body >
         <hr>
         <!---水平線--->        
