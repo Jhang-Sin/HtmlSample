@@ -64,7 +64,8 @@
         /////變數定義區/////
         var EX01Arr = new Array(); ///陣列宣告方式01
         var EX02 = [] ; ///陣列宣告方式02
-        var EX03 = ['A','B','C']; ///陣列宣告方式03        
+        var EX03 = ['A','B','C']; ///陣列宣告方式03
+        var AreCk = 0;//1:點擊過-已被重開過 0:沒點過        
         /////////////////////////////////////////////////////////////
 
         $(document).ready()
@@ -388,7 +389,24 @@ $(document).ready(function ()
                     $("#againBT").prop("hidden", false); // 開啟時顯示
                     var ReShowBt = $("#againBT");
                     var BtStatus = ReShowBt.hidden;
+
+                    if(AreCk ==0)
+                    {
+                        console.log('沒被點擊過')
+                    }
+                    else if( AreCk==1)
+                    {
+                         console.log('已經被點擊過')
+                         if(BtStatus== undefined)    ///undefined不用加''號或是""號
+                         {
+                            alert('[重開啟按鈕]已經重開過一次了就不開了~');
+                        
+                         }
+
+                    }
                     
+
+
                     if($("#myDiv").is(":hidden"))
                     {
                         console.log("目前是隱藏的");
@@ -644,6 +662,7 @@ $(document).ready(function ()
                 //$("ReopenDialog").hidden=true;
                 var BT = $("#againBT");
                 BT.hide();//自己本身隱藏///
+                AreCk = 1;
             }
             
 
