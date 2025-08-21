@@ -692,7 +692,7 @@ $(document).ready(function ()
         <a id="SYSInfoTXT">測試狀態顯示列</a>
         <button id="skip-btn" onclick="ShowDisableBT(1)" class="SkipBtn sinCircleBut3" hidden>X</button><!--關閉遮罩按鈕初始為[hidden屬性隱藏]-->
     </div>
-<button type="button" id="againBT" onclick="ReopenDialog()" hidden="true" >再開一次視窗</button>
+
     <body >
         <hr>
         <!---水平線--->        
@@ -722,12 +722,14 @@ $(document).ready(function ()
         <div style="text-align: right;">
             <!---DIV對齊方式靠右------>
             <button onclick="console.clear()" class="form-floating mb-3 btn btn-light">清除console-log</button></br>
+            
 
             <!--<button onclick="Notes()" class= "sinCircleBut">SHOW notesDay</button>-->
 
             <table style="text-align: right;" border="1" align="right"> 
                 <tr>
                     <td>
+                       
                       
                         
                         <b><a>現在時間:</a></b>
@@ -735,7 +737,12 @@ $(document).ready(function ()
                     <td>
                         <div id="TM01"></div> 
                     </td>
-                </tr>                
+                </tr>
+                 <tr>
+                            <td>
+                                <button type="button" id="againBT" onclick="ReopenDialog()" hidden="true" >再開一次視窗</button>
+                            </td>
+                        </tr>                
             </table>            
 
             <div class="sinCircleBut2" style="width: 100px ;height: 100px;"><a>圓形CSS</a></div>
