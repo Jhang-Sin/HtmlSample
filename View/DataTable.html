@@ -1,0 +1,53 @@
+<html  lang="zh-tw" ng-app = "myapp">
+    <title>Datatable Example</title>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../CSS/dataTables.min.css"/>
+<script src="../JS/jquery-3.6.0.js"></script>
+<script src="../JS/dataTables.min.js"></script>
+<script>
+     $(document).ready(function() {
+      $('#example').DataTable({
+          paging: true,      // 分頁
+          searching: true,   // 搜尋
+          ordering: true,    // 排序
+          pageLength: 5      // 每頁顯示筆數
+      });
+  });
+</script>
+
+
+    </head>
+    <body>
+       <table id="example" class="display">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>姓名</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Alice</td>
+      <td>alice@test.com</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Bob</td>
+      <td>bob@test.com</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Candy</td>
+      <td>Candy@test.com</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Davi</td>
+      <td>Davi@test.com</td>
+    </tr>
+  </tbody>
+</table>
+    </body>
