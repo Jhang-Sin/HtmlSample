@@ -1,53 +1,60 @@
-<html  lang="zh-tw" ng-app = "myapp">
-    <title>Datatable Example</title>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../CSS/dataTables.min.css"/>
-<script src="../JS/jquery-3.6.0.js"></script>
-<script src="../JS/dataTables.min.js"></script>
-<script>
-     $(document).ready(function() {
-      $('#example').DataTable({
-          paging: true,      // 分頁
-          searching: true,   // 搜尋
-          ordering: true,    // 排序
-          pageLength: 5      // 每頁顯示筆數
-      });
-  });
-</script>
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>DataTables vs ng-repeat</title>
+    <link rel="stylesheet" 
+          href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="../JS/SinDataTableData.js"></script>
+</head>
+<body ng-controller="myCtrl">
 
-    </head>
-    <body>
-       <table id="example" class="display">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>姓名</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Alice</td>
-      <td>alice@test.com</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Bob</td>
-      <td>bob@test.com</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Candy</td>
-      <td>Candy@test.com</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Davi</td>
-      <td>Davi@test.com</td>
-    </tr>
-  </tbody>
-</table>
-    </body>
+    <h2>Table 1: jQuery DataTables</h2>
+    <table id="table1" class="display">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 這裡的資料要用 jQuery DataTables API 填充 -->
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Table 2: AngularJS ng-repeat</h2>
+    <table border="1" width="50%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <h3>新增使用者</h3>
+     <input type="text" ng-model="newUser.name" placeholder="姓名">
+    <input type="text" ng-model="newUser.email" placeholder="Email">
+    <button ng-click="addUser()">確認</button>
+
+    <script>
+        
+    </script>
+</body>
+</html>
