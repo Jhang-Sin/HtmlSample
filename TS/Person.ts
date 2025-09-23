@@ -1,6 +1,6 @@
-class Person{
+class Person
+{
     //屬性
-
     name:string;
     age:number;
     // constructor 建構函數/建構子
@@ -20,7 +20,8 @@ class Person{
     }
 
 }
-function doclick():void {
-let val:string= document.querySelector('#text1').value
-
+function doclick(): void {
+    let val: string = (document.querySelector('#text1') as HTMLInputElement).value;
+    console.log(val);
 }
+
