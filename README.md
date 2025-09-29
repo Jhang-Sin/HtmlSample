@@ -91,7 +91,7 @@ npm start
    ```bash
    npm run deploy
    ```
-4. 開啟網址 [https://你的帳號.github.io/react-typescript-learning](https://你的帳號.github.io/react-typescript-learning)
+4.開啟網址 [https://你的帳號.github.io/react-typescript-learning](https://你的帳號.github.io/react-typescript-learning)
 
 ---
 
@@ -106,3 +106,60 @@ npm start
 
 ## 📜 授權
 本專案僅供學習使用。
+
+
+## 備註記事
+
+- 忽略檔案放置位置-專案資料夾/.gitignore檔案
+- 日誌記事位置- 跟目錄 /README.md檔案
+
+
+## =====================編譯備註=====================
+- 1️⃣ 單檔編譯（沒有 tsconfig.json）
+如果你只是單純要編譯某個檔案，例如 src/models/user.ts：
+編譯指令如下:
+tsc src/models/user . ts
+✅ 你可以在專案根目錄或任何地方執行，但要給 完整路徑。
+❌ 如果你只輸入 tsc user . ts，就必須要在 src/models/ 這個目錄下，否則會找不到檔案。 
+
+2️⃣ 專案編譯（有 tsconfig.json）
+通常 React + TypeScript 專案會在 專案根目錄 建立一個 tsconfig.json。
+ 這個檔案會定義：
+來源檔案的位置 (include / files / exclude)
+
+編譯輸出的資料夾 (outDir)
+
+編譯規則（嚴格模式、ES 版本等等）
+
+此時只要在 專案根目錄 輸入：
+tsc
+
+
+TypeScript 會自動依照 tsconfig.json 搜尋並編譯所有 .ts / .tsx 檔案。
+✅ 優點：不用管檔案放在哪一層，統一由 tsconfig.json 管理。
+ ❌ 缺點：需要先設定好 tsconfig.json。
+
+3️⃣ 常見建議做法
+在 React + TS 專案中：
+學習階段 → 你可以先用單檔編譯 (tsc xxx.ts)。
+
+專案開發 → 建議使用 tsconfig.json，然後在根目錄執行 tsc 或 tsc -w（監聽模式，自動編譯）。
+
+
+# ========================================================
+
+📌 流程說明
+
+.ts → tsc 編譯器 → .js → HTML
+
+編譯：由 TypeScript 轉換成 JavaScript
+
+輸出 JS：生成 .js 檔案供執行
+
+HTML 使用：前端程式永遠引用 .js
+
+⚠️ 檔案依賴關係
+
+刪除 .ts → 仍能執行 .js，但失去原始碼維護能力
+
+刪除 .js → 前端會報錯，必須用 tsc 重新編譯

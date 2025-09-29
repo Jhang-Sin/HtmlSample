@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>TypeScript → JavaScript 編譯流程比較</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 20px;
+    }
+    h2, h3 {
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+    td {
+      padding: 10px 20px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .box {
+      padding: 10px 15px;
+      background: #e9ecef;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      min-width: 120px;
+    }
+    .arrow {
+      font-weight: bold;
+      font-size: 18px;
+      color: #444;
+    }
+    .note {
+      margin: 20px auto;
+      padding: 15px;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 6px;
+      max-width: 900px;
+    }
+  </style>
+</head>
+<body>
+  <h2>TypeScript → JavaScript 編譯流程比較</h2>
+
+  <!-- 多模組分支版本 -->
+  <h3>多模組分支編譯</h3>
+  <table>
+    <tr>
+      <td colspan="7"><div class="box">TypeScript 原始檔 (TS)</div></td>
+    </tr>
+    <tr>
+      <td colspan="7" class="arrow">↓</td>
+    </tr>
+    <tr>
+      <td colspan="7"><div class="box">TS 編譯器 (tsc)</div></td>
+    </tr>
+    <tr>
+      <td colspan="7" class="arrow">↓</td>
+    </tr>
+    <tr>
+      <td><div class="box">模組 A.ts</div></td>
+      <td class="arrow">→</td>
+      <td><div class="box">模組 B.ts</div></td>
+      <td class="arrow">→</td>
+      <td><div class="box">模組 C.ts</div></td>
+      <td class="arrow">→</td>
+      <td><div class="box">模組 D.ts</div></td>
+    </tr>
+    <tr>
+      <td class="arrow">↓</td>
+      <td></td>
+      <td class="arrow">↓</td>
+      <td></td>
+      <td class="arrow">↓</td>
+      <td></td>
+      <td class="arrow">↓</td>
+    </tr>
+    <tr>
+      <td><div class="box">A.js</div></td>
+      <td></td>
+      <td><div class="box">B.js</div></td>
+      <td></td>
+      <td><div class="box">C.js</div></td>
+      <td></td>
+      <td><div class="box">D.js</div></td>
+    </tr>
+  </table>
+
+  <!-- 合併模組版本 -->
+  <h3>合併模組編譯 (Bundling)</h3>
+  <table>
+    <tr>
+      <td colspan="7"><div class="box">TypeScript 原始檔 (TS)</div></td>
+    </tr>
+    <tr>
+      <td colspan="7" class="arrow">↓</td>
+    </tr>
+    <tr>
+      <td colspan="7"><div class="box">TS 編譯器 (tsc)</div></td>
+    </tr>
+    <tr>
+      <td colspan="7" class="arrow">↓</td>
+    </tr>
+    <tr>
+      <td><div class="box">模組 A.ts</div></td>
+      <td class="arrow">→</td>
+      <td><div class="box">模組 B.ts</div></td>
+      <td class="arrow">→</td>
+      <td><div class="box">模組 C.ts</div></td>
+      <td class="arrow">→</td>
+      <td><div class="box">模組 D.ts</div></td>
+    </tr>
+    <tr>
+      <td colspan="7" class="arrow">↓</td>
+    </tr>
+    <tr>
+      <td colspan="7"><div class="box">打包工具 (Webpack / Rollup / esbuild)</div></td>
+    </tr>
+    <tr>
+      <td colspan="7" class="arrow">↓</td>
+    </tr>
+    <tr>
+      <td colspan="7"><div class="box">bundle.js (單一檔案)</div></td>
+    </tr>
+  </table>
+
+  <!-- 說明 -->
+  <div class="note">
+    <h3>比較說明：</h3>
+    <ul>
+      <li><b>多模組分支</b>：每個 <code>.ts</code> 檔獨立編譯成對應的 <code>.js</code> 檔。</li>
+      <li><b>合併模組</b>：透過打包工具將多個 <code>.ts</code> 編譯輸出後，合併為單一 <code>bundle.js</code>。</li>
+      <li>多模組適合小專案；合併模組更適合大型專案，避免多檔案載入延遲。</li>
+      <li>最終輸出的 <code>.js</code> 檔可由 <b>Node.js</b> 或 <b>瀏覽器</b> 執行。</li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -554,6 +554,13 @@ $(document).ready(function ()
              window.opener=null;   
             }
             
+            ///TS → JS 編譯流程與檔案依賴圖
+            function openTypeScriptToJavascriptPage()
+            {
+             window.open('View/TypeScriptToJavascript.html')
+             window.opener=null;   
+            }
+            
 
 
             function ShowTime()
@@ -1013,6 +1020,9 @@ $(document).ready(function ()
                 <td>
                     <button onclick="openDataTablelPage()">DataTablePage</button>
                 </td>
+            </tr>
+            <tr>
+                <td><button onclick="openTypeScriptToJavascriptPage()">TypeScript至javascript流程</button></td>
             </tr>
 
         </table>        
