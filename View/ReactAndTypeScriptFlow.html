@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React + TypeScript 專案建立流程</title>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+      margin-top: 30px;
+    }
+    .mermaid {
+      margin-top: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>React + TypeScript 專案建立流程</h1>
+  <div class="mermaid">
+    flowchart TD
+        A([開始]):::start --> B["npm create vite@latest my-react-app"]:::cmd
+        B --> C{選擇框架與語言}
+        C -->|選 React| D["React"]:::result
+        C -->|選 React + TS| E["React + TypeScript"]:::result
+        E --> F["cd my-react-app"]:::cmd
+        F --> G["npm install"]:::cmd
+        G --> H["npm install axios (可選)"]:::cmd
+        H --> I["npm run dev"]:::cmd
+        I --> J["啟動 http://localhost:5173/"]:::result
+        J --> K([專案建立完成 ✔]):::end
+
+        classDef cmd fill:#3b82f6,stroke:#1e40af,stroke-width:2px,color:#fff;
+        classDef result fill:#22c55e,stroke:#166534,stroke-width:2px,color:#fff;
+        classDef start fill:#facc15,stroke:#ca8a04,stroke-width:2px,color:#000;
+        classDef end fill:#ef4444,stroke:#991b1b,stroke-width:2px,color:#fff;
+  </div>
+
+  <h1>專案目錄結構</h1>
+  <div class="mermaid">
+flowchart TD
+    A([開始]) --> B["npm create vite@latest my-react-app"]
+    B --> C{選擇框架與語言}
+    C -->|React| D["React"]
+    C -->|React + TS| E["React + TypeScript"]
+    E --> F["cd my-react-app"]
+    F --> G["npm install"]
+    G --> H["npm install axios (可選)"]
+    H --> I["npm run dev"]
+    I --> J["啟動 http://localhost:5173/"]
+    J --> K([專案建立完成 ✔])
+</div>
+</body>
+</html>

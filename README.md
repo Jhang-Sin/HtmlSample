@@ -35,8 +35,8 @@ npm start
 ## 🎯 學習任務表
 
 ### 🔹 第一階段：基礎
-- [x] 建立 React + TypeScript 專案
-- [x] 熟悉 VS Code 基本操作
+- [V] 建立 React + TypeScript 專案
+- [V] 熟悉 VS Code 基本操作
 - [ ] 建立第一個 Component（顯示文字）
 - [ ] 在畫面上使用 props / state
 - [ ] 練習事件（Button click、Input change）
@@ -163,3 +163,53 @@ HTML 使用：前端程式永遠引用 .js
 刪除 .ts → 仍能執行 .js，但失去原始碼維護能力
 
 刪除 .js → 前端會報錯，必須用 tsc 重新編譯
+
+# ===============編譯語法================
+
+指令(tsc)
+單一檔案：
+tsc 要編譯的ABC.ts
+
+會輸出 ABC.js
+
+# ============執行測試==============
+
+node 編譯出的ABC.js
+
+
+
+
+
+# ======編譯前後簡易差異說明=======
+
+# TypeScript 與 JavaScript Enum 對照表
+
+以下展示 TypeScript `enum` 在編譯後於 JavaScript 的輸出結果。
+
+## 編譯前 TypeScript 原始碼
+#ts
+enum Color 
+{
+  Red,
+  Green,
+  Blue
+}
+## ========編譯後的 JavaScript
+"use strict";
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Green"] = 1] = "Green";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+
+console.log(Color.Red);   // 0
+console.log(Color.Green); // 1
+console.log(Color.Blue);  // 2
+
+
+| 名稱  | TypeScript 寫法 | JavaScript 編譯結果 |
+| ----- | ------------- | --------------- |
+| Red   | `Color.Red`   | `0`             |
+| Green | `Color.Green` | `1`             |
+| Blue  | `Color.Blue`  | `2`             |
