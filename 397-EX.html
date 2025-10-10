@@ -512,10 +512,21 @@ $(document).ready(function ()
             }
 
 
-            function openReaactPage()
+            function openReaactPage(num)
             {
-                window.open('View/ReactPage.html');
-                window.opener=null;
+
+                if(num ==2)
+                {
+                    window.open('https://jhang-sin.github.io/ReactTypeScript/');
+                    window.opener=null;
+                }
+                else
+                {
+                    window.open('View/ReactPage.html');
+                    window.opener=null;
+
+                }
+                
 
 
             }
@@ -1013,6 +1024,9 @@ $(document).ready(function ()
             </tr>
             <tr>
                 <td><button onclick="openReaactPage()">React測試頁面</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="openReaactPage(2)">React頁面2-新架構</button></td>
             </tr>
 
             <tr>
