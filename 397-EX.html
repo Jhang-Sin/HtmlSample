@@ -564,6 +564,14 @@ $(document).ready(function ()
              window.open('View/DataTable.html')
              window.opener=null;   
             }
+
+            function openLoadDataPage()
+            {
+
+             window.open('View/LoadData.html')
+             window.opener=null;   
+            }
+
             
             ///TS → JS 編譯流程與檔案依賴圖
             function openTypeScriptToJavascriptPage()
@@ -1040,8 +1048,11 @@ $(document).ready(function ()
             </tr>
             <tr>
                 <td>
-                    <button onclick="openDataTablelPage()">DataTablePage</button>
+                    <button onclick="openLoadDataPage()">讀取資料</button>
                 </td>
+            </tr>
+            <tr>
+                <td><button onclick="openLOadDataTablelPage()">DataTablePage</button></td>
             </tr>
             <tr>
                 <td><button onclick="openTypeScriptToJavascriptPage()">TypeScript至javascript流程</button></td>

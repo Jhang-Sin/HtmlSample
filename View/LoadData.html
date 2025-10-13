@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-TW" ng-app="dataApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Display - jQuery DataTables & AngularJS</title>
+
+  <!-- jQuery + DataTables -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      display: flex;
+      width: 95%;
+      gap: 20px;
+    }
+    .panel {
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      background-color: #fafafa;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .switch-buttons {
+      margin-bottom: 15px;
+    }
+    button {
+      margin: 0 5px;
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    #jqueryPanel, #angularPanel {
+      display: none;
+    }
+  </style>
+</head>
+<body ng-controller="MainCtrl">
+
+  <h1>📊 Data Display: jQuery DataTables vs AngularJS</h1>
+
+  <div class="switch-buttons">
+    <button onclick="showPanel('jqueryPanel')">jQuery DataTables 顯示</button>
+    <button onclick="showPanel('angularPanel')">AngularJS 顯示</button>
+  </div>
+
+  <div class="container">
+    <!-- jQuery DataTables Panel -->
+    <div id="jqueryPanel" class="panel">
+      <h2>jQuery DataTables</h2>
+      <table id="dataTable" class="display">
+        <thead>
+          <tr><th>PID</th><th>NAME</th><th>SEX</th><th>DATA</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- AngularJS Panel -->
+    <div id="angularPanel" class="panel" ng-show="true">
+      <h2>AngularJS ng-repeat</h2>
+      <table>
+        <thead>
+          <tr><th>PID</th><th>NAME</th><th>SEX</th><th>DATA</th></tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in dataList">
+            <td>{{item.PID}}</td>
+            <td>{{item.NAME}}</td>
+            <td>{{item.SEX}}</td>
+            <td>{{item.DATA}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // --- 顯示切換 ---
+    function showPanel(id) {
+      document.getElementById('jqueryPanel').style.display = 'none';
+      document.getElementById('angularPanel').style.display = 'none';
+      document.getElementById(id).style.display = 'block';
+    }
+
+    // 預設顯示 jQuery Panel
+    showPanel('jqueryPanel');
+
+    // --- jQuery DataTables 部分 ---
+    $(document).ready(function () {
+      $.get('./data.txt', function (content) {
+        const rows = content.match(/{.*?}/g);
+        const tableData = rows.map(row => {
+          const obj = {};
+          row.replace(/{|}/g, '').split(';').forEach(pair => {
+            const [key, val] = pair.split(':');
+            obj[key.trim()] = val;
+          });
+          return obj;
+        });
+
+        // 將資料加入表格
+        tableData.forEach(item => {
+          $('#dataTable tbody').append(
+            `<tr>
+              <td>${item.PID}</td>
+              <td>${item.NAME}</td>
+              <td>${item.SEX}</td>
+              <td>${item.DATA}</td>
+            </tr>`
+          );
+        });
+
+        // 啟用 DataTable
+        $('#dataTable').DataTable();
+      });
+    });
+
+    // --- AngularJS 部分 ---
+    const app = angular.module('dataApp', []);
+    app.controller('MainCtrl', function($scope, $http) {
+      $http.get('./data.txt').then(response => {
+        const rows = response.data.match(/{.*?}/g);
+        $scope.dataList = rows.map(row => {
+          const obj = {};
+          row.replace(/{|}/g, '').split(';').forEach(pair => {
+            const [key, val] = pair.split(':');
+            obj[key.trim()] = val;
+          });
+          return obj;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
