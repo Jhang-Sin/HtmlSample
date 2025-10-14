@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rows.map(row => {...}) 程式流程說明</title>
+<style>
+  body {
+    font-family: "Microsoft JhengHei", sans-serif;
+    margin: 20px;
+  }
+  table {
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .arrow {
+    font-size: 24px;
+    color: #666;
+  }
+  .code {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: pre;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .section {
+    background: #eef;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<h2>🧩 JavaScript 資料轉換流程說明</h2>
+<p>這頁說明下列程式碼的執行結構與每一步的意義：</p>
+
+<div class="code">
+rows.map(row =&gt; {<br>
+&nbsp;&nbsp;const obj = {};<br>
+&nbsp;&nbsp;row.replace(/{|}/g, '').split(';').forEach(pair =&gt; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;const [key, val] = pair.split(':');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj[key.trim()] = val;<br>
+&nbsp;&nbsp;});<br>
+&nbsp;&nbsp;return obj;<br>
+});
+</div>
+
+<br>
+
+<table>
+  <tr>
+    <td class="section" colspan="3">整體流程結構</td>
+  </tr>
+  <tr>
+    <td>rows 陣列<br><small>例如 ["{PID:1001;NAME:A01}", "{PID:1002;NAME:A02}"]</small></td>
+    <td class="arrow">↓</td>
+    <td>使用 <b>map()</b><br>對每一列 row 執行一次處理</td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="section">單筆 row 的處理流程</div>
+    </td>
+  </tr>
+  <tr>
+    <td>1️⃣ 建立空物件<br><b>const obj = {}</b></td>
+    <td class="arrow">↓</td>
+    <td>準備放入這筆 row 的欄位資料</td>
+  </tr>
+  <tr>
+    <td>2️⃣ 清除字串內的大括號<br><b>row.replace(/{|}/g, '')</b></td>
+    <td class="arrow">↓</td>
+    <td>移除所有 <code>{</code> 和 <code>}</code><br>
+        <small>例如 "{PID:1001;NAME:A01}" → "PID:1001;NAME:A01"</small></td>
+  </tr>
+  <tr>
+    <td>3️⃣ 拆分欄位<br><b>.split(';')</b></td>
+    <td class="arrow">↓</td>
+    <td>以分號切割欄位 → <br><code>["PID:1001", "NAME:A01", "SEX:1"]</code></td>
+  </tr>
+  <tr>
+    <td>4️⃣ 逐一處理每個欄位<br><b>forEach(pair =&gt; {...})</b></td>
+    <td class="arrow">↓</td>
+    <td>
+      拆出欄位名稱與值：<br>
+      <code>const [key, val] = pair.split(':')</code><br>
+      並存入物件：<br>
+      <code>obj[key.trim()] = val;</code>
+    </td>
+  </tr>
+  <tr>
+    <td>5️⃣ 回傳物件</td>
+    <td class="arrow">↓</td>
+    <td>
+      一筆完成 → 例如：<br>
+      <code>{ PID: "1001", NAME: "A01", SEX: "1" }</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="section">map() 結束後的最終結果</div>
+      <div class="code">
+[
+  { PID: "1001", NAME: "A01", SEX: "1" },
+  { PID: "1002", NAME: "A02", SEX: "0" }
+]
+      </div>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h3>🔍 正規表示式 <code>/{|}/g</code> 的解釋</h3>
+<table>
+  <tr><td><b>/</b> 和 <b>/</b></td><td>界定正規表示式的開始與結束</td></tr>
+  <tr><td><b>{|}</b></td><td>匹配「{」或「}」任一字元</td></tr>
+  <tr><td><b>g</b></td><td>全域搜尋（取代所有匹配的字元）</td></tr>
+</table>
+
+<p>例如：</p>
+<div class="code">
+"{PID:1001;NAME:A01}".replace(/{|}/g, '')
+→ "PID:1001;NAME:A01"
+</div>
+
+<br>
+<footer style="text-align:center; font-size:12px; color:#777;">
+© 2025 rows.map() 教學示例頁 | 可直接上傳至 GitHub Pages
+</footer>
+
+</body>
+</html>

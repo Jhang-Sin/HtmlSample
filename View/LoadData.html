@@ -67,6 +67,10 @@
   <div class="switch-buttons">
     <button onclick="showPanel('jqueryPanel')">jQuery DataTables 顯示</button>
     <button onclick="showPanel('angularPanel')">AngularJS 顯示</button>
+    <button onclick="location.reload()">重新載入頁面</button>
+    <button onclick="window.close()">關閉視窗</button>
+    <button onclick="window.open('./convertNotes.html', '_blank')">程式流程說明</button>
+    
   </div>
 
   <div class="container">
@@ -151,11 +155,15 @@
           row.replace(/{|}/g, '').split(';').forEach(pair => {
             const [key, val] = pair.split(':');
             obj[key.trim()] = val;
+            
           });
           return obj;
         });
       });
     });
+
+
+
   </script>
 </body>
 </html>
