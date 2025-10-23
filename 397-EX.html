@@ -492,14 +492,15 @@ $(document).ready(function ()
             ///////開啟RWD測試頁面//////
             function openRWDPage()
             {
-                window.open('Rwd.html');/////大小寫有差異
+               const newWin = window.open('Rwd.html', '_blank', 'noopener');/////大小寫有差異
+               if (newWin) newWin.opener = null;
 
                 //////window.open(' 新視窗的網址 ', '新視窗的名稱', config='height=高度,width=寬度');
             }
 
             function OpenMultPage()
             {
-                window.open('View/MultiPage.html');
+                window.open('View/MultiPage.html', '_blank', 'noopener');
                 window.opener=null;
                 ///window.close(); ///關閉原視窗
 
@@ -507,7 +508,7 @@ $(document).ready(function ()
             }
             function OpenAngHttp()
             {
-                window.open('View/AngHttp.html');
+                window.open('View/AngHttp.html', '_blank', 'noopener');
                 window.opener=null;
             }
 
@@ -517,12 +518,12 @@ $(document).ready(function ()
 
                 if(num ==2)
                 {
-                    window.open('https://jhang-sin.github.io/ReactTypeScript/');
+                    window.open('https://jhang-sin.github.io/ReactTypeScript/', '_blank', 'noopener');
                     window.opener=null;
                 }
                 else
                 {
-                    window.open('View/ReactPage.html');
+                    window.open('View/ReactPage.html', '_blank', 'noopener');
                     window.opener=null;
 
                 }
@@ -533,42 +534,42 @@ $(document).ready(function ()
 
             function openDialogExample()
             {
-                window.open('View/DialogExample.html');
+                window.open('View/DialogExample.html', '_blank', 'noopener');
                 window.opener=null;
             }
 
             
             function openB64Page()
             {
-                window.open('View/B64.html');
+               const newWin = window.open('View/B64.html', '_blank', 'noopener');
                 window.opener=null;
                 
             }
 
             function openWebComponentPage()
             {
-                window.open('View/WebComponent.html')
+                window.open('View/WebComponent.html', '_blank', 'noopener')
                 window.opener=null;
             }
 
             function openBroadcastChannelPage()
             {
 
-             window.open('View/BroadcastChannel/frameIndex.html')
+             window.open('View/BroadcastChannel/frameIndex.html', '_blank', 'noopener')
              window.opener=null;   
             }
             
             function openDataTablelPage()
             {
 
-             window.open('View/DataTable.html')
+             window.open('View/DataTable.html', '_blank', 'noopener')
              window.opener=null;   
             }
 
             function openLoadDataPage()
             {
 
-             window.open('View/LoadData.html')
+             window.open('View/LoadData.html', '_blank', 'noopener')
              window.opener=null;   
             }
 
@@ -576,19 +577,19 @@ $(document).ready(function ()
             ///TS → JS 編譯流程與檔案依賴圖
             function openTypeScriptToJavascriptPage()
             {
-             window.open('View/TypeScriptToJavascript.html')
+             window.open('View/TypeScriptToJavascript.html', '_blank', 'noopener')
              window.opener=null;   
             }
 
             ///TS → JS 編譯流程圖2
             function openTypeScriptToJavascriptPage2()
             {
-             window.open('View/ReactAndTypeScriptFlow.html')
+             window.open('View/ReactAndTypeScriptFlow.html', '_blank', 'noopener')
              window.opener=null;   
             }
             function openTSModuleOperationAssociation()
             {
-                window.open('View/TSModuleOperationAssociation.html')
+                window.open('View/TSModuleOperationAssociation.html', '_blank', 'noopener')
             }
             
             
@@ -1038,7 +1039,7 @@ $(document).ready(function ()
                 <td><button onclick="openReaactPage()">React測試頁面</button></td>
             </tr>
             <tr>
-                <td><button onclick="openReaactPage(2)">React頁面2-新架構</button></td>
+                <td><button onclick="openReaactPage(2)">React頁面2-新架構</button><img src="./Image/TIP.gif" style="width: 18px;height: 18px;border-radius: 99em;"></td>
             </tr>
 
             <tr>
