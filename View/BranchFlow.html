@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Pages 部署分支說明</title>
+  <style>
+    body {
+      font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+      background: #f8fafc;
+      color: #222;
+      margin: 40px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #0366d6;
+    }
+    .flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .box {
+      border: 2px solid #0366d6;
+      border-radius: 10px;
+      padding: 20px 30px;
+      background: white;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      text-align: center;
+    }
+    .arrow {
+      font-size: 24px;
+      color: #999;
+    }
+    .note {
+      background: #e9f5ff;
+      border-left: 5px solid #0366d6;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>GitHub Pages 部署分支說明</h1>
+  <p>這個架構說明 React 專案在 GitHub 上的兩個分支 <b>main</b> 與 <b>gh-pages</b> 的用途與流程。</p>
+
+  <div class="flow">
+    <div class="box">
+      <h2>main 分支</h2>
+      <p>主要開發分支<br>包含 React / TypeScript 原始碼<br>及 README.md</p>
+      <p><b>手動推送：</b><br>git push origin main</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="box">
+      <h2>npm run build</h2>
+      <p>將程式打包至 <b>dist/</b> 資料夾</p>
+    </div>
+    <div class="arrow">➡️</div>
+    <div class="box">
+      <h2>gh-pages 分支</h2>
+      <p>自動部署分支<br>用於 GitHub Pages 網站展示</p>
+      <p><b>自動推送：</b><br>npm run deploy</p>
+    </div>
+  </div>
+
+  <div class="note">
+    ✅ <b>開發重點：</b><br>
+    - 平常都在 <b>main</b> 分支開發。<br>
+    - 每次更新完程式後，執行：
+      <pre>npm run build && npm run deploy</pre>
+    - 系統會自動將靜態檔案推送到 <b>gh-pages</b> 分支，供 GitHub Pages 使用。
+  </div>
+</body>
+</html>
