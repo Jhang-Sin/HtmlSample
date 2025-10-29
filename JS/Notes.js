@@ -3,7 +3,7 @@ function Notes()
 {
 
     document.getElementById("notesDay").innerText="";
-    document.getElementById("notesDay").innerHTML = "異動/更新日:2025-10-28 <br>更新/異動內容:React頁面2-新架構<br>新增GitHub Pages 部署分支說明頁面<br>";
+    document.getElementById("notesDay").innerHTML = "異動/更新日:2025-10-29 <br>更新/異動內容:React頁面2-新架構<br>新增GitHub Pages 部署分支說明頁面<br>掛號系統架構頁面<br>";
 
 }
 
