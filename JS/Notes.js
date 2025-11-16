@@ -3,7 +3,7 @@ function Notes()
 {
 
     document.getElementById("notesDay").innerText="";
-    document.getElementById("notesDay").innerHTML = "異動/更新日:2025-11-11<br>更新/異動內容:React頁面2-新架構<br>Router流程圖<br>掛號功能、測試資料；頁面調整<br>";
+    document.getElementById("notesDay").innerHTML = "異動/更新日:2025-11-16<br>更新/異動內容:掛號功能-新增依醫師、依日期頁面及假資料<br>測試資料；頁面調整<br>";
 
 }
 
