@@ -3,7 +3,7 @@ function Notes()
 {
 
     document.getElementById("notesDay").innerText="";
-    document.getElementById("notesDay").innerHTML = "異動/更新日:2025-11-16<br>更新/異動內容:掛號功能-新增依醫師、依日期頁面及假資料<br>測試資料；頁面調整<br>";
+    document.getElementById("notesDay").innerHTML = "異動/更新日:2025-12-24<br>-更新/異動內容:掛號作業<br>-測試資料檢核功能；頁面調整<br>-模擬資料建立<br>-系統架構調整<br>-作業功能模組化/角色權限設定及模擬";
 
 }
 
