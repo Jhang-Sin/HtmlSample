@@ -3,7 +3,7 @@ function Notes()
 {
 
     document.getElementById("notesDay").innerText="";
-    document.getElementById("notesDay").innerHTML = "異動/更新日:2025-12-31<br>-更新/異動內容:維護管理<br>-檢核功能調整<br>-檢核頁面調整<br>增加DB-Viewer功能-模擬資料調整<br>-系統架構調整<br>";
+    document.getElementById("notesDay").innerHTML = "異動/更新日:2025-12-31<br>-更新/異動內容:維護管理<br>-檢核功能調整<br>-檢核頁面調整<br>-增加DB-Viewer功能<br>-模擬資料調整<br>-系統架構調整<br>";
 
 }
 
