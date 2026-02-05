@@ -3,7 +3,7 @@ function Notes()
 {
 
     document.getElementById("notesDay").innerText="";
-    document.getElementById("notesDay").innerHTML = "異動/更新日:<br>2026-1-30<br>-更新/異動內容:<br>-維護管理<br>-檢核功能調整<br>-檢核頁面調整<br>-掛號作業資料顯示修正<br>";
+    document.getElementById("notesDay").innerHTML = "異動/更新日:<br>2026-2-05<br>-更新/異動內容:<br>掛號頁面-調整依日期掛號[共用元件]<br>-增加SA文件<br>";
 
 }
 
