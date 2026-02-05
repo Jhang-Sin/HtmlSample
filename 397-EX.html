@@ -87,14 +87,14 @@ $(document).ready(function ()
     let interval; // 在全域範圍內宣告 interval 變數
     
 	// 倒數秒數    
-	let countdown = 10;
+	let countdown = 6;
 	// 每秒更新倒數
 	 timerT = setInterval(function () 
 	{
 		$('#countdown-overlay').text(countdown); // 更新顯字
-            if(countdown ==5)
+            if(countdown ==3)
             {
-                console.log('剩5秒');
+                console.log('剩3秒');
                 ///抓物件
                 var disBt = document.getElementById("skip-btn");
                 var CentdisBt =  document.getElementById("CenterClsDiv");
